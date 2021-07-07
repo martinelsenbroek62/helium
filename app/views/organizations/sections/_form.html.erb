@@ -1,0 +1,13 @@
+<%= form_for [_organization, _survey, section] do |f| %>
+  <h3>Create new section</h3>
+  <div class="">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

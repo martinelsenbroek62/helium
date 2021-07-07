@@ -1,0 +1,2 @@
+module Organizations::ClaimsHelper
+end

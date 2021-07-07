@@ -1,0 +1,9 @@
+
+<%= render 'subheader' %>
+
+<%
+claims = (claims = _benefit_program.claims.paginate(page:params[:page], per_page:15))
+claims = claims.joins(:user).where('users.name ~* ? or users.email ~* ?', params[:q], params[:q]) if params[:q].present?
+%>
+<%= render 'organizations/people/claims_table', claims: claims %>
+<p><%= will_paginate claims %></p>

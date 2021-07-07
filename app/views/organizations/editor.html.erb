@@ -1,0 +1,53 @@
+<%= render 'subheader' %>
+
+<%= form_for _organization do |f| %>
+  <div style="margin-left:90%;margin-top:-70px;position:absolute;" class="text-right">
+    <%= f.submit "Save Template" %>
+  </div>
+
+  <ul class="editor-drawer">
+    <% fields = [
+        :benefit_welcome,
+        :organization_styles_template,
+        :benefit_balance,
+        :benefit_focus_area,
+        :benefit_claims_form,
+        :benefit_about,
+        :employee_welcome_email_text,
+        :benefit_categories_text,
+        :benefit_footer,
+        :benefit_categories_template,
+        :email_claim_status_template
+    ]
+
+    fields.each do |field| %>
+        <li>
+            <%= link_to organization_editor_path(_organization, field:field) do %>
+                <i class="fa fa-file-text-o"></i> &nbsp;
+                <%= field %>
+            <% end %>
+        </li>
+    <% end %>
+  </ul>
+
+  <div>
+    <% template = fields.select { |f| f.to_s == params[:field] }.first  %>
+    <%= f.text_area template, id: "textarea_editor", style:"display:none;" %>
+    <div id="editor" class="uc-full-width"></div>
+  </div>
+<% end %>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.9/ace.js"></script>
+
+<script>
+    var textArea = document.getElementById('textarea_editor');
+    var editor = ace.edit("editor");
+    editor.getSession().setValue(textArea.value);
+    editor.getSession().on("change", function(){
+      textArea.value=(editor.getSession().getValue());
+    });
+    editor.getSession().setMode("ace/mode/html");
+    editor.setOptions({
+     maxLines: editor.session.getLength()
+   });
+</script>

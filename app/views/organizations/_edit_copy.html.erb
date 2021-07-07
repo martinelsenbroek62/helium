@@ -1,0 +1,30 @@
+
+<h3>Copy for Benefits & Admin Pages</h3>
+<div class="">
+  <% [:benefit_welcome, :benefit_about, :benefit_balance, :benefit_focus_area, :benefit_claims_form, :employee_welcome_email_text, :benefit_categories_text, :benefit_categories_template, :benefit_footer].each do |field| %>
+    <div class="">
+      <%
+      popup_window = case field.to_s
+      when /email/i
+        ''
+      when /welcome|about|balance/i
+        '/benefits'
+      when /focus/
+        '/benefits/focus_area'
+      when /claim/
+        '/claims/new'
+      else
+        ''
+      end
+      %>
+
+      <% if popup_window.present? %>
+        <a href="#" onclick="$(this).closest('form').submit();window.open('<%= popup_window %>', '', 'width=960');">+ Preview</a>
+      <% end %>
+      <%= f.label field %>
+      <%= f.text_area field %>
+    </div>
+  <% end %>
+
+  <button>Submit</button>
+</div>

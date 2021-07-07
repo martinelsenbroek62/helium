@@ -1,0 +1,6 @@
+<div class="mx-auto" style="max-width: 40rem">
+<form action="<%= question.url %>" method="post" id='question_<%= question.id %>'>
+  <input style="text-align:center" type='text' name='question[answer]' placeholder='<%= question.placeholder %>' value='<%= question.answer %>' <%= 'data-required="true"' if question.required %>>
+  <p class="lead mt-2"><%= question.units %></p>
+</form>
+</div>

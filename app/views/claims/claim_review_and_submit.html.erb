@@ -1,0 +1,45 @@
+<!-- <h1>CLAIM_REVIEW_AND_SUBMIT</h1> -->
+<div class="mx-auto" style="max-width: 40rem">
+
+  <% if _claim.incomplete? %>
+    <div class="alert alert-danger text-center mt-4" style="max-width: 40rem" role="alert">
+      <p class="lead">Your claim is incomplete. All claims require a Purchase Price, Amount Requested, Purchase Date and Proof of Purchase.
+        <strong>
+          <p class="lead">
+            <%= link_to "Edit Claim", edit_claim_path(_claim) %>
+          </p>
+        </strong>
+      </p>
+      <p class="mb-0">
+        <i class="fa fa-times-circle fa-2x"></i>
+      </p>
+      <h5 class="alert-heading mt-2">Claim ID:
+        <%= _claim.id %></h5>
+    </div>
+  <% else %>
+
+    <div class="alert alert-success text-center mt-4" style="max-width: 40rem" role="alert">
+      <p class="lead">Your claim has been submitted and is
+        <strong>under review</strong>.</p>
+      <p class="mb-0">
+        <i class="fa fa-check-circle fa-2x"></i>
+      </p>
+      <h5 class="alert-heading mt-2">Claim ID:
+        <%= _claim.id %></h5>
+    </div>
+  <% end %>
+
+  <%= render 'claim_details' %>
+
+  <hr>
+
+  <% if _claim.incomplete? %>
+    <div class=""></div>
+  <% else %>
+    <p class="lead text-center">Need to change something?</p>
+
+    <p class="lead text-center">
+      <%= link_to "Edit Claim", edit_claim_path(_claim) %>
+    </p>
+  <% end %>
+</div>

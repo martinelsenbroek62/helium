@@ -1,0 +1,31 @@
+<% if true %>
+<style media="screen">
+  #loadingBox {
+    position:fixed;
+    opacity:0.95;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:#E5EFF1;
+    padding-top:290px;
+    color:black;
+    font-size:40px;
+    text-align:center;
+    z-index:999;
+  }
+  .navbar {
+    z-index:9999!important;
+  }
+</style>
+  <%= _survey.template('report_template.html').to_s.gsub(/class="invisible"/, 'class=""').gsub(/Loading.../, '<div id="loadingBox">Generating Your Custom Report<br><img src="/loading2.gif" style="width:400px"/></div>').html_safe %>
+  <script type="text/javascript">
+    <%= _survey.master.report_script_template.to_s.html_safe %>
+  </script>
+<% else %>
+  <!-- Render File Templates for Testing -->
+  <%= File.read("#{Rails.root}/tmp/report_3208.html").to_s.html_safe %>
+  <script type="text/javascript">
+    <%= File.read("#{Rails.root}/tmp/report_script_3208.js").to_s.html_safe %>
+  </script>
+<% end %>

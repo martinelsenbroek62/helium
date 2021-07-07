@@ -1,0 +1,28 @@
+<% if _claim.claim_attachments.any? %>
+  <b>Uploaded Proof of Purchase and Eligibility</b>
+
+  <table>
+    <tbody>
+      <% _claim.claim_attachments.group_by { |claim_attachment| claim_attachment.kind }.each do |kind, claim_attachments| %>
+        <% claim_attachments.each do |claim_attachment| %>
+          <tr>
+            <td>
+              <%= kind.to_s.titleize %>:
+              <%= claim_attachment.attachment['original_filename'] %>
+            </td>
+            <td>
+              <%= link_to claim_attachment.attachment_url, target: "_blank" do %>
+                Preview <%= claim_attachment.attachment['resource_type'] %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to claim_attachment_path(claim_attachment.uuid), method: :delete, data: {confirm: "Are you sure?"}, style:"color:gray;text-decoration:none;" do %>
+                <i class=""></i> Delete file
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

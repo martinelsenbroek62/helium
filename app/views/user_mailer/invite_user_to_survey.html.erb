@@ -1,0 +1,3 @@
+<%= Liquid::Template.parse(
+  @survey.template('invite_template.text')
+  ).render('survey' => @survey, 'user' => @survey.user ).html_safe %>

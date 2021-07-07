@@ -1,0 +1,27 @@
+<%= render 'subheader' %>
+
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">Bulk Send Employee Invitations</h4>
+
+  <p>
+    By pressing the button below we will send out invites to everyone
+    who hasn't received an invite or hasn't responded to it yet.
+  </p>
+  <p>
+    Employees who have already received and accepted their invite will not be emailed again.
+  </p>
+
+  <hr>
+
+  <p class="mb-0">
+    No sample available
+  </p>
+</div>
+
+<%= form_for :invite, data: { confirm: "Are you sure?"}, method: :post do |f| %>
+  <div class="">
+    <button>
+    Send Invitations To Employees
+    </button>
+  </div>
+<% end %>

@@ -1,0 +1,53 @@
+<div class="">
+  <%= link_to _product.focus_area, focus_area_products_path(filter:_product.focus_area) %>
+  >
+  <%= link_to _product.category_name, category_products_path(filter:_product.category_name) %>
+</div>
+
+<br>
+
+<div class="">
+  <div class="">
+    <br>
+    <%= image_tag _product.image_url, style: 'width:100%;' %>
+  </div>
+  <div class="">
+    <h1>
+      <%= _product.name %>
+    </h1>
+
+    <h4>
+      Average Benefit
+      <%= number_to_currency _product.average_benefit %>
+      From a total of <%= pluralize _product.claims.count, 'claim' %>
+    </h4>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+  </div>
+</div>
+
+<div class="">
+  <div class="">
+    <%= form_for :wishlist, url: saved_products_path(product_id:_product.id) do |f| %>
+      <div class="">
+        <button style="">
+          <% if _user.products.include?(_product) %>
+            Remove from wishlist
+          <% else %>
+            Add to wishlist
+          <% end %>
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <div class="">
+    <%= link_to new_product_claim_path(_product) do %>
+      <button style="">
+        Submit A Claim for this product
+      </button>
+    <% end %>
+  </div>
+</div>

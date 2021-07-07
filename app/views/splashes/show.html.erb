@@ -1,0 +1,24 @@
+<br>
+<div class="">
+  <h1><%= @organization.name %></h1>
+  <br>
+  <p>
+    Please wait why we initialize your survey
+  </p>
+  <%= image_tag "loading.gif" %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // TODO make this a post request
+    $.ajax({
+      method:"GET",
+      data: null,
+      url: "<%= create_anonymous_survey_path %>",
+      success: function(resp){
+        console.log(resp)
+        location.href = '/profile'
+      }
+    })
+  });
+</script>

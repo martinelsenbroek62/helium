@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= link_to message.subject, [message.organization, message.survey, message] %>
+  </td>
+  <td>
+    <% if message.deliver_to %>
+      Sent to "<%= message.deliver_to %>" survey
+    <% end %>
+  </td>
+  <td>
+    <% if message.delivered_at %>
+      Sent <%= time_ago_in_words message.delivered_at %> ago
+    <% else %>
+      Not sent yet
+    <% end %>
+  </td>
+  <td>
+    <%= link_to [message.organization, message.survey, message], method: 'delete', data: { confirm: "Are you sure?" } do %>
+      Delete
+    <% end %>
+  </td>
+</tr>

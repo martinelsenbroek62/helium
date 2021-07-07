@@ -1,0 +1,24 @@
+<%= render 'subheader' %>
+
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">CSV Upload</h4>
+
+  <p>Please upload a CSV with the headers listed below. Employees are matched on email address. All other attributes are updated.</p>
+
+  <hr>
+  <p class="mb-0">
+    <%= link_to "Upload funds for certain users", upload_organization_people_path(_organization) %>  or
+    <a href="/upload_employees.csv">Download Sample CSV</a>
+  </p>
+</div>
+
+<%= form_for :upload, url: "", method: :post do |f| %>
+  <pre>First_Name, Last_Name, Employee_ID, Email_Address, Office_Location, State_of_Residence, Start_Date, Termination_Date, SAML IDP, SAML IDP ID</pre>
+
+  <div class="">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
+  </div>
+
+  <button>Upload</button>
+<% end %>

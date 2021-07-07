@@ -1,0 +1,12 @@
+<%
+  _section = Section.where(name: 'Goals')
+  _group = _section.groups.last
+%>
+
+<%= Liquid::Template.parse(_survey.template('group_template.html')).render(
+  'survey' => _survey,
+  'section' => _section,
+  'group' => _group,
+  'next' => _group.next.try(:url) || (_section.next.try(:url)||_survey.url).to_s + '/complete',
+  'prev' => _group.prev.try(:url) || (_section.prev.try(:url)||_survey.url).to_s + '/',
+).html_safe %>

@@ -1,0 +1,38 @@
+
+<table>
+  <tbody>
+  <tr>
+    <td>
+      {% if organization.logo %}
+        <img src="{{organization.logo.secure_url}}">
+        {% endif %}
+    </td>
+    <td>
+      <h1>{{organization.name}}</h1>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<h3>Current Benefit Programs</h3>
+
+{% for program in programs %}
+  <div class="">
+    <a href="{{program.url}}">
+      <h3>{{program.name}}</h3>
+    </a>
+    You have
+    <b>{{program.user_balance}} </b>
+    to spend in this program
+
+    {{program.description}}
+
+    <p>
+      <a href="{{program.url}}">
+        View {{program.categories.size}} program benefits
+      </a>
+    </p>
+  </div>
+{% else %}
+  <h3>There are currently no programs</h3>
+{% endfor %}

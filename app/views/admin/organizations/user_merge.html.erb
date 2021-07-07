@@ -1,0 +1,27 @@
+<div class="">
+  <%= form_for :merge, url: "" do %>
+      <%= csrf_meta_tag %>
+
+      <table>
+        <tr>
+          <td>From</td><td></td>
+          <td>To
+            <span style="float:right"><button>Merge Users</button></span>
+          </td>
+        </tr>
+        <% 200.times.each do |i| %>
+          <tr>
+            <td>
+              <input type="text" name="from[]" value="" placeholder="from@example.com">
+            </td>
+            <td style="width:10px!important">
+              =>
+            </td>
+            <td>
+              <input type="text" name="to[]" value="" placeholder="to@example.com">
+            </td>
+          </tr>
+        <% end %>
+      </table>
+  <% end %>
+</div>

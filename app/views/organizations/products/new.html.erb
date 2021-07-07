@@ -1,0 +1,45 @@
+<%= render 'organizations/reimbursement_rules/subheader' %>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <h3>New Specific Product</h3>
+      <p>
+        A specific product allows you to customize rules for an instance of a product, rather than for a class of products.
+        Features set here will override features defined at the category and product type level.
+      </p>
+      <div class="">
+        <%= form_for [_organization, Product.new] do |f| %>
+          <div class="">
+            <label>Program</label>
+            <%= f.select :program_id, (_organization.programs.map { |program| [program.name, program.id]}), prompt: "Choose" %>
+          </div>
+
+          <div class="">
+            <label>Category </label>
+            <%= f.text_field :focus_area %>
+          </div>
+
+          <div class="">
+            <label>Product Type</label>
+            <%= f.text_field :category_name %>
+          </div>
+
+          <div class="">
+            <label>Description</label>
+            <%= f.text_field :description %>
+          </div>
+
+          <div class="">
+            <label>Amount to Reimburse as %</label>
+            <%= f.text_field :reimbursement_percentage %>
+          </div>
+
+          <div class="">
+            <button>Save</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

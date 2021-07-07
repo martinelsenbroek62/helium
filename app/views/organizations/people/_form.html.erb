@@ -1,0 +1,51 @@
+<%= form_for @user, url: url do |f| %>
+  <fieldset>
+    <legend>Contact Info</legend>
+
+    <% [:first_name, :last_name, :email, :employee_id, :employee_office_location, :employee_state_of_residence].each do |field| %>
+      <div class="">
+        <%= f.label field %>
+        <%= f.text_field field, style: "width:100%" %>
+      </div>
+    <% end %>
+  </fieldset>
+
+  <fieldset>
+    <legend>More Info</legend>
+    <% [:employee_start_date, :employee_termination_date].each do |field| %>
+      <div class="">
+        <% if field =~ /terminat/i %>
+          <label> <%= field.to_s.titleize  %> (Set date to indicate inactive employee)</label>
+        <% else %>
+          <%= f.label field %>
+        <% end %>
+        <%= f.text_field field, class: "datepicker", type: "date", style: "width:100%" %>
+      </div>
+    <% end %>
+  </fieldset>
+  <br>
+  <fieldset><legend>SAML</legend>
+    <small>You shouldn't manage these fields but in case there is an issue you can override here</small>
+    <div class="">
+      <%= f.label :saml_idp, "SAML Identity Provider" %>
+      <%= f.text_field :saml_idp %>
+      <small>Lowercase, one word used to identify provider in single sign on url.. e.g., medwelless</small>
+    </div>
+    <div class="">
+      <%= f.label :saml_idp_id, "SAML Identity Provider ID" %>
+      <%= f.text_field :saml_idp_id %>
+      <small>The id the provider returns to identify a unique user</small>
+    </div>
+  </fieldset>
+
+  <div class="">
+    <Button>
+      Save
+    </Button>
+
+    <%= link_to organization_person_path(_organization, @user) do %>
+      Cancel
+    <% end rescue '' %>
+  </div>
+
+<% end %>

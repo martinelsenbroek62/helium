@@ -1,0 +1,97 @@
+<%= render 'subheader' %>
+
+<a href="#survey">Survey</a>
+<a href="#section">Sections</a>
+<a href="#group">Groups</a>
+<a href="#question">Questions</a>
+<a href="#organization">Organizations</a>
+<a href="#user">Users</a>
+
+
+<% if _survey.questions.any? %>
+
+<h4 id="survey">Survey Variables</h4>
+<% if false %>
+<table>
+<% _survey.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{survey.<%= key %>}}
+    </td>
+    <td>
+      <%= value %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<h4 id="section">Section Variables</h4>
+<table>
+<% _survey.sections.first.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{section.<%= key %>}}
+    </td>
+    <td>
+      <%= value %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<h4 id="group">Group Variables</h4>
+<table>
+<% _survey.groups.first.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{group.<%= key %>}}
+    </td>
+    <td>
+      <%= value %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<h4 id="question">Question Variables</h4>
+<table>
+<% _survey.questions.first.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{question.<%= key %>}}
+    </td>
+    <td>
+      <%= value %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<h4 id="organization">Organization Variables</h4>
+<table>
+<% _organization.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{organization.<%= key %>}}
+    </td>
+    <td>
+      <%= value %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<h4 id="user">User Variables</h4>
+<table>
+<% _user.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{user.<%= key %>}}
+    </td>
+    <td>
+      <%= value %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>

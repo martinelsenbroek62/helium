@@ -1,0 +1,20 @@
+<form action="<%= question.url %>" method="post" id='question_<%= question.id %>'>
+  <ul class="">
+    <% question.options.split(",").each do |option| %>
+      <li>
+        <% option = option.to_s.strip %>
+        <%# _json = JSON.parse(question.answer) rescue '' %>
+        <% _json = question.answer_as_array %>
+        <% selected = option.in?(_json) ? "checked=checked" : "" %>
+        <label style=""><input type='radio' name='question[answer][]' value='<%= option %>' <%= selected %>> <%= option %></label>
+      </li>
+    <% end %>
+  </ul>
+
+  <% if question.kind =~ /none|unsure/i %>
+  <label>
+    <input type='radio' name='question[answer][]' value='Unsure'>
+    None or unsure
+  </label>
+  <% end %>
+</form>

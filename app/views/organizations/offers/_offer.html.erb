@@ -1,0 +1,23 @@
+
+  <tr class="offer">
+    <td>
+      <h3><%= offer.company %></h3>
+      <%= offer.name %>
+      <p><%= offer.body %></p>
+      <%= link_to "Edit", edit_organization_offer_path(_organization, offer) %>
+      | <%= link_to "Delete", organization_offer_path(_organization, offer), method: :delete, data: {confirm:"Delete this offer?"} %>
+    </td>
+    <td style='text-align:center'>
+      Available
+      <br>
+      <%= offer.start_date %> - <%= offer.end_date %>
+
+      <a href="<%= offer.website %>" target="_blank">
+        <p><%= offer.cta || "Claim Offer" %></p>
+      </a>
+
+      <p>
+        Value of <br> <%= offer.value %>
+      </p>
+    </td>
+  </tr>

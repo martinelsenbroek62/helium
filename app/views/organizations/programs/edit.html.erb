@@ -1,0 +1,54 @@
+<%= render 'organizations/reimbursement_rules/subheader' %>
+
+<br>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <center><h3>New Program</h3></center>
+      <div class="">
+        <%= form_for [_organization, _organization.programs.find(params[:id])] do |f|%>
+          <div class="">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+
+          <div class="">
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+          </div>
+
+          <div class="">
+            <%= f.label :start_date %>
+            <%= f.text_field :start_date, class: "datepicker" %>
+          </div>
+
+          <div class="">
+            <%= f.label :end_date %>
+            <%= f.text_field :end_date, class: "datepicker" %>
+            <small>Leave start and end dates empty if they do not expire</small>
+          </div>
+
+          <div class="">
+            <button>Save</button>
+          </div>
+        <% end %>
+      </div>
+
+      <% if params[:delete] %>
+        <h3 class="" id="delete">Confirm Delete</h3>
+        If you delete this program associated products, rules and funds will also be deleted.
+        <%= link_to "Yes, I want to delete anyway", [_organization, _program], method: :delete, data: { confirm: "Are you sure?"} %>
+        or
+        <%= link_to "cancel", "?" %>
+      <% else %>
+        <%= link_to "?delete=true#delete" do %>
+          <i class=""></i> Delete this program
+        <% end %>
+      <% end %>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>

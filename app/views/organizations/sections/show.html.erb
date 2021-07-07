@@ -1,0 +1,84 @@
+<p>
+  <%= link_to [_organization, _survey] do %>
+    <b><%= _survey.name %></b>
+  <% end %>
+</p>
+
+<%= link_to [:new, _organization, _survey, _section, :group], style: "" do %>
+    <i class=""></i> Create a new group for this section
+<% end %>
+
+<h1 style="">
+  <%= _section.name %>
+</h1>
+
+<%= form_for [_organization, _survey, _section] do |f| %>
+  <div class="">
+    <%= f.label :name, "Section Name" %><br>
+    <%= f.text_field :name, placholder: "Name" %>
+  </div>
+
+  <div class="">
+    <%= f.label :position %><br>
+    <%= f.text_field :position, placholder: "Position" %>
+  </div>
+  <button>Save</button>
+<% end %>
+
+<h3 style="">Edit Templates</h3>
+<small>These templates inherit from the section templates. You can override ride them here.</small>
+
+<p>
+  <a href="?template=start_template">Section Start Template</a> | <a href="?template=complete_template">Section Complete Template</a>
+</p>
+
+<div class="">
+  <% if params[:template].blank? || params[:template] =~ /start/i %>
+  <div class="">
+    <%= form_for [_organization, _survey, _section] do |f| %>
+      <div class="">
+        <%= f.submit "Update Template" %>
+      </div>
+      <div class="">
+        <%= f.text_area :start_template, id: "textarea_editor", style:"display:none;", value:_section.template('start_template') %>
+        <div id="editor" class=""></div>
+      </div>
+
+      <div class="">
+        <%= f.submit "Update Template" %>
+      </div>
+    <% end %>
+  </div>
+  <% else %>
+  <div class="">
+    <%= form_for [_organization, _survey, _section] do |f| %>
+      <div class="">
+        <%= f.submit "Update Template" %>
+      </div>
+      <div>
+        <%= f.text_area :complete_template, id: "textarea_editor", style:"display:none;", value:_section.template('complete_template') %>
+        <div id="editor" class=""></div>
+      </div>
+      <div class="">
+        <%= f.submit "Update Template" %>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.9/ace.js"></script>
+
+<script>
+    var textArea = document.getElementById('textarea_editor');
+    var editor = ace.edit("editor");
+    editor.getSession().setMode("ace/mode/javascript");
+    editor.getSession().setValue(textArea.value);
+    editor.getSession().on("change", function(){
+      textArea.value=(editor.getSession().getValue());
+    });
+    editor.getSession().setMode("ace/mode/html");
+    editor.setOptions({
+     maxLines: editor.session.getLength()
+   });
+</script>

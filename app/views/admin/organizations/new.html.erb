@@ -1,0 +1,12 @@
+<%= render 'subheader' %>
+
+<%= form_for [:admin, Organization.new] do |f| %>
+  <div class="">
+    <%= f.label :name, "Organization Name" %>
+    <%= f.text_field :name, placeholder: "Acme, Inc" %>
+  </div>
+
+  <div class="">
+    <button>Save and Continue</button>
+  </div>
+<% end %>

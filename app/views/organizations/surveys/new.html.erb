@@ -1,0 +1,12 @@
+
+
+<%= form_for [_organization, _organization.surveys.new] do |f| %>
+  <div class="">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "u-full-width", autofocus:true %>
+  </div>
+
+  <button>
+    Create Survey
+  </button>
+<% end %>

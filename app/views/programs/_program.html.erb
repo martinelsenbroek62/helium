@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= link_to program_path(program) do %>
+      <%= program.name %>
+    <% end %>
+  </td>
+  <td>
+    <%= program.description %>
+  </td>
+  <td>
+    <%= program.benefit_categories.count %>
+  </td>
+  <td>
+    <%#= program.start_date %>
+  </td>
+  <td>
+    <%#= program.end_date %>
+  </td>
+  <td>
+    <%=number_to_currency _user.funds.where(benefit_program_id: program.id).map(&:amount).sum %>
+  </td>
+</tr>

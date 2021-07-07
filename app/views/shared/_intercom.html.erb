@@ -1,0 +1,39 @@
+<%
+@intercom_enabled_for_org = true
+if(_user && _user.organization_id)
+  if ENV['INTERCOM_DISABLED_ORG_IDS'].to_s.split(",").include?(_user.organization_id.to_s)
+    @intercom_enabled_for_org = false # Turn off if the user's org id included in INTERCOM_DISABLED_ORG_IDS
+  end
+end
+%>
+
+<% if ENV['INTERCOM_APP_ID'] && @intercom_enabled_for_org %>
+  <script>
+  window.intercomSettings = {
+    <% if _user.present? %>
+      app_id: "<%= ENV['INTERCOM_APP_ID'] %>",
+      user_id: "<%= _user.id %>",
+      email: "<%= _user.email %>",
+      name: "<%= _user.name %>",
+      office: "<%= _user.employee_office_location %>",
+      claims_recent_expensed_date: "<%= _user.expensed_date_of_last_claim %>",
+      claims_count: "<%= _user.claims.paid_out.count %>",
+      balance: "<%= number_to_currency _user.available_funds %>",
+      created_at: "<%= _user.created_at.to_i %>",
+      <% if _user.organization.present? %>
+      company: {
+        id: "<%= _user.organization.id %>",
+        name: "<%= _user.organization.name %>",
+        created_at: "<%= _user.organization.created_at.to_i %>",
+      }
+      <% end %>
+    <% else %>
+      app_id: "<%= ENV['INTERCOM_APP_ID'] %>"
+    <% end %>
+  };
+  </script>
+  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/<%= ENV['INTERCOM_APP_ID']%>';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<% else %>
+  <!-- INTERCOM_DISABLED_ORG_IDS -->
+  <!-- <%= ENV['INTERCOM_DISABLED_ORG_IDS'] %> -->
+<% end %>

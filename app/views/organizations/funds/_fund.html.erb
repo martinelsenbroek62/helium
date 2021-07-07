@@ -1,0 +1,40 @@
+<tr>
+  <td>
+    <%= link_to organization_person_path(_organization, fund.user) do %>
+      <%= fund.user.name %>
+    <% end %>
+  </td>
+  <td>
+    <% if fund.benefit_program.present? %>
+      <%= link_to [fund.benefit_program.organization, fund.benefit_program] do %>
+        <%= fund.benefit_program.name %>
+      <% end %>
+    <% end %>
+  </td>
+  <td>
+    <%= number_to_currency fund.amount %>
+  </td>
+
+  <td>
+    <% if fund.available_on.present? %>
+      <%= fund.available_on.try(:stamp, '10/10/2015') %> -
+    <% end %>
+    <% if fund.expires_on.present? %>
+      <%= fund.expires_on.stamp('10/10/2015') %>
+    <% else %>
+      Rollover
+    <% end %>
+    <%= "**EXPIRED**" if fund.expired? %>
+  </td>
+  <td>
+    <%= fund.created_at.stamp('10/10/2015') %>
+  </td>
+  <td>
+    <%= fund.comment %>
+  </td>
+  <td>
+    <%= link_to [_organization,fund], method: :delete, data: {confirm: "Are you sure?"} do %>
+      Trash
+    <% end %>
+  </td>
+</tr>

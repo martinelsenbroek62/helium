@@ -1,0 +1,34 @@
+<!-- <tr>
+  <td>
+    <%= link_to product.focus_area, focus_area_products_path(filter:product.focus_area) %>
+  </td>
+  <td>
+    <%= link_to product.category_name, category_products_path(filter:product.category_name) %>
+  </td>
+  <td>
+    <%= link_to product do %>
+      <%= product.name %>
+    <% end %>
+  </td>
+  <td>
+    <%#= number_to_percentage product.reimbursement_percentage, precision:0 %>
+    <%= number_to_percentage product.reimbursement_rule_percentage, precision:0 %>
+  </td>
+</tr> -->
+
+<%= link_to product do %>
+  <div class="" style="">
+    <div class="" style="">
+      <b style=""><%= product.focus_area %></b>
+      <small style="">
+        <%= product.category_name %>
+      </small>
+
+      <%= image_tag product.focus_area_image, style: "width:75%;height:100px" %>
+
+      <p>
+        <%= product.name.present? ? product.name : 'N/A' %>
+      </p>
+    </div>
+  </div>
+<% end %>

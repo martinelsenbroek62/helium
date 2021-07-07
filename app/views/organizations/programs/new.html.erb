@@ -1,0 +1,39 @@
+<%= render 'organizations/reimbursement_rules/subheader' %>
+
+<br>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <center><h3>New Program</h3></center>
+      <div class="">
+        <%= form_for [_organization, _organization.programs.new] do |f|%>
+          <div class="">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+
+          <div class="">
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+          </div>
+
+          <div class="">
+            <%= f.label :start_date %>
+            <%= f.text_field :start_date, class: "datepicker" %>
+          </div>
+
+          <div class="">
+            <%= f.label :end_date %>
+            <%= f.text_field :end_date, class: "datepicker" %>
+            <small>Leave start and end dates empty if they do not expire</small>
+          </div>
+
+          <div class="">
+            <button>Save</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

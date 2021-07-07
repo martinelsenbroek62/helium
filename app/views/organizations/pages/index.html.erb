@@ -1,0 +1,10 @@
+<%= render 'organizations/subheader' %>
+
+<div class="container">
+
+  <h1>Pages</h1>
+
+  <%= render _organization.pages.ordered %>
+  <%= render 'form', page: Page.new %>
+
+</div>

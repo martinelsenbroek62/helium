@@ -1,0 +1,97 @@
+<% if _user.super_admin? %>
+  <%= link_to change_benefit_category_claim_path(_claim) do %>
+    Change Benefit Category
+  <% end %>
+<% end %>
+
+<%
+  _benefit_category = _claim.benefit_category
+%>
+
+<% if !_claim.benefit_category %>
+  <p>This claim can no longer be edited</p>
+<% else %>
+
+<% total = 0 %>
+<% _benefit_category.benefit_programs.each do |benefit_program| %>
+  <% total += _user.funds.where(benefit_program_id:benefit_program.id).map(&:amount).map(&:to_f).sum rescue 0 %>
+<% end %>
+<h3>Submitted by: <%= _claim.user.name %> </h3>
+<%= Liquid::Template.parse(_organization.benefit_claims_form.to_s).render(
+  'organization' => _organization,
+  'program_balance' => number_to_currency(total_balance_for_program(_benefit_category, total)),
+  'category' => _benefit_category,
+  'programs' => _benefit_category.benefit_programs
+).html_safe %>
+
+<% url_for_claim = (@url||claims_path) %>
+<%= form_for _claim, html: {multipart: true} do |f| %>
+  <input type="hidden" name="benefit_category[id]" value="<%= _benefit_category.id %>">
+
+  <div class="">
+    <div class="">
+      Purchase Price
+    </div>
+    <div class="">
+      <%= f.text_field :purchase_amount, placeholder: "Amount: E.g., $100.00" %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      Reimbursement Amount
+    </div>
+    <div class="">
+      <%= f.text_field :requesting_amount, placeholder: "Amount: E.g., $100.00" %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      Purchase Date
+    </div>
+    <div class="">
+      <%= f.text_field :expensed_date, placeholder: "E.g., 10/21/2017", class: "datepicker" %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      Manufacturer <i>(if available)</i>
+    </div>
+    <div class="">
+      <%= f.text_field :manufacturer %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      Model # <i>(if available)</i>
+    </div>
+    <div class="">
+      <%= f.text_field :model_number %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      Notes
+    </div>
+    <div class="">
+      <%= f.text_area :more_info %>
+    </div>
+  </div>
+
+  <%= render 'claims/fields_for_attachments', f: f %>
+
+  <div class="">
+    <hr>
+    <button>
+      Submit
+    </button>
+  </div>
+<% end %>
+
+
+
+<% end %>

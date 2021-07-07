@@ -1,0 +1,24 @@
+Current Benefit Category:
+<b>
+  <%= _claim.benefit_category.name %> -
+  <%= _claim.benefit_category.focus_area %>
+
+</b>
+
+<h3>Change To: </h3>
+<p>Select the new category for claim #<%= _claim.id %>) <%= _claim.title %> below:</p>
+
+<% _organization.benefit_categories.order('name asc').each do |benefit_category| %>
+  <li>
+    <%= benefit_category.name %>
+    -
+    <%= benefit_category.focus_area %>
+
+    <%= link_to change_benefit_category_claim_path(_claim, benefit_category: benefit_category.uuid), method: :post, data: { confirm: "Are you sure?" } do %>
+      Select
+    <% end %>
+    <% if benefit_category == _claim.benefit_category %>
+    <b>*current*</b>
+    <% end %>
+  </li>
+<% end %>

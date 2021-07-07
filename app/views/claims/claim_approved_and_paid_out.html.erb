@@ -1,0 +1,27 @@
+<!-- <h1>CLAIM_APPROVED_AND_PAID_OUT</h1> -->
+
+<!-- <% if flash[:notice] %> <p style=""> <%= flash[:notice] %> </p> <% end %> <h1>Approved and Paid</h1> <%= render 'claim_details' %> -->
+
+<div class="mx-auto" style="max-width: 40rem">
+
+  <% if flash[:notice] %>
+    <p style="">
+      <%= flash[:notice] %>
+    </p>
+  <% end %>
+
+  <div class="alert alert-success text-center mt-4" style="max-width: 40rem" role="alert">
+    <p class="lead">Your claim has been
+      <strong>approved and paid</strong>!</p>
+    <p class="mb-0">
+      <i class="fa fa-times-circle fa-2x"></i>
+    </p>
+    <h5 class="alert-heading mt-2">Claim ID:
+      <%= _claim.id %></h5>
+  </div>
+
+  <%= render 'claim_details' %>
+
+  <hr>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col center">
+    <br>
+    <% if _q = _survey.continue_at_question %>
+      <%= link_to [_survey, _q.section, _q.group], target: "_self" do %>
+        <p>Continue where you left off <i class="fa fa-arrow-right"></i></p>
+      <% end %>
+    <% end %>
+    <br>
+  </div>
+</div>
+
+<%= Liquid::Template.parse(_survey.template('section_template.html')).render(
+  'survey' => _survey,
+  'sections' => _survey.sections.where.not('lower(name) = ?', 'goals')
+).html_safe %>

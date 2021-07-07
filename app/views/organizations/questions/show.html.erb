@@ -1,0 +1,107 @@
+<p>
+  <%= link_to [_organization, _survey] do %>
+    <b><%= _survey.name %></b>
+  <% end %>
+
+  <%= link_to [_organization, _survey, _section] do %>
+    > <%= _section.name %>
+  <% end %>
+
+  <%= link_to [_organization, _survey, _section, _group] do %>
+    > <%= _group.name %>
+  <% end %>
+</p>
+
+<h1>
+  <%= _question.text %>
+</h1>
+
+<%= form_for [_organization, _survey, _section, _group, _question] do |f| %>
+  <div class="">
+    <%= f.label :text, "Question" %>
+    <%= f.text_field :text, class: "u-full-width" %>
+  </div>
+  <div class="">
+    <%= f.label :kind %>
+    <%= f.select :kind, options_for_select(%w{text select integer range checkbox checkbox_none checkbox_unsure checkbox_unsure_none radio}.map(&:titleize).map(&:downcase), selected: f.object.kind.to_s.downcase) %>
+  <!-- </div>
+  <div class=""> -->
+    <%= f.label :options %>
+    <%= f.text_field :options, size:110, placeholder:"Separate each w/ comma" %>
+  </div>
+  <div class="">
+    <%= f.label :placeholder %>
+    <%= f.text_field :placeholder, size:75 %>
+  </div>
+  <div class="">
+    <%= f.label :more_info %>
+    <%= f.text_field :more_info, size:125 %>
+  </div>
+  <div class="">
+    <%= f.label :units %>
+    <%= f.text_field :units %>
+  </div>
+  <div class="">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+  <div class="">
+    <%= f.label :cell %>
+    <%= f.text_field :cell %>
+  </div>
+
+  <div class="">
+    <%= f.label :question_identifier %>
+    <%= f.text_field :question_identifier, placeholder: "Unique question identifier" %>
+  </div>
+
+  <div class="">
+    <%= f.check_box :required %> <%= f.label :required %>
+  </div>
+
+  <div class="">
+    <%= f.check_box :show_previous_answers %> <%= f.label :show_previous_answers %>
+  </div>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<% other_questions = (_question.group.questions) %>
+<% if other_questions.any? %>
+  <h4>
+    Other questions in
+    <%= link_to [_organization, _survey, _question.group.section, _question.group] do %>
+      Group: <%= _question.group.name %>
+    <% end %>
+  </h4>
+  <% other_questions.each do |question| %>
+    <li id="question_<%= question.id %>">
+      <%= link_to [_organization, _survey, question.group.section, question.group, question, anchor:"question_#{question.id}"] do %>
+        <% if question == _question %>
+          <b style="">
+            *<%= question.text %>
+          </b>
+        <% else %>
+          <%= question.text %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+<% end %>
+
+
+<h3><%= pluralize _question.rules.count, "Rule" %></h3>
+
+<%= render _question.rules %>
+
+<hr>
+
+<%= render 'organizations/rules/form', rule: _question.rules.new %>
+
+<hr>
+
+<%= link_to [_organization, _survey, _section, _group, _question], method: :delete, data: {confirm:"Are you sure?"} do %>
+  <span class="btn btn-danger">Delete this question</span>
+<% end %>

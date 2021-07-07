@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Offers</h1>
+  <%= link_to new_organization_offer_path(_organization) do %>
+    + Offer
+  <% end %>
+
+  <hr>
+
+  <table>
+    <% if offers = _organization.offers.any? %>
+      <%= render _organization.offers %>
+    <% else %>
+    <tr>
+      <td>Company</td>
+      <td>Offer</td>
+      <td>Value</td>
+      <td>Start</td>
+      <td>End Date</td>
+    </tr>
+      <%= empty_table_rows(5) %>
+    <% end %>
+  </table>
+
+</div>

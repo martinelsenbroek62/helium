@@ -1,0 +1,66 @@
+<% if _survey.questions.any? %>
+<table>
+<% _survey.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{survey.<%= key %>}}
+    </td>
+  </tr>
+<% end %>
+</table>
+
+
+<h4 id="section">Section Variables</h4>
+<table>
+<% _survey.sections.first.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{section.<%= key %>}}
+    </td>
+  </tr>
+<% end %>
+</table>
+<h4 id="group">Group Variables</h4>
+<table>
+<% _survey.groups.first.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{group.<%= key %>}}
+    </td>
+  </tr>
+<% end %>
+</table>
+<h4 id="question">Question Variables</h4>
+<table>
+<% _survey.questions.first.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{question.<%= key %>}}
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<h4 id="organization">Organization Variables</h4>
+<table>
+<% _organization.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{organization.<%= key %>}}
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<h4 id="user">User Variables</h4>
+<table>
+<% _user.to_liquid.each do |key,value| %>
+  <tr>
+    <td>
+      {{user.<%= key %>}}
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>

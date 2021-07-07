@@ -1,0 +1,51 @@
+<%= content_for :subheader do %>
+  <div class="nav">
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_people_path do %>
+        All Employees
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_people_path(_organization, sort:"updated_at") do %>
+        Recently Added
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_people_path(status: "terminated") do %>
+        Terminated
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to upload_organization_people_path(_organization) do %>
+        Import Funds
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to deposit_organization_people_path(_organization) do %>
+        Bulk Deposit
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to invitations_organization_people_path(_organization) do %>
+        Send Invites
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to import_organization_people_path(_organization) do %>
+        Import Employees
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-success">
+      <%= link_to new_organization_person_path(_organization) do %>
+        Add Employees
+      <% end %>
+    </button>
+    <%= content_for(:searchbar) do %>
+      <form action="<%= organization_people_path(_organization) %>" method="get">
+        <input type="text" name="filter" value="<%= params[:filter] %>" placeholder="Find a user">
+        <button>Go</button>
+      </form>
+    <% end %>
+  </div>
+
+<% end %>

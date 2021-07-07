@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  benefit_program_id: 1
+  benefit_category_id: 1
+
+two:
+  uuid: MyString
+  benefit_program_id: 1
+  benefit_category_id: 1

@@ -1,0 +1,38 @@
+<div class="row center">
+  <div class="col lead">
+    {% if questions_remaining.size > 0 %}
+    <h1>You're almost done</h1>
+
+    <p>
+      We just need you to finish answering the following questions
+    </p>
+
+    <ul>
+      {% for question in questions_remaining %}
+      <li>
+        <a href="{{question.group_url}}" target="_self">
+            {{question.text}}
+          </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+
+    <h1>Thank your taking the survey!</h1>
+
+    <img src="/img/heart.png" alt="" />
+    <br />
+
+    <p>
+      Now you can explore your preliminary results!
+    </p>
+
+    <h4><i class="fa fa-star gold"></i>
+    <a href="{{survey.url}}/report" class="button">
+        <h5><i class="fa fa-caret-left"></i> See Your Initial Results <i class="fa fa-caret-right"></i></h5>
+    </a><i class="fa fa-star gold"></i>
+    </h4>
+
+    <h3>You're <strong>{{survey.finish_number}}</strong> of <strong>{{survey.finishers_count}}</strong> to complete the survey</h3> {% endif %}
+  </div>
+</div>

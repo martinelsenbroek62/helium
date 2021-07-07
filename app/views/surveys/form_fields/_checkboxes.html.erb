@@ -1,0 +1,69 @@
+<form action="<%= question.url %>" method="post">
+  
+  <!--
+  <input type='hidden' name='question[answer]' value=''>
+  <input type='hidden' name='question[answer][]' value=''>
+  -->
+
+  <ul class="">
+    <% question.options.split(",").each do |option| %>
+      <li>
+        <% option = option.to_s.strip %>
+        <% _json = question.answer_as_array %>
+        <% selected = option.in?(_json) ? "checked=checked" : "" %>
+        <label class="">
+          <input type='checkbox' name='question[answer][]'
+          onclick='if(this.checked){$(this).closest("form").find(".none-or-unsure").attr("checked", false)}'
+          value='<%= option %>' <%= selected %>> <%= option %>
+        </label>
+      </li>
+    <% end %>
+
+    <% if question.kind.to_s.downcase == 'checkbox none' %>
+    <% checked_option = 'checked="checked"' if question.answer.to_s.downcase==''%>
+    <li>
+      <label>
+        <input type='checkbox' name='question[answer]' value='None'
+        
+        onclick="$(this).closest('form').find('input:checkbox').not(this).attr('checked',false)">
+        None
+      </label>
+    </li>
+    <% end %>
+
+    <% if question.kind.to_s.downcase == 'checkbox unsure' %>
+    <% checked_option = 'checked="checked"' if question.answer.to_s.downcase=='unsure'%>
+    <li>
+      <label>
+        <input type='checkbox' name='question[answer]' value='Unsure'
+        
+        onclick="$(this).closest('form').find('input:checkbox').not(this).attr('checked',false)"  <%= checked_option %>>
+        Unsure
+      </label>
+    </li>
+    <% end %>
+
+    <% if question.kind.to_s.downcase =~ /(?=.*none)(?=.*unsure)/i %>
+    <% checked_option = 'checked="checked"' if question.answer.to_s.downcase=='unsure'%>
+    <li>
+      <label>
+        <input type='checkbox' name='question[answer]' value='Unsure'
+        
+        onclick="if(this.checked) { $(this).closest('form').find('input:checkbox').not(this).attr('checked',false) }" <%= checked_option %>>
+        Unsure
+      </label>
+    </li>
+
+    <% checked_option = 'checked="checked"' if question.answer.to_s.downcase==''%>
+    <li>
+      <label>
+        <input type='checkbox' name='question[answer]' value='None'
+        
+        onclick="if(this.checked) {$(this).closest('form').find('input:checkbox').not(this).attr('checked',false)}">
+        None
+      </label>
+    </li>
+    <% end %>
+  </ul>
+
+</form>

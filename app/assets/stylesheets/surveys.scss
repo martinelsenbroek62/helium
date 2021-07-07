@@ -1,0 +1,422 @@
+body#survey {
+  .hidden {
+    display: none !important;
+  }
+
+  .indicate-invisible {
+    // text-decoration:line-through;
+    opacity: 0.85;
+    color: gray;
+  }
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+body#survey {
+  li,
+  ul {
+    list-style: none;
+  }
+
+  .on.right {
+    float: right;
+  }
+
+  .text-on-right {
+    text-align: right;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .inline {
+    display: inline-block;
+  }
+
+  .highlighted {
+    background: lightyellow;
+  }
+
+  .ui-helper-hidden-accessible {
+    display: none !important;
+  }
+
+  .ui-autocomplete {
+    background: white;
+    position: relative !important;
+    // width:180px;
+    height: auto;
+    border-radius: 2px;
+    list-style: none;
+    -webkit-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .2);
+
+    .ui-menu-item {
+      cursor: pointer;
+      height: auto;
+
+      #ui-active-menuitem {
+        border: none;
+        background: #e4eef1 !important;
+      }
+
+      .ui-state-hover {
+        color: #000;
+        margin: 0 !important;
+      }
+    }
+
+    .ui-menu-item a {
+      color: #6E6B66;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 30px;
+      // padding:0 10px 0 10px;
+      padding: 10px 5px;
+      border-bottom: solid 1px #999;
+      display: block;
+
+      &#ui-active-menuitem {
+        background: lightblue;
+        cursor: pointer;
+      }
+    }
+
+    .ui-menu-item a:hover {
+      background: #E4EEF1;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .sheet {
+    text-align: center;
+    margin: 50px auto;
+    width: 500px;
+  }
+
+  .survey-block {
+    border: solid 1px #EEE;
+    border-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .survey {
+    border-bottom: solid 1px #EEE;
+    padding: 15px;
+  }
+
+  .survey:last-child {
+    border: none;
+  }
+
+  .survey a {
+    color: #454545;
+    text-decoration: none;
+  }
+
+  .progress-bar {
+    width: 100%;
+    display: block;
+    background: #f8f8f8;
+  }
+
+  .progress-bar-complete {
+    width: 0;
+    height: 5px;
+    background: gold;
+    display: block;
+  }
+
+  table.surveys {
+    color: #454545;
+
+    td {
+      border-bottom: solid 1px #DDD;
+      padding: 15px;
+
+      a {
+        color: #353535;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .in-visible {
+    display: none;
+  }
+
+  form {
+    ul {
+      text-align: left;
+      list-style: none;
+      width: 500px;
+      margin: 0 auto;
+
+      li {
+        border: solid 1px #EEE;
+        padding: 5px 10px;
+
+        label {
+          position: relative;
+          top: 5px;
+        }
+      }
+    }
+  }
+
+  .question-required {
+    color: red;
+  }
+
+  body#survey {
+    input[type=checkbox] {
+      zoom: 1.5;
+      position: relative;
+      top: 1px;
+      outline: none;
+    }
+
+    input[type=text],
+    select {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  .warning {
+    background: pink;
+    padding: 2px;
+    border: solid 1px maroon;
+    border-radius: 3px;
+    color: maroon;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.75;
+
+    a {
+      color: maroon;
+    }
+  }
+
+  .gold {
+    color: #FFDD00;
+  }
+  /** From old template */
+  body {
+    margin: 0;
+  }
+
+  .leftside {
+    float: left;
+  }
+
+  .rightside {
+    float: right;
+  }
+
+  .header {
+    padding: 25px;
+    background: black;
+    margin-bottom: 25px;
+  }
+
+  .header a {
+    color: gold;
+    text-decoration: none;
+    position: relative;
+    top: 10px;
+  }
+
+  .navigation {
+    padding: 20px 0 30px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 60px;
+  }
+
+  .next-question-link {
+    float: right;
+  }
+
+  .prev-question-link {
+    float: left;
+  }
+
+  .progress-bar {
+    width: 100%;
+    display: block;
+    background: #f8f8f8;
+  }
+
+  .progress-bar-complete {
+    width: 0;
+    height: 5px;
+    background: gold;
+    display: block;
+  }
+
+  .more-info-text {
+    background: whitesmoke;
+    border-left: solid 10px #EEE;
+    padding: 15px;
+  }
+
+  .more-info .hidden {
+    display: none;
+  }
+
+  fieldset {
+    position: relative;
+    top: -5px;
+  }
+
+  .field {
+    text-align: center;
+  }
+
+  fieldset {
+    border-top: solid 4px #EEE;
+  }
+
+  legend {
+    padding: 10px;
+    font-size: 40px;
+  }
+
+  .grayBox {
+    background: #f8f8f8;
+    border-top: solid 1px #EEE;
+    padding: 10px;
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  .infoList li {
+    background: #f8f8f8;
+    text-align: left;
+    list-style: none;
+    clear: both;
+    display: block;
+    min-height: 50px;
+  }
+
+  .infoList h4 {
+    position: relative;
+    left: 75px;
+  }
+
+  .infoList li .text {
+    position: relative;
+    top: 15px;
+  }
+
+  .icon {
+    background: gold;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 45px;
+    display: inline-block;
+    border-radius: 360px;
+    position: relative;
+    top: -6px;
+  }
+
+  .icon .fa {
+    font-size: 22px;
+    color: #FFF;
+    display: inline-block;
+  }
+
+  .iconWrap {
+    margin-right: 10px;
+    background: #FFF;
+    padding: 15px;
+    display: block;
+    float: left;
+  }
+
+  .hint {
+    padding-bottom: 15px;
+  }
+
+  .footer {
+    text-align: center;
+    border-top: solid 1px #EEE;
+    margin-top: 50px;
+    padding: 25px;
+  }
+
+  .center {
+    text-align: center;
+  }
+  /** Questions */
+  // #questions .question {
+  //   border-top: solid 1px #DDD;
+  //   padding: 0;
+  //   margin: 0;
+  // }
+  //
+  // #questions .question:first-child {
+  //   border-top: 0;
+  // }
+  #questions .question h4 {
+    margin: 0;
+  }
+
+  .question form {
+    margin: 0;
+  }
+  /** Sections */
+  .section-block {
+    width: 38%;
+    box-shadow: 1px 3px 5px #CCC;
+    margin: 0 5% 5%;
+    border: solid 1px #EEE;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px 2px 4px 4px;
+  }
+
+  .section-block h4 {
+    margin: 2px 0;
+  }
+
+  .section-block:hover {
+    box-shadow: 1px 3px 5px #999;
+  }
+
+  .section-block-box {
+    padding: 15px;
+  }
+
+  .inline {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+  }
+
+  .footer {
+    background: #c9cccc;
+  }
+
+  .funfacts {
+    text-align: left;
+    width: 70%;
+    margin-left: 12%;
+  }
+}

@@ -1,0 +1,5 @@
+First Name,Last Name,Email,Amount,Available On Date,Expiration Date,Comment,Program Name
+Bob,Example,bob@example.com,1000,1/1/2017,12/31/2017,First Year Funds,Wellness
+Bob,Example,bob@example.com,-500,1/1/2017,12/31/2017,First Year Funds,Wellness
+Peter,Smith,peter@example.com.com,1000,1/1/2017,12/31/2017,First Year Funds,Wellness
+Robert,McGrath,rmgrath@example.com.com,1000,1/1/2017,12/31/2017,First Year Funds,Wellness Program,Wellness

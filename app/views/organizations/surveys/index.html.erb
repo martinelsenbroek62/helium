@@ -1,0 +1,44 @@
+<%= render 'subheader' %>
+<div class="">
+  <b><%= _organization.name %></b>
+  Surveys created and deployed for <%= _organization.name %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Survey</th>
+      <th>Questions</th>
+      <th>Employees</th>
+      <th>Created</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= empty_table_rows(5) if _organization.surveys.masters.empty? %>
+  <% _organization.surveys.masters.order('created_at desc').each do |survey| %>
+    <tr class="">
+      <td class="">
+        <%= link_to [:overview, _organization, survey], target:"_self" do %>
+          <%= survey.name %>
+        <% end %>
+      </td>
+      <td>
+        <%= pluralize survey.questions.count, 'question' %>
+      </td>
+      <td>
+        <%= pluralize survey.surveys.count, 'user survey' %>
+      </td>
+      <td>
+        <%= survey.created_at.stamp('Jun 1st 2016') %>
+      </td>
+      <td>
+        <%= link_to [:overview, _organization, survey] do %>
+        View
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

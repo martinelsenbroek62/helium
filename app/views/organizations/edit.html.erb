@@ -1,0 +1,15 @@
+<%= render 'subheader' %>
+
+<%= form_for _organization do |f| %>
+  <%
+  edit_form = case params[:manage].to_s
+  when /copy/i
+    'edit_copy'
+  when /contact/i
+    'edit_contact'
+  else
+    'edit_general'
+  end
+  %>
+  <%= render edit_form, f: f %>
+<% end %>

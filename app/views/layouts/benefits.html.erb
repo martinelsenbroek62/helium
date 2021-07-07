@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sustainabli™ | Sustainability Benefits</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.2.3/highcharts.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highstock/4.2.3/highcharts-more.js"></script>
+</head>
+<body id="<%= controller_name =~ /survey|group|section|question/ ? 'survey' : 'benefits' %>" class="benefits_layout">
+  <%= render 'organizations/super_admin_bar' %>
+  <%= render 'layouts/benefits_header' %>
+
+  <div class="container">
+    <div class="row">
+      <% if controller_name =~ /surveys|groups|sections/i %>
+        <%= render 'surveys/navigation' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container" style="">
+    <%= yield %>
+  </div>
+
+  <%= render 'layouts/benefits_footer' %>
+  <%= render 'shared/intercom' %>
+  <%= render 'shared/analytics' %>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.datepicker').datepicker()
+
+      $('.helpText').on('click', function(event){
+        event.preventDefault()
+        $(this).closest('.helpTextContainer').find('.helpTextContent').toggleClass('hide')
+      })
+      $('.more-info').on('click', function(event){
+        //event.preventDefault()
+        $(this).find('.more-info-text').toggleClass('hidden')
+        $(this).closest('div').find('.more-info-text').toggleClass('hidden')
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+</html>

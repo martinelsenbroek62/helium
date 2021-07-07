@@ -1,0 +1,46 @@
+<%= render 'subheader' %>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <h3>Edit Reimbursement Rule</h3>
+      <div class="">
+        <%= form_for [_product.organization, _product] do |f| %>
+          <div class="">
+            <label>Program</label>
+            <%= f.select :set_program_id, (_organization.programs.map { |program| [program.name, program.id]}), prompt: "Choose" %>
+          </div>
+
+          <div class="">
+            <label>Name </label>
+            <%= f.text_field :name %>
+          </div>
+
+          <div class="">
+            <label>Category </label>
+            <%= f.text_field :focus_area %>
+          </div>
+
+          <div class="">
+            <label>Product Type</label>
+            <%= f.text_field :category_name %>
+          </div>
+
+          <div class="">
+            <label>Description</label>
+            <%= f.text_field :description %>
+          </div>
+
+          <div class="">
+            <label>Amount to Reimburse as %</label>
+            <%= f.text_field :reimbursement_percentage %>
+          </div>
+
+          <div class="">
+            <button>Save</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

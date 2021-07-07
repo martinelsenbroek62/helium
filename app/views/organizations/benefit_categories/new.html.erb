@@ -1,0 +1,21 @@
+<%= render 'organizations/benefit_programs/subheader' %>
+
+<%= form_for [_organization, _benefit_program, _organization.benefit_categories.new] do |f| %>
+  <% [:name, :focus_area, :product_type, :percent_to_reimburse, :description, :focus_area_description, :product_type_description, :category_notes].each do |field| %>
+    <div class="">
+      <%= f.label field %>
+      <%= f.text_field field %>
+    </div>
+  <% end %>
+
+
+  <div class="">
+    <button>
+      Update
+    </button>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('.datepicker').datepicker();
+</script>

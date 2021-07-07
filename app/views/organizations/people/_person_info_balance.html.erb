@@ -1,0 +1,51 @@
+<%
+  @user_id = if _person
+    _person.id
+  elsif _claim
+    _claim.user_id
+  else
+    0
+  end
+%>
+
+<table>
+  <tr>
+    <th>Program</th>
+    <th>Total</th>
+    <th>Spent</th>
+    <th>Remaining</th>
+  </tr>
+
+  <%
+  @total_funds_by_prog = 0
+  @total_amount_spent = 0
+  @total_balance_remaining = 0
+  %>
+  <% UserBalanceByProgram.where(user_id: @user_id).each do |balance| %>
+    <tr>
+      <td>
+        <%= balance.program_name %>
+      </td>
+      <td>
+        <% @total_funds_by_prog += (balance.funds_by_prog || 0) %>
+        <%= number_to_currency (balance.funds_by_prog) %>
+      </td>
+      <td>
+        <% @total_amount_spent += (balance.amount_spent || 0) %>
+        <%= number_to_currency balance.amount_spent %>
+      </td>
+      <td>
+        <% @total_balance_remaining += (balance.remaining_balance || 0) %>
+        <%= number_to_currency balance.remaining_balance %>
+      </td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td></td>
+    <td><b><%= number_to_currency @total_funds_by_prog %></b></td>
+    <td><b><%= number_to_currency @total_amount_spent %></b></td>
+    <td><b><%= number_to_currency @total_balance_remaining %></b></td>
+  </tr>
+
+</table>

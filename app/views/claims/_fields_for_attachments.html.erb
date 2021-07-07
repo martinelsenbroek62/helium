@@ -1,0 +1,95 @@
+<div class="">
+  <div class="more-info">
+    <h3>Proof of Purchase and Eligibility
+      <a href="#" class="" onclick="$(this).parent().find('.text').toggleClass('hidden');return false">
+        <i class="fa fa-question-circle"></i>
+      </a>
+      <div class="text hidden info lead">
+        <%= benefits_proof_of_purchase_help_text %>
+      </div>
+    </h3>
+    <div class="text hidden info">
+      <%= benefits_proof_of_purchase_help_text %>
+    </div>
+  </div>
+
+  <div class="">
+    Please include your proof of purchase (required) and/or eligibility (as needed). You may attach as many documents as you need.
+  </div>
+</div>
+
+<div class="row" id="add_another_file">
+  <div class="col">
+    <div class="attachmentKind">
+      <div class="attachmentFile">
+        <%= file_field_tag :attachment, name: "attachment_for_proof_of_purchase[]" %>
+        <a href="#" class="removeAttachment" onclick="$(this).closest('.attachmentFile').remove();return false">
+          <i class="fa fa-trash"></i>
+          Remove attachment</a>
+        <br>
+      </div>
+
+      <div class="moreAttachments"></div>
+
+      <a href="#" class="addAttachment">
+        <i class="fa fa-plus-circle"></i>
+        Add another file
+      </a>
+    </div>
+  </div>
+</div>
+
+<% if defined?(@_claim) && @_claim && @_claim.claim_attachments.any? %>
+  <b>Proof of Purchase Attachments</b>
+  <% @_claim.claim_attachments.each do |claim_attachment| %>
+    <hr>
+    <a href="<%= claim_attachment.attachment_url %>" target="_blank">
+      <i class="fa fa-upload"></i>
+      <%= claim_attachment.attachment['original_filename'] %>
+      -
+      <u>Preview Attachment</u>
+    </a>
+
+    &nbsp;
+
+    <%= link_to claim_attachment_path(claim_attachment.uuid), data: { confirm: "Are you sure?" , method: :delete } do %>
+    <i class="fa fa-trash"></i>
+    Delete
+  <% end %>
+<% end %>
+<% end %>
+
+<style media="screen">
+.attachmentFile input {
+  }
+
+.attachmentFile a {
+  display: none;
+}
+
+.moreAttachments .attachmentFile a {
+  display: inline-block;
+}
+
+.removeAttachment {
+  background: whitesmoke;
+  display: inline-block;
+  border-radius: 30px;
+  margin: 5px 0 15px;
+  padding: 2px 10px;
+  color: red;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $('.addAttachment').on('click', function (event) {
+    var $attachmentFileClone = $(this).closest('.attachmentKind').find('.attachmentFile:first').clone()
+    $('input', $attachmentFileClone).val('').trigger('click')
+
+    $(this).closest('.attachmentKind').find('.moreAttachments').append($attachmentFileClone)
+    event.preventDefault();
+    return false;
+  });
+});
+</script>

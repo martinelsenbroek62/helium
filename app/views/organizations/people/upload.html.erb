@@ -1,0 +1,42 @@
+<%= render 'subheader' %>
+
+
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">Add Funds for Employees of <%= _organization.name %></h4>
+
+  <p>
+    Please upload a CSV with the headers listed below.
+    Employees are matched on email address.
+    A new employee will be created if there is not a record with the email address in the database.
+    Employees are otherwise updated.
+    To upload employees without funds <%= link_to "click here", import_organization_people_path(_organization) %>.
+  </p>
+
+  <p>
+    Amounts can be positive or negative, to subtract money from an employee's balance.
+  </p>
+
+  <p>
+    To restrict funds to a particular program, e.g., "Wellness Program", include the "Program Name" (case sensitive)
+    in the CSV upload.
+  </p>
+  <hr>
+
+  <p class="mb-0">
+    <%= link_to "Download Sample CSV", "/upload_employees_and_funds.csv", target: "_blank" %>
+  </p>
+</div>
+
+<%= form_for :upload, url: "", method: :post do |f| %>
+
+  <pre>First Name, Last Name, Email, Amount, Available On Date, Expiration Date, Comment, Program Name</pre>
+
+  <div class="">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
+  </div>
+
+  <button>
+    Upload
+  </button>
+<% end %>

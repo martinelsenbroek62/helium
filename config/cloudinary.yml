@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: vermont-energy-investment-corporation
+  api_key: '373855716794537'
+  api_secret: N6F_EUKGVto1b4DzJKfBajazZE0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: vermont-energy-investment-corporation
+  api_key: '373855716794537'
+  api_secret: N6F_EUKGVto1b4DzJKfBajazZE0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: vermont-energy-investment-corporation
+  api_key: '373855716794537'
+  api_secret: N6F_EUKGVto1b4DzJKfBajazZE0
+  enhance_image_tag: true
+  static_image_support: false

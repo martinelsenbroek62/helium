@@ -1,0 +1,25 @@
+<div class="">
+  <div class="">
+    <%= _organization.benefit_focus_area.to_s.html_safe %>
+  </div>
+</div>
+
+<div class="">
+  <%# ReimbursementRule.where.not(focus_area_description: nil, focus_area_description: '').where('category_name = ? or category_name is null', '').each do |reimbursement_rule| %>
+  <% _organization.reimbursement_rules.select('distinct on (focus_area) focus_area, focus_area_description, image_url').where.not(focus_area_description: nil, focus_area_description: '').where('category_name = ? or category_name is null', '').each do |reimbursement_rule| %>
+    <% next if ["category", "custom"].include?(reimbursement_rule.focus_area.to_s.downcase) %>
+    <div class="">
+      <div class="">
+        <%= link_to focus_area_products_path(filter:reimbursement_rule.focus_area), class: "" do %>
+          <h4><%= reimbursement_rule.focus_area %></h4>
+        <% end %>
+        <%= image_tag reimbursement_rule.image_url, style:"width:100%;height:190px" %>
+        <%= simple_format reimbursement_rule.focus_area_description %>
+
+        <p>
+          <%= link_to "Explore " + reimbursement_rule.focus_area, focus_area_products_path(filter:reimbursement_rule.focus_area), class: "muted" %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

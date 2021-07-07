@@ -1,0 +1,28 @@
+<%= form_for [_organization, offer] do |f| %>
+  <% [:company, :name, :website, :cta, :start_date, :end_date, :value].each do |field| %>
+    <div class="field">
+      <%= f.label field %>
+      <% if field.to_s =~ /_date/i %>
+        <%= f.text_field field %>
+      <% else %>
+        <%= f.text_field field, class: "datepicker" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body, "Description of offer" %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="field">
+    <label>
+      <%= f.check_box :published %>
+      Publish offer
+    </label>
+  </div>
+
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>

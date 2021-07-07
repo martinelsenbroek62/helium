@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= link_to [benefit_program.organization, benefit_program] do %>
+      <%= benefit_program.name %>
+    <% end %>
+  </td>
+  <td>
+    <%= benefit_program.try(:start_date) %>
+    <%= benefit_program.try(:end_date) %>
+  </td>
+  <td>
+    <%= link_to organization_claims_path(_organization, benefit_program_id:benefit_program.id) do %>
+      <%= benefit_program.claims.count %>
+    <% end %>
+  </td>
+  <td>
+    <%= benefit_program.benefit_categories.count %>
+  </td>
+  <td>
+    <%=number_to_currency benefit_program.funds.for_active_employees.map(&:amount).map(&:to_f).sum %>
+  </td>
+</tr>

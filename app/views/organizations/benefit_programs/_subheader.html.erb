@@ -1,0 +1,60 @@
+<%= content_for :subheader do %>
+  <div class="nav">
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_benefit_program_path(_organization, _benefit_program) do %>
+        Overview
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+        <%= link_to program_claims_organization_benefit_program_path(_organization, _benefit_program) do %>
+          View Program Claims
+        <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to program_funds_organization_benefit_program_path(_organization, _benefit_program) do %>
+        View Program Funds
+      <% end %>
+    </button>
+
+    <%= content_for :searchbar do %>
+      <form class="" action="" method="get" style="">
+
+        <input type="text" name="q" value="<%= params[:q]%>" placeholder="Find...">
+        <button>Go</button>
+      </form>
+    <% end %>
+  </div>
+
+  <table>
+    <tr>
+      <td>
+        <h3>
+            <%= link_to [_organization, _benefit_program] do %>
+              <%= _benefit_program.name.to_s %>
+            <% end %>
+        </h3>
+        <%= link_to edit_organization_benefit_program_path(_organization, _benefit_program) do %>
+          <i ></i> Edit Program
+        <% end %>
+      </td>
+      <td>
+        Start: <b><%= _benefit_program.start_date.try(:stamp, 'June 1st 2015') %></b><br>
+        End: <b><%= _benefit_program.end_date.try(:stamp, "June 1st 2010") %></b><br>
+      </td>
+      <td>
+        <h3>
+          Balance: <%= number_to_currency _benefit_program.funds.for_active_employees.map(&:amount).map(&:to_f).sum %>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          Reimbursed:
+          <%= number_to_currency _benefit_program.claims.map(&:reimbursement_amount).map(&:to_f).sum %>
+        </h3>
+      </td>
+      <td>
+
+      </td>
+    </tr>
+  </table>
+<% end %>

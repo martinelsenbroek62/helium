@@ -1,0 +1,38 @@
+<%= render 'subheader' %>
+
+<div class="info">
+  <b>
+    <%= _organization.name %>'s
+    <%= pluralize _organization.users.count, "Employee" %>
+  </b>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Claims</th>
+    <th>Balance</th>
+    <th>Date of last deposit</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% employees = (params[:filter] ? _organization.users.where('name ~* ? or email ~* ?', params[:filter], params[:filter]) : _organization.users).paginate(page:params[:page]) %>
+
+  <%
+  if params[:status] =~ /terminate/i
+    employees = (params[:filter] ? _organization.users.terminated_employees.where('name ~* ? or email ~* ?', params[:filter], params[:filter]) : _organization.users.terminated_employees).paginate(page:params[:page])
+  end
+  %>
+
+  <% if params[:sort]
+      employees = employees.order("#{params[:sort]} desc")
+  end %>
+
+  <%= render partial: 'organizations/people/person', collection: employees, as: :person %>
+  <%= empty_table_rows(5) if employees.empty? %>
+  </tbody>
+</table>
+
+<%= will_paginate employees %>

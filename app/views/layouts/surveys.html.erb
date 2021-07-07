@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sustainabli™ | Sustainability Benefits</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.2.3/highcharts.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highstock/4.2.3/highcharts-more.js"></script>
+</head>
+<body id="survey">
+
+<div class="veic-header header">
+  <div class="row">
+    <div class="two columns">
+      <%= image_tag "logo@2x.png", style: "width:200px" %>
+    </div>
+    <div class="four columns">
+      <%= link_to root_path, target:"_self" do %>
+        <i class="fa fa-home"></i> Home
+      <% end %>
+    </div>
+    <div class="six columns text-on-right">
+      <% if _organization.has_benefits? %>
+        <%= link_to products_path do %>
+          <i class="fa fa-send"></i> Sustainability Benefits
+        <% end %>
+      <% end %>
+      &nbsp;
+
+      <% if _organization.has_surveys? %>
+      <%= link_to surveys_path do %>
+        <i class="fa fa-list"></i> Your Surveys
+      <% end %>
+      <% end %>
+      &nbsp;
+
+      <% if _survey %>
+        <%= link_to profile_survey_path(_survey) do %>
+          <i class="fa fa-user"></i> <%= _user.nickname %>
+        <% end %>
+      <% else %>
+        <%= link_to profile_path do %>
+          <i class="fa fa-user"></i> <%= _user.nickname %>
+        <% end %>
+      <% end %>
+      &nbsp;
+      <%= link_to logout_path, method: 'delete' do %>
+        <i class="fa fa-power-off"></i> Logout
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= render 'surveys/navigation' %>
+  <div class="">
+    <%= yield %>
+  </div>
+</div>
+
+<% if _survey %>
+  <%= Liquid::Template.parse(_survey.template('survey_footer_template.html')).render(
+    'survey' => _survey
+  ).html_safe %>
+
+  <style media="screen">
+    <%= _survey.template('styles_template.css') %>
+  </style>
+<% end %>
+
+<%= render 'shared/intercom' %>
+<%= render 'shared/analytics' %>
+</body>
+</html>

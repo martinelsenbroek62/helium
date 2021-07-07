@@ -1,0 +1,11 @@
+<% if _survey.created_at < Date.parse("Sept 29th 2017") %>
+  <%= Liquid::Template.parse(File.read("#{Rails.root}/app/views/surveys/templates/section_complete_template.html")).render(
+    'survey' => _survey,
+    'section' => _section
+  ).html_safe %>
+<% else %>
+  <%= Liquid::Template.parse(_section.template('complete_template.html')).render(
+    'survey' => _survey,
+    'section' => _section
+  ).html_safe %>
+<% end %>

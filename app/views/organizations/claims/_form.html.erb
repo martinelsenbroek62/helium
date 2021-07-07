@@ -1,0 +1,60 @@
+
+
+<%= form_for [_organization, ((_claim rescue nil)||Claim.new)] do |f| %>
+  <%= f.hidden_field :user_id, value: params[:user_id] %>
+
+  <%= render 'claims/fields_for_product' %>
+
+  <div class="">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="">
+    <%= f.label :approved %>
+    <%= f.check_box :approved %>
+  </div>
+
+  <div class="">
+    <%= f.label :rejected %>
+    <%= f.check_box :rejected %>
+  </div>
+
+  <div class="">
+    <%= f.label :rejected_reason %>
+    <%= f.text_field :rejected_reason %>
+  </div>
+
+  <div class="">
+    <%= f.label :expensed_date %>
+    <%= f.text_field :expensed_date, class: 'datepicker' %>
+  </div>
+
+  <div class="">
+    <%= f.label :purchase_amount %>
+    <%= f.text_field :purchase_amount%>
+  </div>
+
+  <div class="">
+    <%= f.label :requesting_amount %>
+    <%= f.text_field :requesting_amount%>
+  </div>
+
+  <div class="">
+    <%= f.label :reimbursement_amount %>
+    <%= f.text_field :reimbursement_amount%>
+  </div>
+
+  <%= render 'claims/fields_for_attachments', f: f %>
+
+  <div class="">
+    <button>
+      Submit Claim
+    </button>
+  </div>
+<% end %>

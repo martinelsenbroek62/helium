@@ -1,0 +1,44 @@
+<% _benefit_program = BenefitProgram.new %>
+<%= form_for [_organization, _benefit_program] do |f| %>
+  <div class="">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="">
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date, class: "datepicker" %>
+  </div>
+
+  <div class="">
+    <%= f.label :end_date %>
+    <%= f.text_field :end_date, class: "datepicker" %>
+  </div>
+
+  <div class="">
+    <label>
+      <%= f.check_box :active %>
+      Active
+    </label>
+  </div>
+
+  <div class="">
+    <button>
+      Update
+    </button>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('.datepicker').datepicker();
+</script>

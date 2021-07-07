@@ -1,0 +1,6 @@
+<% template = @organization.employee_welcome_email_text.to_s.strip %>
+<%= Liquid::Template.parse(template).render(
+    'organization' => @organization, 
+    'user' => @user
+).html_safe %>
+

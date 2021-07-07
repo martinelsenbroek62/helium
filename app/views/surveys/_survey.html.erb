@@ -1,0 +1,39 @@
+<div class="col-4">
+  <div class="card">
+    <div class="card-header center">
+      <div class="" data-progress="<%= survey.percent_complete %>%"></div>
+      <% unless survey.allowed_to_submit_answers? %>
+          CURRENTLY CLOSED
+      <% else %>
+        &nbsp;
+      <% end %>
+    </div>
+
+    <div class="card-body center" style="min-height:225px;">
+      <%= link_to survey do %>
+          <% unless survey.allowed_to_submit_answers? %>
+            <div class="">
+              <small>
+                You may look at your old survey but will be unable to submit changes.
+              </small>
+            </div>
+          <% else %>
+            <small>&nbsp;</small>
+          <% end %>
+
+          <h3 class="">
+            <%= survey.name %>
+          </h3>
+        <% end %>
+      </div>
+
+      <div class="card-footer center">
+        <small class="">
+          <i class=""></i>
+          Started <%= time_ago_in_words survey.created_at %> ago
+          <i class=""></i> You are <%= number_to_percentage survey.percent_complete, precision:0 %> complete
+        </small>
+
+      </div>
+    </div>
+  </div>

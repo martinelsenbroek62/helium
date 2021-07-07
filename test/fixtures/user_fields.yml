@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  organization_id: 1
+  survey_id: 1
+  key: MyString
+  value: MyString
+
+two:
+  user_id: 1
+  organization_id: 1
+  survey_id: 1
+  key: MyString
+  value: MyString

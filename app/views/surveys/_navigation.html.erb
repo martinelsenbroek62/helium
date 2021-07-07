@@ -1,0 +1,32 @@
+<% if _survey && !(controller_name=='surveys'&&action_name=='show') %>
+
+  <div class="nav center surveys-nav">
+    <div class="">
+      <%= link_to "Home", _survey, class: "button" %>
+    </div>
+    <div class="">
+      <%= link_to "Sections", [_survey, :sections], class: "button", target:"_self" %>
+    </div>
+    <div class="">
+      <%= link_to "Report", [_survey, :report], class: "button", target: "_self" %>
+    </div>
+    <div class="">
+      <%= link_to "Data", [_survey, :data], class: "button" %>
+    </div>
+    <div class="">
+      <%= link_to "FAQ", [_survey, :faq], class: "button" %>
+    </div>
+  </div>
+  <% if false %>
+    <% if _section %>
+      <% unless controller_name=='sections' && action_name == 'index' %>
+        <div class="">
+          <div class="" data-progress='<%= _section.percent_complete%>%'>
+            <%#= _section.percent_complete %>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

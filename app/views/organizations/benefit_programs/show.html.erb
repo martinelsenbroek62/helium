@@ -1,0 +1,51 @@
+<%= render 'subheader' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category Name</th>
+      <th>Focus Area</th>
+      <th>Product Type</th>
+      <th>% to Reimburse</th>
+      <th>Claims</th>
+      <th>
+        <%= link_to new_organization_benefit_program_benefit_category_path(_organization, _benefit_program) do %>
+        + New Product
+      <% end %>
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <%= render _benefit_program.benefit_categories %>
+  <%= empty_table_rows(5,3) if _benefit_program.benefit_categories.empty? %>
+</tbody>
+</table>
+
+<div class="card">
+<div class="card-header">
+  <h4>Upload Benefit Categories</h4>
+</div>
+
+<div class="card-body">
+  <p>
+    Please upload a CSV file to import categories and product types into the database. Please use the headers listed below, or download the sample file to get started.
+  </p>
+  <pre style="">category name,focus area,product type,percent to reimburse,category description,focus area description,product type description, program name, eligibility description, description of exclusions,benefit category image url</pre>
+
+  <%= link_to "/upload_reimbursement_rules.csv" do %>
+  Download Sample File
+<% end %>
+
+<%= form_for :upload, url: upload_organization_benefit_program_benefit_categories_path(_organization, _benefit_program) do |f| %>
+<div class="">
+  <%= f.label :file %>
+  <%= f.file_field :file %>
+</div>
+
+<button>
+  Upload
+</button>
+<% end %>
+
+</div>
+</div>

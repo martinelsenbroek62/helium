@@ -1,0 +1,45 @@
+<% unless _survey.allowed_to_submit_answers? %>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-warning center">
+        <h3>Survey Closed</h3>
+        You may view your survey but cannot change your answers
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= Liquid::Template.parse(_survey.template('group_template.html')).render(
+  'survey' => _survey,
+  'section' => _section,
+  'group' => _group,
+  'next' => _group.next.try(:url) || (_section.next.try(:url)||_survey.url).to_s + '/complete',
+  'prev' => _group.prev.try(:url) || (_section.prev.try(:url)||_survey.url).to_s + '/',
+).html_safe %>
+
+<% unless _survey.allowed_to_submit_answers? %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('input, select').attr('disabled', 'disabled');
+    });
+  </script>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    function checkRequiredQuestions(){
+      var answered = $('.visible [data-required]').filter(function(x, input){
+        return !$(input).val().length
+      }).length <= 0;
+      console.log('answered', answered)
+      if(answered){
+        $('#questions .button').text("Save & Continue")
+      } else {
+        $('#questions .button').text("Continue With Required Questions Missing")
+      }
+    }
+
+    checkRequiredQuestions()
+    $('input, select').on('change keyup', checkRequiredQuestions)
+  })
+</script>

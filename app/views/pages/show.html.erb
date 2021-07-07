@@ -1,0 +1,4 @@
+
+<%= Liquid::Template.parse(_page.body.to_s).render(
+  'organization' => _organization,
+).html_safe %>

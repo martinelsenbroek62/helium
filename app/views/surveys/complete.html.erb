@@ -1,0 +1,7 @@
+<%# remaining_questions = _survey.questions.remaining.all %>
+<%# remaining_questions = remaining_questions.select { |q| q.xshow? } %>
+
+<%= Liquid::Template.parse(_survey.template('complete_template.html')).render(
+  'survey' => _survey,
+  'questions_remaining' => @remaining_questions
+).html_safe %>

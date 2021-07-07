@@ -1,0 +1,26 @@
+<div id="section_<%= section.id %>" class="card">
+  <div class="card-header">
+    <h3>
+      Section: <%= section.name %>
+      <%= link_to [_organization, _survey, section] do %><i class="fa fa-edit"></i> Edit<% end %>
+    </h3>
+
+    <small>
+      In <%= section.position.to_i.ordinalize %> position
+      with <%= pluralize section.groups.count, 'Question Group' %>
+      and <%= pluralize section.questions.count, 'Question' %>
+    </small>
+  </div>
+
+  <div class="card-body">
+    <% section.groups.each do |group| %>
+      <%= render 'organizations/preview/group', group: group, section: section %>
+    <% end %>
+  </div>
+
+  <div class="card-footer">
+    <a href="#top" style="">Back to top</a>
+  </div>
+</div>
+
+<br>

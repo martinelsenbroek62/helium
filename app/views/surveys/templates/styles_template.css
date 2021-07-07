@@ -1,0 +1,189 @@
+body {
+  margin:0px;
+}
+
+.leftside {
+  float:left;
+}
+.rightside{
+  float:right;
+}
+
+.header {
+  padding:25px;
+  background:black;
+  margin-bottom:25px;
+}
+
+.header a {
+  color:gold;
+  text-decoration:none;
+  position:relative;
+  top:10px;
+}
+
+
+.navigation {
+  padding:20px 0px 30px;
+}
+
+h1,h2,h3,h4 {
+  line-height:60px;
+}
+
+.next-question-link {
+  float:right;
+}
+.prev-question-link {
+  float:left;
+}
+
+.progress-bar {
+  width:100%;
+  display:block;
+  background:#f8f8f8;
+}
+.progress-bar-complete {
+  width:0%;
+  height:5px;
+  background:gold;
+  display:block;
+}
+
+.more-info-text {
+  background:whitesmoke;
+  border-left:solid 10px #EEE;
+  padding:15px;
+}
+
+.more-info .hidden {
+  display:none;
+}
+
+fieldset {
+  position:relative;
+  top:-5px;
+}
+
+.field {
+  text-align:center;
+}
+
+fieldset {
+  border-top:solid 4px #EEE;
+}
+
+legend {
+  padding:10px;
+  font-size:40px;
+}
+
+.grayBox {
+  background:#f8f8f8;
+  border-top:solid 1px #EEE;
+  padding:10px;
+  width:65%;
+  margin:0px auto;
+}
+
+.infoList li {
+  background:#f8f8f8;
+  text-align:left;
+  list-style:none;
+  clear:both;
+  display:grid !important;
+  min-height:50px;
+}
+
+.infoList h4 {
+  position:relative;
+  left:75px;
+}
+
+.infoList li .text {
+  position:inherit;;
+  top:15px;
+}
+
+.icon {
+  background:gold;
+  width:40px;
+  height:40px;
+  text-align:center;
+  line-height:45px;
+  display:inline-block;
+  border-radius:360px;
+  position:relative;
+  top:-6px;
+}
+
+.icon .fa {
+  font-size:22px;
+  color:#FFF;
+  display:inline-block;
+}
+.iconWrap {
+  margin-right:10px;
+  background:#FFF;
+  padding:15px;
+  display:block;
+  float:left;
+}
+
+.hint {
+  padding-bottom:15px;
+}
+
+.footer {
+  text-align:center;
+  border-top:solid 1px #EEE;
+  margin-top:50px;
+  padding:25px;
+}
+.center {
+  text-align:center
+}
+
+/** Questions */
+
+
+#questions .question {
+  border-top:solid 1px #DDD;
+  padding:0px 0px;
+  margin:0px;
+}
+
+
+#questions .question:first-child {
+  border-top:0px;
+}
+
+#questions .question h4 {
+  margin:0px;
+}
+
+.question form {
+  margin:0px;
+}
+
+/** Sections */
+
+.section-block {
+  width:38%;
+  box-shadow:1px 3px 5px #CCC;
+  margin:0px 5% 5%;
+  border:solid 1px #EEE;
+  text-align:center;
+  display:inline-block;
+  box-sizing: border-box;
+  border-radius:2px 2px 4px 4px;
+}
+.section-block h4 {
+  margin:2px 0px;
+}
+.section-block:hover {
+  box-shadow:1px 3px 5px #999;
+}
+.section-block-box {
+  padding:15px;
+}

@@ -1,0 +1,92 @@
+<div class="">
+    <span class="">Submit a Claim</span>
+    <ol>
+      <li>Select a Product Type below to start a claim</li>
+      <li>Complete and submit form with supporting documentation</li>
+      <li>Your claim will be reviewed within 3-5 business days</li>
+      <li>Once approved you will be reimbursed the following pay period</li>
+    </ol>
+</div>
+
+<div class="">
+  <div class="">
+
+  {% for program in programs %}
+    <div class="">
+      <a href="?pid={{program.id}}" class="">
+        <b>{{program.name}}</b>
+        <div class="">
+          {{program.user_balance}}
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+</div>
+
+
+<div class="">
+  <div class="">
+
+  {% assign sorted_category_links = (category_links|sort:'name') %}
+  {% for category_link in sorted_category_links %}
+    <span class="" >
+      <a href="{{category_link.url}}" class="">
+        {{ category_link.name }}
+      </a>
+    </span>
+  {% endfor %}
+  </div>
+  <div class="">
+Search: <input type="text" id="filter_categories" value="">
+    <span class="" >
+      <a href="?">
+        RESET
+      </a>
+    </span>
+  </div>
+</div>
+
+{% if program %}
+  {{program.description}}
+{% endif %}
+
+{% for benefit_category in categories %}
+  <div class="">
+    <h3 class="">{{benefit_category.name}}</h3>
+
+    {% assign items = benefit_category.items | sort:'focus_area' %}
+    <div class="">
+        {% for item in items %}
+        <div class="">
+          <a href="{{item.url}}">
+            <b>{{item.focus_area}}</b> {{item.product_type}}
+          </a>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('a.active').removeClass("active")
+    $('a[href="'+location.search+'"]').parent().addClass('active')
+    $('#filter_categories').on("keyup", function(){
+      var val = $(this).val()
+      $('.hidden').removeClass('hidden')
+      $("div.category:not(:containsI('"+val+"'))").addClass('hidden')
+
+      $('div#items').each(function(x, ul){
+        $ul = $(ul)
+        var a = $('div.hidden', $ul).length
+        var b = $('div', $ul).length
+        if(a==b){
+          $ul.addClass('hidden')
+        } else {
+          $ul.removeClass('hidden')
+        }
+      })
+    })
+  })
+</script>

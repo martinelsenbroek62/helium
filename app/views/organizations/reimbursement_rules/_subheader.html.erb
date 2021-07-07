@@ -1,0 +1,40 @@
+<%= content_for :subheader do  %>
+  <div class="nav">
+
+    <div class="">
+      <%= link_to "Programs", organization_programs_path(_organization) %>
+    </div>
+    <div>
+      <%= link_to new_organization_program_path(_organization) do %>
+        <i class=""></i> Add
+      <% end %>
+    </div>
+    <div>
+      <%= link_to "Benefits", organization_reimbursement_rules_path %>
+    </div>
+    <div>
+      <%= link_to new_organization_reimbursement_rule_path(_organization) do %>
+        <i class=""></i>
+        Add
+      <% end %>
+    </div>
+    <div>
+      <%= link_to organization_products_path(_organization) do %>
+        Specific Products
+      <% end %>
+    </div>
+    <div>
+      <%= link_to new_organization_product_path(_organization) do %>
+        <i class=""></i>
+        Add
+      <% end %>
+
+    </div>
+    <div class="subheader-form" style="">
+      <form class="" action="" method="get">
+        <input type="text" name="filter" value="<%= params[:filter] %>" placeholder="Find a product">
+        <button>Go</button>
+      </form>
+    </div>
+  </div>
+<% end %>

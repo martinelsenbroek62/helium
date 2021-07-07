@@ -1,0 +1,38 @@
+<%= content_for :subheader do %>
+    <div class="nav-tabs">
+      <% if _survey %>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to [:overview, _organization, _survey] do %>
+            Survey Overview
+          <% end %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to [_organization, _survey], class: "" do %>
+            Survey Questions
+          <% end %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Participants", [_organization, _survey, :users], target: "_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Messages", [_organization, _survey, :messages], target:"_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Templates", [_organization, _survey, :templates], target:"_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Configure", [:edit, _organization, _survey], target:"_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Help", [:help, _organization, _survey], class: "", target:"_self" %>
+      </button>
+      <% end %>
+
+      <button type="button" class="btn btn-primary btn btn-outline-secondary">
+        <%= link_to new_organization_survey_path(_organization) do %>
+          <i class="fa fa-plus-circle"></i>
+          New Survey
+        <% end %>
+    </button>
+    </div>
+<% end %>

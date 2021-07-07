@@ -1,0 +1,61 @@
+<%= render 'subheader' %>
+
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">Deposit Money for All Employees of <%= _organization.name %></h4>
+
+  <p>
+    Amounts can be positive or negative, to subtract money from an employee's balance.
+  </p>
+  <p>
+    Leave the expiration date blank for rollover deposits.
+  </p>
+
+  <hr>
+  <p class="mb-0">
+    No sample available
+  </p>
+</div>
+
+<%= form_for :fund, url: "", method: :post do |f| %>
+  <% if _user %>
+    <input type="hidden" name="user_id" value="<%= _user.id %>">
+  <% end %>
+
+  <div class="">
+    <label>Program Name</label>
+    <select name="benefit_program[name]">
+      <% _organization.benefit_programs.each do |benefit_program| %>
+      <option value="<%=benefit_program.name%>">
+        <%= benefit_program.name %>
+      </option>
+      <% end %>
+    </select>
+  </div>
+
+    <div class="">
+      <%= f.label :amount, "Amount & Fund Expiration" %>
+      <%= f.text_field :amount, placeholder: "Amount: $500.00" %>
+    </div>
+
+
+    <div class="">
+      <%= f.label :expires_on %>
+      <%= f.text_field :expires_on, class: "datepicker", placeholder: "Expires on: 10/10/2017" %>
+      <small>
+        Leave blank for rollover or
+        <a href="#" onclick="$('#fund_expires_on').val('<%= Time.zone.now.end_of_year.stamp('10/10/2015')%>');return false">
+          expire at EOY
+        </a>
+      </small>
+    </div>
+
+    <div class="">
+      <%= f.label :comment %>
+      <%= f.text_field :comment, placeholder: "Misc. notes" %>
+    </div>
+  </div>
+
+  <div class="">
+    <button> Deposit Funds </button>
+  </div>
+<% end %>

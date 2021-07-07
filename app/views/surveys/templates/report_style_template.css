@@ -1,0 +1,53 @@
+.ng-cloak { display:none; }
+
+a.active {
+  border:solid 2px #999;
+}
+
+
+.green {
+  color:darkgreen;
+}
+
+.yellow {
+  color:gold;
+}
+
+.red {
+  color:maroon;
+}
+
+
+.inline {
+  display:inline-block!important;
+}
+.has-border-top {
+  border-top: solid 1px #EEE;
+}
+.padding {
+  padding:0px !important;
+}
+.text-align-right {
+  text-align:right;
+}
+.muted {
+  color:gray;
+}
+h3 small {
+  font-size:16px;
+}
+
+.invalid-survey-message {
+  background:lightyellow;
+  margin:10px 0px;
+  border:solid 1px orange;
+  border-radius:4px;
+  padding:10px;
+}
+
+.invisible {
+  /*visibility:hidden;*/
+}
+.visible {
+  visibility:visible;
+}

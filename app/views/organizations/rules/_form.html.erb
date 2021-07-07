@@ -1,0 +1,30 @@
+<%= form_for [_organization, _survey, rule] do |f| %>
+  <%= f.hidden_field :question_id %>
+  <%= f.hidden_field :group_id %>
+
+  <% if _question %>
+    <p>Show this question if the answer to</p>
+  <% end %>
+
+  <div class="">
+    <%= f.label :answer_from  %>
+    <%= f.text_field :answer_from, data: {complete: search_questions_organization_survey_path(_organization, _survey, not_in_group:_group.id)}, placeholder:"Search for a question", style:"width:400px" %>
+  </div>
+
+  <div class="">
+    <%= f.label :operator %>
+    <%= f.select :operator, options_for_select(['equals', 'not equal', 'contains', 'not contain', 'like', 'greater than', 'less than', 'present', 'empty'], selected: rule.operator) %>
+  </div>
+
+  <div class="">
+    <%= f.label :value %>
+    <%= f.text_field :value, placeholder:"value..." %>
+  </div>
+
+  <%= rule.operator %>
+  <%= rule.value %>
+
+  <button>
+    + Add Rule
+  </button>
+<% end %>

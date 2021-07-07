@@ -1,0 +1,29 @@
+<tr>
+  <td>
+    <% if reimbursement_rule.program.present? %>
+      <%= link_to [_organization, reimbursement_rule.program] do %>
+        <%= reimbursement_rule.program.name %>
+      <% end %>
+    <% end %>
+  </td>
+  <td>
+    <%= reimbursement_rule.focus_area.present? ? reimbursement_rule.focus_area : '--' %>
+  </td>
+  <td>
+    <%= reimbursement_rule.category_name.present? ? reimbursement_rule.category_name : '--' %>
+  </td>
+  <td>
+    <%= number_to_percentage reimbursement_rule.percentage.to_f, precision:0 %>
+  </td>
+  <td style="">
+    <%= link_to [:edit, reimbursement_rule.organization, reimbursement_rule] do %>
+      <i class=""></i> Edit
+    <% end %>
+  </td>
+  <td style="">
+    <%= link_to [reimbursement_rule.organization, reimbursement_rule], method: :delete, data: {confirm:"Are you sure?"} do %>
+      <i class=""></i>
+      Remove
+    <% end %>
+  </td>
+</tr>

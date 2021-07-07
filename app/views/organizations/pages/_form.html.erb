@@ -1,0 +1,29 @@
+<%= form_for [_organization, page] do |f| %>
+  <% [:title, :slug, :position ].each do |field| %>
+    <div class="f">
+      <%= f.label field %>
+      <%= f.text_field field %>
+    </div>
+  <% end %>
+
+  <div class="f">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="f">
+    <label>
+      <%= f.check_box :published %> Published page
+    </label>
+  </div>
+
+  <div class="f">
+    <label>
+      <%= f.check_box :show_in_menu %> Show in menu
+    </label>
+  </div>
+
+  <div class="f">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>

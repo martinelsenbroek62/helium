@@ -1,0 +1,27 @@
+<p>
+  <%= link_to [_organization, _survey] do %>
+    <b><%= _survey.name %></b>
+  <% end %>
+
+  <%= link_to [_organization, _survey, _section] do %>
+    > <%= _section.name %>
+  <% end %>
+</p>
+
+<%
+_group = Group.new
+%>
+
+<%= form_for [_organization, _survey, _section, _group] do |f| %>
+  <h3>Add new question group for <%= _section.name %></h3>
+  <div class="">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+
+  <%= f.submit "Create Question Group" %>
+<% end %>

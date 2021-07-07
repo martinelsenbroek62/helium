@@ -1,0 +1,107 @@
+<div class="">
+  <div class="">
+    <%= _organization.benefit_claims_form.to_s.html_safe %>
+    <hr>
+  </div>
+</div>
+
+<%
+url_for_claim = (@url||claims_path)
+%>
+<%= form_for Claim.new, url: url_for_claim, html: {multipart: true} do |f| %>
+
+  <%= render 'claims/fields_for_product' %>
+
+  <div class="">
+    <div class="">
+      Describe your purchase
+    </div>
+    <div class="">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      How much did you pay for this item?
+    </div>
+    <div class="">
+      <%= f.text_field :purchase_amount, placeholder: "Amount: E.g., $100.00" %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      How much would you like back?
+    </div>
+    <div class="">
+      <%= f.text_field :requesting_amount, placeholder: "Amount: E.g., $100.00" %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <div class="">
+        <a href="#" class="">
+          <i class=""></i> When did you make this purchase?
+        </a>
+        <div class="">
+          <%= benefits_when_did_you_make_this_purchase_help_text %>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <%= f.text_field :expensed_date, class: "datepicker" %>
+    </div>
+  </div>
+
+  <h3>More Details</h3>
+
+  <div class="">
+    <div class="">
+      Manufacturer <i>(if available)</i>
+    </div>
+    <div class="">
+      <%= f.text_field :manufacturer %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      Model # (if available)
+    </div>
+    <div class="">
+      <%= f.text_field :model_number %>
+    </div>
+  </div>
+
+  <%= render 'claims/fields_for_attachments', f: f %>
+
+  <div class="">
+    <hr>
+    <button>
+      Submit
+    </button>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker()
+    $('#claim_purchase_amount').on('keyup', function(){
+      var amount = parseFloat($(this).val().replace(/[^0-9\.]/, ''))
+      var percentage = parseFloat($('#claim_reimbursement_percentage').val())
+      var reimbursementAmount = (amount / (100.0 / percentage))
+
+      var currentBalance = parseFloat('<%= _user.current_balance %>');
+
+      if(currentBalance < reimbursementAmount){
+        reimbursementAmount = currentBalance
+      }
+
+      if(reimbursementAmount) {
+        $('#remimbursement_amount').text(reimbursementAmount)
+      }
+    })
+  })
+</script>

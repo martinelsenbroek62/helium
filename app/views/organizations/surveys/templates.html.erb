@@ -1,0 +1,56 @@
+<%= render 'subheader' %>
+
+<% _templates = _survey.attributes.keys.grep(/template/i).reject { |template| template == 'question_template'} %>
+<% params[:template]||=_templates.first %>
+
+<ul class="editor-drawer">
+  <% _templates.each do |template| %>
+    <li style="<%= 'background:#454545' if template == params[:template] %>">
+      <%= link_to "?template=#{template}" do %>
+        <%= template.to_s.titleize.gsub(/template/i, '') %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for [_organization, _survey] do |f| %>
+  <div style="position:absolute;background:white;right:10px;z-index:999;margin-top:-90px;" class="text-right">
+    <button class="">Update Template</button>
+  </div>
+
+  <% _templates.each do |template| %>
+    <% if (template == params[:template] || params[:template].blank? && template == _templates.first) %>
+      <div class="">
+        <%= f.text_area template, id: "textarea_editor", style:"display:none;" %>
+        <div id="editor" class=""></div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<hr>
+
+<div class="" style="margin-left:350px;">
+  <h3>Restore Default Template for "<%= params[:template].to_s.titleize %>".</h3>
+  <%= form_for :survey, url:restore_template_organization_survey_path(_organization, _survey, template: params[:template]), method: 'post', data: { confirm:"Are you sure?" } do |f| %>
+    <button class="">
+      Yes, Restore "<%= params[:template].to_s.titleize %>"
+    </button>
+  <% end %>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.9/ace.js"></script>
+
+<script>
+    var textArea = document.getElementById('textarea_editor');
+    var editor = ace.edit("editor");
+    editor.getSession().setMode("ace/mode/javascript");
+    editor.getSession().setValue(textArea.value);
+    editor.getSession().on("change", function(){
+      textArea.value=(editor.getSession().getValue());
+    });
+    editor.getSession().setMode("ace/mode/html");
+    editor.setOptions({
+     maxLines: editor.session.getLength()
+   });
+</script>

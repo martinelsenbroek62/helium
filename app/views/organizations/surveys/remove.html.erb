@@ -1,0 +1,42 @@
+<%= link_to [:edit, _organization, _survey] do %>
+  <p>Back</p>
+<% end %>
+
+<div class="row">
+  <div class="col">
+    <%= form_for [:reset, _organization, _survey], method:'post' do |f| %>
+      <h3>Reset Survey Spreadsheet Info</h3>
+
+      <div class="">
+        <%= f.submit "Reset Campaign", data: { confirm: "Reset Campaign: Are you sure?" }, class: "full-width" %>
+      </div>
+
+      <hr>
+
+      <p>
+        All sections, questions and answers will be removed
+      </p>
+      <p>
+        Meta data, users and messages will NOT be deleted
+      </p>
+
+    <% end %>
+  </div>
+  <div class="col">
+    <%= form_for [_organization, _survey], method:'delete' do |f| %>
+      <h3>Delete Campaign</h3>
+      <div class="">
+        <%= f.submit "Delete Campaign", data: { confirm: "Delete Campaign: Are you sure? Everything will be removed. There is no Undo!" }, class: "danger full-width" %>
+      </div>
+
+      <hr>
+
+      <p>
+        All survey data will be deleted
+      </p>
+      <p>
+        Employees will NOT be deleted, just their association to this survey
+      </p>
+    <% end %>
+  </div>
+</div>

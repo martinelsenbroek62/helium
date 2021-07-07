@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>Claim</th>
+     <th>Employee</th>
+      <th>Note</th>
+      <th>Time</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for note in notes %>
+      <tr class="">
+        <td>
+          <%= link_to [_organization, note.claim] do %>
+            #<%= note.claim.id %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to [_organization, note.claim] do %>
+            <%= note.user %>
+          <% end %>
+        </td>
+        <td><%= note.body %></td>
+        <td><%= time_ago_in_words note.created_at %> ago</td>
+        <td>Author <%= note.author %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

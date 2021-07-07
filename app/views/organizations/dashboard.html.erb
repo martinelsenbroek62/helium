@@ -1,0 +1,27 @@
+<h3>Dashboard</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <h1>
+          <%= pluralize _organization.users.count, 'Person' %>
+        </h1>
+        <%= image_tag "https://webdesignledger.com/wp-content/uploads/2010/02/graphs_5.jpg" %>
+      </td>
+      <td>
+        <h1>
+          <%= pluralize _organization.claims.count, 'Claim' %>
+        </h1>
+        <%= image_tag "https://webdesignledger.com/wp-content/uploads/2010/02/graphs_5.jpg" %>
+        <%#= image_tag "https://lh4.googleusercontent.com/-xgT_QSnxFpc/TpOIItFyrxI/AAAAAAAAAWo/HoinTa_Zpi4/s400/LineGraph.gif" %>
+      </td>
+      <td>
+        <h1>
+          <%= pluralize _organization.surveys.count, 'Survey' %>
+        </h1>
+        <%= image_tag "https://webdesignledger.com/wp-content/uploads/2010/02/graphs_5.jpg" %>
+      </td>
+    </tr>
+  </tbody>
+</table>

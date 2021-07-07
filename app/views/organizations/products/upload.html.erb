@@ -1,0 +1,50 @@
+<%= render 'subheader' %>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <h3>Add Product</h3>
+      <div class="">
+        <%= form_for [_organization, Product.new] do |f| %>
+          <div class="">
+            <label>Category </label>
+            <%= f.text_field :focus_area %>
+          </div>
+
+          <div class="">
+            <label>Product Type</label>
+            <%= f.text_field :category_name %>
+          </div>
+
+          <div class="">
+            <label>Description</label>
+            <%= f.text_field :description %>
+          </div>
+
+          <div class="">
+            <label>Amount to Reimburse as %</label>
+            <%= f.text_field :reimbursement_percentage %>
+          </div>
+
+          <div class="">
+            <button>Save</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="">
+      <h3>Upload Multiple Products</h3>
+      <p>Upload CSV file of specific products with the following headers</p>
+
+<pre style="">
+focus area, category, type, name, description, percentage to reimburse
+</pre>
+
+      <%= form_for :upload, url: "" do |f| %>
+        <%= f.file_field :file %>
+        <button>Upload</button>
+      <% end %>
+
+    </div>
+  </div>
+</div>

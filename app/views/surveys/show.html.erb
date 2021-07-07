@@ -1,0 +1,15 @@
+<%= Liquid::Template.parse(_survey.template('start_template.html')).render(
+  'survey' => _survey
+).html_safe %>
+
+<br>
+
+<div class="row-center">
+  <div class="col-stretch">
+    <% if _q = _survey.continue_at_question %>
+      <%= link_to [_survey, _q.section, _q.group], target: "_self" do %>
+        Continue where you left off <i class="fa fa-arrow-right"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

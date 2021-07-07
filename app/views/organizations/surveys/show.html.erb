@@ -1,0 +1,23 @@
+<%= render 'subheader' %>
+
+<% _survey.sections.each do |section| %>
+  <li>
+    <h3><%= section.name %></h3>
+
+  <% section.groups.each do |group| %>
+    <li>
+      <h4><%= group.name %></h4>
+
+      <ul>
+        <% group.questions.each do |question| %>
+          <li>
+            <%= form_for [_organization, _survey, question] do |f| %>
+              <%= f.text_field :text %>
+              <%= f.submit ">" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+<% end %>

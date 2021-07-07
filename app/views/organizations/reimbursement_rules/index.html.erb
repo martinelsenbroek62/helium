@@ -1,0 +1,22 @@
+<%= render 'subheader' %>
+
+<div class="">
+  <b>Reimbursement Rules</b>
+  contain category and product type information, including descriptions and allowable reimbursement amounts.
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Program</th>
+    <th>Category</th>
+    <th>Product Type</th>
+    <th colspan="3">Allowable Reimbursement Amount</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% reimbursement_rules = _organization.reimbursement_rules  %>
+  <%= render reimbursement_rules %>
+  <%= empty_table_rows(4) if reimbursement_rules.empty? %>
+  </tbody>
+</table>

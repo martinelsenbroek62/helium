@@ -1,0 +1,13 @@
+<%= form_for [_organization, _survey, _section,_group, question] do |f| %>
+  <div class="">
+    <label>  Add new question: </label><br>
+    <%= f.text_field :text, placeholder: "Enter question text..." %>
+  </div>
+
+  <div class="">
+    <label>Position: </label><br>
+    <%= f.text_field :position %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

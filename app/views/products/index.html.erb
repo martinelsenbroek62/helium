@@ -1,0 +1,24 @@
+<%
+@programs = _organization.benefit_programs.map do |program|
+  begin
+    funds_total =_user.funds.where(benefit_program_id: program.id).map(&:amount).sum
+    reimbursed_total = _user.claims.where(benefit_category_id: program.benefit_category_ids).map(&:reimbursement_amount).map(&:to_f).sum
+  rescue
+    funds_total=0
+    reimbursed_total=0
+  end
+
+  attrs = program.attributes
+  attrs["categories"] = program.benefit_categories
+  attrs["url"] = benefit_categories_path(pid:program.id)
+  attrs["user_balance"] = number_to_currency(funds_total - reimbursed_total)
+  attrs
+end
+%>
+
+<%= Liquid::Template.parse(_organization.benefit_welcome.to_s).render(
+  'programs' => @programs,
+  'organization' => _organization,
+  'funds' => _user.funds,
+  'funds_by_year' => _user.funds_grouped_by_year
+).html_safe %>

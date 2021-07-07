@@ -1,0 +1,115 @@
+<% if claim.paid_out? %>
+  <tr>
+<% elsif claim.rejected? %>
+  <tr class="claim-is-invalid">
+<% else %>
+  <tr class="claim-is-<%= (claim.requesting_amount_available_in_program_balance? && claim.requesting_amount_is_valid?) ? 'valid' : 'invalid' %>">
+<% end %>
+  <td>
+    <!-- that workd -->
+    <input type="checkbox" name="claim_uuid[]" style="" class="claim_uuid" value="<%= claim.uuid %>">
+    &nbsp;
+
+    <%= link_to [claim.organization, claim] do %>
+    #<%= claim.id %>:
+    <%= claim.user.name.to_s.titleize %>
+  <% end %>
+</td>
+<td>
+  <%= claim.benefit_programs.map(&:name).to_sentence %>
+  &nbsp;
+</td>
+<td class="claim-reimbursement-amount-<%= (!claim.requesting_amount_available_in_program_balance? && !claim.paid_out?) ? 'invalid' : 'valid' %>">
+  <%
+    @user_funds_grouped_by_year ||= claim.user.funds_grouped_by_year
+  %>
+  <b><%= number_to_currency claim.user_program_balance(@user_funds_grouped_by_year) %></b>
+  &nbsp;
+</td>
+<td>
+  <%= excerpt claim.benefit_category.try(:name), '', radius:25 %>
+  &nbsp;
+</td>
+<td>
+  <%= excerpt claim.benefit_category.try(:focus_area).to_s, '', radius:25 %>
+  &nbsp;
+</td>
+<td>
+  <%= claim.status %>
+  &nbsp;
+</td>
+<td>
+  <%= number_to_currency claim.purchase_amount %>
+  &nbsp;
+</td>
+<td class="claim-reimbursement-amount-<%= (!claim.requesting_amount_is_valid? || !claim.requesting_amount_available_in_program_balance? && !claim.paid_out?) ? 'invalid' : 'valid' %>">
+  <% if claim.requesting_amount.present? %>
+    <%= number_to_currency claim.requesting_amount.to_s.gsub(/[^0-9\,\.]/i, '') %>
+  <% else %>
+    --
+  <% end %>
+  &nbsp;
+</td>
+<td class="claim-reimbursement-amount-<%= claim.requesting_amount_is_valid? ? 'valid' : 'invalid' %>">
+  <%= claim.percent_to_reimburse %>
+  &nbsp;
+</td>
+<td class="table-primary font-weight-bold">
+  <%= number_to_currency claim.reimbursement_amount %>
+  &nbsp;
+</td>
+<td>
+  <%= claim.created_at.stamp('10/10/2017') if claim.created_at.present? %>
+  &nbsp;
+</td>
+<td style="color:gray">
+  <%= claim.expensed_date.stamp('10/10/2017') if claim.expensed_date.present? %>
+  &nbsp;
+</td>
+<td>
+  <%= link_to proof_organization_claim_path(_organization, claim, anchor:'proof_of_purchase'), target:"_blank" do %>
+  View
+<% end %>
+</td>
+<td>
+<%= link_to edit_claim_path(claim), class: "show_more_info" do %>
+<%= claim.more_info.present? ? "*Manage*" : "Manage" %>
+
+<% if claim.more_info.present? %>
+  <div class="">
+    <%= claim.more_info %>
+  </div>
+<% end %>
+<% end %>
+</td>
+<td style="display:none;">
+
+<div class="drawer">
+<a href="#" onclick="$(this).parent().find('.hide').toggleClass('hide'); $(this).closest('tr').toggleClass('expanded'); $(this).closest('table').toggleClass('shrink'); return false">
+  <i class="fa fa-expand"></i>
+</a>
+
+<div class="hide drawer-content">
+  <a href="#" onclick="$(this).parent().toggleClass('hide'); $(this).closest('tr').toggleClass('expanded'); $(this).closest('table').toggleClass('shrink'); return false;" class="close-drawer">
+    <i class="fa fa-times-circle"></i>
+    Close Drawer
+  </a>
+
+  <%= link_to [claim.organization, claim] do %>
+  <h3>
+    #<%= claim.id %>:
+    <%= claim.user.name.to_s.titleize %></h3>
+<% end %>
+
+<table>
+  <% for key, val in claim.attributes %>
+    <tr>
+      <td><%= key %></td>
+      <td><%= val %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+</div>
+</td>
+</tr>

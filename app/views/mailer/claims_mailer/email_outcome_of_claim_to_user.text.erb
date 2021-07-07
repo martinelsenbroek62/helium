@@ -1,0 +1,9 @@
+<%=
+@claim.url = claim_url(@claim)
+
+Liquid::Template.parse(@organization.email_claim_status_template.to_s).render(
+  'organization' => @organization,
+  'claim' => @claim
+).to_s
+
+-%>

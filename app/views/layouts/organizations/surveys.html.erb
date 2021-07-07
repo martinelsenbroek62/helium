@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Sustainabli™ | Sustainability Benefits</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+</head>
+<body>
+<div class="container-fluid">
+  <%= render 'organizations/header' %>
+
+  <div class="nav">
+      <% if _survey %>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to [:overview, _organization, _survey] do %>
+            Survey Overview
+          <% end %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to [_organization, _survey], class: "" do %>
+            Survey Questions
+          <% end %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Participants", [_organization, _survey, :users], target: "_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Messages", [_organization, _survey, :messages], target:"_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Templates", [_organization, _survey, :templates], target:"_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Configure", [:edit, _organization, _survey], target:"_self" %>
+      </button>
+        <button type="button" class="btn btn-primary btn btn-outline-secondary">
+          <%= link_to "Help", [:help, _organization, _survey], class: "", target:"_self" %>
+      </button>
+      <% end %>
+
+    </div>
+  <%= yield %>
+</div>
+
+<%= render 'shared/intercom' %>
+<%= render 'shared/analytics' %>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+</html>

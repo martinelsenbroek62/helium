@@ -1,0 +1,23 @@
+<%= render 'organizations/reimbursement_rules/subheader' %>
+<div class="">
+  <b>Benefits Programs</b>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Program</th>
+    <th>Dates</th>
+    <th>Claims</th>
+    <th>Benefits</th>
+    <th>Balance</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% programs = _organization.programs %>
+  <%= render programs %>
+  <%= empty_table_rows(6) if programs.empty? %>
+  </tbody>
+</table>

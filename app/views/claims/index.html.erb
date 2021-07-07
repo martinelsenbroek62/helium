@@ -1,0 +1,65 @@
+<div class="row align-middle">
+  <div class="col">
+    <h1>Your Claims History</h1><br/>
+  </div>
+</div>
+
+<table class="table-responsive table-hover" id="claims_table">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>ID</th>
+      <th>Program</th>
+      <th>Category</th>
+      <th>Focus Area</th>
+      <th>Product</th>
+      <th style="">Date</th>
+      <th>Amount</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% (user_claims = ( _user.claims + _user.historical_claims.order('expensed_date desc'))) %>
+      <% user_claims.sort_by{|claim| claim.status_sort_by(claim.status)}.group_by { |claim| claim.status }.each do |status, claims| %>
+        <%= render claims %>
+      <% end %>
+      <%= empty_table_rows(8,5) if user_claims.empty? %>
+    </tbody>
+  </table>
+  <hr/>
+  <% @historical_claims = Claim.unified_historical_claims(email=_user.email) %>
+    <% if @historical_claims.any? %>
+      <table>
+        <thead>
+          <tr>
+            <td>Program</td>
+            <td>Category</td>
+            <td>Expense Date</td>
+            <td>Reimbursement Amount</td>
+            <td>Summary</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @historical_claims.each do |historical_claim| %>
+            <tr>
+              <td><%= historical_claim["Program"] %></td>
+              <td><%= historical_claim["Category"] %></td>
+              <td><%= historical_claim["Expense Date"] %></td>
+              <td><%= number_to_currency historical_claim["Reimbursement Amount"] %></td>
+              <td><%= historical_claim["Summary"] %></td>
+            </tr>
+          <% end %>
+        </body>
+      </table>
+    <% end %>
+
+    <div class="">
+      <p>
+        <%= link_to benefit_categories_path do %>
+        <button>
+          <i class=""></i>
+          Submit New Claim
+        </button>
+      <% end %>
+    </p>
+  </div>

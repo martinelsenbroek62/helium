@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organization_id: 1
+  focus_area: MyString
+  category_name: MyString
+  percentage: MyString
+
+two:
+  organization_id: 1
+  focus_area: MyString
+  category_name: MyString
+  percentage: MyString

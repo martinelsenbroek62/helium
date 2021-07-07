@@ -1,0 +1,55 @@
+<fieldset>
+  <legend class="">
+    <h3>{{category}} Section: Question {{question.question_number}}/{{question.section.question_count}}</h3>
+  </legend>
+</fieldset>
+
+<div class="">
+  {% if question.child? %}
+    <i class=""></i>
+    {{question.parent.text}}
+
+    <a href="?redirect={{question.parent.uuid}}">
+      <span id="question_{{question.parent.uuid}}"></span>
+      <small class="">[change your answer]</small>
+    </a>
+
+    <hr>
+
+    {% for child in answered %}
+      {% if question.parent_id == child.parent_id %}
+      <div class="">
+        <i class=""></i>
+        {{child.text}}:
+        <a href="?redirect={{child.uuid}}">
+        <span id="question_{{child.uuid}}"></span> [change your answer]
+        </a>
+
+      </div>
+      {% endif %}
+      <hr>
+    {% endfor %}
+
+  {% endif %}
+
+  <h4 class="">{{question.text}}</h4>
+
+  <div class="">
+    {{question|input}} {{question.units}}
+  </div>
+
+  {% unless question.info == blank %}
+    <div class="">
+      <a href="#"><i class=""></i> More Info</a>
+      <div class="">
+        {{question.info}}
+      </div>
+    </div>
+  {% endunless %}
+
+  <div class="">
+    <button>
+      Submit Answer
+    </button>
+  </div>
+</div>

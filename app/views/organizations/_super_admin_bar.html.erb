@@ -1,0 +1,28 @@
+<% if _user.super_admin? %>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:<%= ENV['ADMIN_NAV_COLOR']||='#000000'%>">
+  <a class="navbar-brand" href="<%= admin_path %>">
+    <i class="fa fa-lock"></i>
+    <%= ENV['ADMIN_NAV_TITLE']||='' %>
+    Admin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentSuperAdminBar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContentSuperAdminBar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="<%= organization_path(_organization) %>">
+          <%= _organization.name %>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item pull-xs-right">
+        <a class="nav-link" href="/benefits">
+          <i class="fa fa-sign-in"></i>
+          Your Benefits Portal</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<% end %>

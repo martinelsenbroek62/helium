@@ -1,0 +1,13 @@
+<br>
+<br>
+
+<%= form_for @user, url:register_path do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder:"Enter email", class: "u-full-width" %>
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder: "Password: ***************", class:"u-full-width" %>
+
+  <button class="">
+    Register Org <i class=""></i>
+  </button>
+<% end %>

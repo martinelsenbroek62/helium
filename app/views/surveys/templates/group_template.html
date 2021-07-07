@@ -1,0 +1,75 @@
+<div>
+  <a href="{{group.url}}/prev" class="leftside"><i class="fa fa-caret-left"></i> <span class="lead">Prev</span></a>
+  <a href="{{group.url}}/next" class="rightside"><span class="lead">Next</span> <i class="fa fa-caret-right"></i></a>
+
+  <div class="center">
+    <h3 class="legend">{{section.name}}: {{group.name}}</h3>
+  </div>
+
+  {% if group.intro != blank %}
+  <h5 class="group-intro center lead mt-5">
+  {{group.intro}}
+</h5> {% endif %}
+
+  <div class="center" id="questions">
+    {% for question in group.questions %}
+    <div id="question_{{question.id}}" class="question x-question {% if question.visible %} visible {% else %} in-visible {% endif %}">
+
+      <div class="h4 mt-5 mb-4">
+        {% if question.required %}
+        <span class="question-required" alt='This is a required question' title='This is a required question'>*</span> {% endif %} {{question.text}}
+      </div>
+
+      {{question | input }} {% if question.previous_answers != blank %}
+      <div class="more-info lead">
+        <a href="#"><i class="fa fa-info-circle"></i> What did I say last year?</a>
+
+        <div class="more-info-text hidden">
+          {% for previous_answer in question.previous_answers %}
+          <div>{{previous_answer}}</div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %} {% if question.more_info != blank %}
+      <div class="more-info lead">
+        <a href="#"><i class="fa fa-info-circle"></i> More Info</a>
+
+        <div class="more-info-text hidden">
+          {{question.more_info}}
+        </div>
+      </div>
+      <br> {% endif %}
+    </div>
+    {% endfor %} {% if group.more_info != blank %}
+    <div class="more-info">
+      <a href="#"><i class="fa fa-info-circle"></i> More Info</a>
+
+      <div class="more-info-text hidden">
+        {{group.more_info}}
+      </div>
+    </div>
+    {% endif %}
+
+    <br> {% if group.next %}
+    <a href="{{group.url}}/next" class="btn btn-primary">
+    <span class="h5">Save & Continue</span>
+    <i class="fa fa-caret-right"></i>
+  </a> {% elsif section.next %}
+    <a href="{{section.url}}/complete" class="btn btn-primary">
+    <span class="h5">Save & Continue</span>
+    <i class="fa fa-caret-right"></i>
+  </a> {% else %}
+    <a href="{{survey.url}}/complete" class="btn btn-primary">
+    <span class="h5">Save & Continue</span>
+    <i class="fa fa-caret-right"></i>
+  </a> {% endif %} {% if survey.has_reached_end %}
+    <div class="has_reached_end mt-2">
+      <a href="{{survey.url}}/complete">
+        <p class="muted">
+          Return to end of survey
+        </p>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<!--
+New Your Claims page should have the following:
+Table 1 - Claims history for all claims that are in the db
+Columns: Claim ID, Program, Category, Focus Area, Product Type, Purchase Date (Expense Date), Reimbursement Amount
+(needs to be conditional - while claim is Under Review this will be Reimbursement Request Amount,
+once claim is APrrove/Paid, it will be Reimbursement Amount
+A button for each claim - "View Claim"
+
+Broken down by Claim Status Flag (separate tables? or sections of a table?) Under Review, Approved, Paid, Rejected)
+
+Table 2 - Historical CLaims from memory, using same column headings if possible.
+
+When user click on "View Claim", it should take them to their Claim Form.  Based on status, it may or may not be locked for review (see https://jira.veic.org/browse/HE-331) User should be able to finish editing a claim from here is it is unlocked (Under Review status)
+
+Historical claims that we recently imported should also be presented in the claim form (which would be locked because they are "paid".
+-->
+<tr>
+  <td>
+    <%= claim.status  %>
+  </td>
+  <td>
+    #<%= claim.id  %>
+  </td>
+  <td>
+    <%= claim.benefit_category.primary_benefit_program rescue 'N/A' %>
+  </td>
+  <td>
+    <%= claim.benefit_category %>
+  </td>
+  <td>
+    <%= claim.focus_area %>
+  </td>
+  <td>
+    <%= claim.product_type %>
+  </td>
+  <td>
+    <%= claim.expensed_date %>
+  </td>
+  <td>
+    <% if claim.approved? %>
+      <%= number_to_currency claim.reimbursement_amount %>
+    <% else %>
+      <%= number_to_currency claim.requesting_amount %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "View", claim %>
+  </td>
+</tr>
+
+<% if false %>
+
+<tr>
+  <td>
+    <%= link_to claim do %>
+      View Claim
+    <% end %>
+  </td>
+  <td>
+    <%= claim.proof_of_purchase.present? ? "Complete" : "Missing" %>
+  </td>
+  <td>
+    <%= claim.proof_eligibility.present? ? "Complete" : "Missing" %>
+  </td>
+  <td>
+    <% if claim.purchase_amount.present? %>
+      <%= number_to_currency claim.purchase_amount.to_s.gsub(/[^0-9\,\.]/i, '') %>
+    <% else %>
+      --
+    <% end %>
+  </td>
+  <td>
+    <% if claim.requesting_amount.present? %>
+      <%= number_to_currency claim.requesting_amount.to_s.gsub(/[^0-9\,\.]/i, '') %>
+    <% else %>
+      --
+    <% end %>
+  </td>
+  <td>
+    <%= claim.expensed_date.try(:stamp, '10/10/2016') %>
+  </td>
+  <td>
+    <%= claim.status %>
+  </td>
+  <td>
+    <%= claim.id %>
+  </td>
+</tr>
+<% end %>

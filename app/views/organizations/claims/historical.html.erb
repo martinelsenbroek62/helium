@@ -1,0 +1,23 @@
+<%= render 'subheader' %>
+
+<div class="info">
+  <b><%= _organization.name %></b>
+  These are claims that were made before this system came online
+</div>
+
+
+<table>
+  <tbody>
+  <%
+  require 'csv'
+  VEIC_HISTORICAL_CLAIMS.each do |line| %>
+    <tr>
+      <% line.each do |v| %>
+        <td>
+          <%= v %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

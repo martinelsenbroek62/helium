@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="<%= root_path %>">
+    <i class="fa fa-globe"></i>
+    Sustainabli</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= root_path %>">
+          <i class="fa fa-briefcase"></i>
+          Claims <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= organization_people_path(_organization) %>">
+          <i class="fa fa-users"></i>
+          Employees</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= organization_benefit_programs_path(_organization) %>">
+          <i class="fa fa-compass"></i>
+          Benefits</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= organization_surveys_path(_organization) %>">
+          <i class="fa fa-list"></i>
+          Surveys</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= organization_notes_path(_organization) %>">
+          <i class="fa fa-comments"></i>
+          Notes</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<%= edit_organization_path(_organization) %>">
+          <i class="fa fa-gear"></i>
+          Settings</a>
+      </li>
+    </ul>
+
+    <div class="searchbar">
+      <%= yield :searchbar %>
+    </div>
+
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link disabled" href="<%= profile_path %>">
+          Welcome, <b><%= _user.to_s.titleize %></b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="<%= login_path %>">
+          <i class="fa fa-lock"></i>
+          Logout</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
+</nav>

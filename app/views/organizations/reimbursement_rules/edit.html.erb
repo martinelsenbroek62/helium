@@ -1,0 +1,50 @@
+<%= render 'subheader' %>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <h3>Edit Reimbursement Rule</h3>
+      <div class="">
+        <%= form_for [_reimbursement_rule.organization, _reimbursement_rule] do |f| %>
+          <div class="">
+            <label>Program</label>
+            <%= f.select :program_id, (_organization.programs.map { |program| [program.name, program.id]}), prompt: "Choose" %>
+            
+          </div>
+
+          <div class="">
+            <label>Category </label>
+            <%= f.text_field :focus_area %>
+          </div>
+          <div class="">
+            <label>Category Description</label>
+            <%= f.text_field :focus_area_description %>
+          </div>
+
+          <div class="">
+            <label>Product Type</label>
+            <%= f.text_field :category_name %>
+          </div>
+          <div class="">
+            <label>Product Type Description </label>
+            <%= f.text_field :category_name_description %>
+          </div>
+
+          <div class="">
+            <label>Amount to Reimburse</label>
+            <%= f.text_field :percentage %>
+          </div>
+
+          <div class="">
+            <label>Focus Area Image URL Address</label>
+            <%= f.text_field :image_url %>
+          </div>
+
+          <div class="">
+            <button>Save</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

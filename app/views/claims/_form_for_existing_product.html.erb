@@ -1,0 +1,150 @@
+<div class="">
+  <div class="">
+    <%= image_tag _product.image_url, style: "width:100%" %>
+
+  </div>
+  <div class="">
+    <h3>Submit a New Claim for <%= _product.name %></h3>
+    <p>
+      <%= _organization.benefit_claims_form.to_s.html_safe %>
+    </p>
+
+  </div>
+</div>
+
+<hr>
+<%= form_for _product.claims.new  do |f| %>
+  <%= f.hidden_field :reimbursement_percentage %>
+  <%= render 'fields_for_product' %>
+
+  <div class="">
+    <div class="">
+      How much did you pay for this item?
+    </div>
+    <div class="">
+      <%= f.text_field :purchase_amount, placeholder: "Amount: E.g., $100.00", autocomplete:"Off" %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      How much would you like back?
+    </div>
+    <div class="">
+      <%= f.text_field :requesting_amount, placeholder: "Amount: E.g., $100.00" %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+    &nbsp;
+    </div>
+    <div class="">
+      <span>
+        You're eligible for up to
+        <b><%= number_to_percentage f.object.reimbursement_percentage, precision:0 %></b> reimbursement on the purchase price
+
+        <h4>You'll receive $<span id="remimbursement_amount">0.00</span> back if approved</h4>
+      </span>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <div class="">
+        <a href="#" class="">
+          <i class=""></i> When did you make this purchase?
+        </a>
+        <div class="">
+          <%= benefits_when_did_you_make_this_purchase_help_text %>
+        </div>
+      </div>
+
+    </div>
+    <div class="">
+      <%= f.date_field :expensed_date, class: "datepicker" %>
+    </div>
+  </div>
+
+  <h3>More Details</h3>
+
+  <div class="">
+    <div class="">
+      Manufacturer <i>(if available)</i>
+    </div>
+    <div class="">
+      <%= f.text_field :manufacturer %>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      Model # <i>(if available)</i>
+    </div>
+    <div class="">
+      <%= f.text_field :model_number %>
+    </div>
+  </div>
+
+  <%= render 'fields_for_attachments', f: f %>
+
+  <div class="">
+    <hr>
+    <button>
+      Submit
+    </button>
+  </div>
+<% end %>
+
+
+
+<% if false %>
+
+<h1>
+  <%= _product.focus_area %> >
+  <%= _product.category_name %> >
+  <%= _product.name %>
+</h1>
+
+<%= form_for _product.claims.new do |f| %>
+  <%= fields_for _product do |f| %>
+    <%= f.hidden_field :focus_area %>
+    <%= f.hidden_field :category_name %>
+  <% end %>
+
+  <%= f.hidden_field :reimbursement_percentage %>
+
+  <div class="">
+    How much did you pay for this item?
+    <%= f.text_field :purchase_amount, placeholder: "Amount: E.g., $100.00", autocomplete:"Off" %>
+
+    <span>
+      Eligible for reimbursement of
+      <b><%= number_to_percentage f.object.reimbursement_percentage, precision:0 %></b>
+
+      <h4>You'll receive $<span id="remimbursement_amount">0.00</span> back if approved</h4>
+    </span>
+  </div>
+<% end %>
+
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#claim_purchase_amount').on('keyup', function(){
+      var amount = parseFloat($(this).val().replace(/[^0-9\.]/, ''))
+      var percentage = parseFloat($('#claim_reimbursement_percentage').val())
+      var reimbursementAmount = (amount / (100.0 / percentage))
+
+      var currentBalance = parseFloat('<%= _user.current_balance %>');
+
+      if(currentBalance < reimbursementAmount){
+        reimbursementAmount = currentBalance
+      }
+
+      if(reimbursementAmount) {
+        $('#remimbursement_amount').text(reimbursementAmount)
+      }
+    })
+  })
+</script>

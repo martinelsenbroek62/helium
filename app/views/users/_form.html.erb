@@ -1,0 +1,33 @@
+<% if flash[:notice] %>
+<div class="error">
+  <%= flash[:notice] %>
+</div>
+<% end %>
+
+<%= form_for _user, url: profile_path, method:'put' do |f| %>
+    <div class="">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "u-full-width" %>
+    </div>
+
+    <div class="">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "u-full-width" %>
+    </div>
+
+    <div class="">
+      <%= f.label :password %>
+      <%= f.password_field :password, class:"u-full-width" %>
+    </div>
+
+    <div class="">
+      <button>
+        Update
+      </button>
+
+      <%= link_to root_path do %>
+        Cancel
+      <% end %>
+
+    </div>
+<% end %>

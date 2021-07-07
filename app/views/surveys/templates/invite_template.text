@@ -1,0 +1,7 @@
+Hello {{user.name}},
+
+You're invited to the {{survey.name}} survey!
+
+Please follow this link to login to your survey
+
+{{user.login_url}}

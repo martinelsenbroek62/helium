@@ -1,0 +1,63 @@
+<table>
+  <% Offer.all.each do |offer| %>
+
+    <tr class="offer">
+      <td>
+        <h3><%= offer.company %></h3>
+        <%= offer.name %>
+        <p><%= offer.body %></p>
+
+        <% if _user && _user.super_admin? %>
+        <%= link_to "Edit", edit_organization_offer_path(_organization, offer) %>
+        | <%= link_to "Delete", organization_offer_path(_organization, offer), method: :delete, data: {confirm:"Delete this offer?"} %>
+        <% end %>
+      </td>
+      <td style='text-align:center'>
+        Available
+        <br>
+        <%= offer.start_date %> - <%= offer.end_date %>
+
+        <a href="<%= offer.website %>" target="_blank">
+          <p><%= offer.cta || "Claim Offer" %></p>
+        </a>
+
+        <p>
+          Value of <br> <%= offer.value %>
+        </p>
+      </td>
+    </tr>
+
+  <% end %>
+</table>
+
+<% if false %>
+<%
+  @offers = open("https://docs.google.com/spreadsheets/d/1ss00gHQyCWG11OAjuNsd_NLHgHyFzC2V-8GR7MQDhKE/pub?gid=501018145&single=true&output=tsv").read rescue ""
+  @offers = CSV.parse(@offers, headers:true, col_sep:"\t")
+%>
+
+<table>
+  <% @offers.each do |offer| %>
+    <tr>
+      <td>
+        <h3><%= offer['company name'] %></h3>
+        <%= offer['offer name'] %>
+        <p><%= offer['offer description'] %></p>
+      </td>
+      <td style='text-align:center'>
+        Available
+        <br>
+        <%= offer['start date'] %> - <%= offer['end date'] %>
+
+        <a href="<%= offer['website'] %>" target="_blank">
+          <p><%= offer['call to action'] || "Claim Offer" %></p>
+        </a>
+
+        <p>
+          Value of <br> <%= offer['value'] %>
+        </p>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<% end %>

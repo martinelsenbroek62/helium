@@ -1,0 +1,13 @@
+<h3>Report Configuration</h3>
+
+<%= form_for [_organization, _survey] do |f| %>
+  <div class="">
+    Variables Map
+    <%= f.text_area :survey_results_variables_map, style: "width:100%;min-height:100px" %>
+    <small>
+      Upload a valid JSON object that maps variable names from results to variable names used in generating reports
+    </small>
+  </div>
+
+  <%= f.submit "Save" %>
+<% end %>

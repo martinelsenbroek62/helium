@@ -1,0 +1,26 @@
+<tr>
+  <td>
+    <%= link_to [program.organization, program] do %>
+      <%= program.name %>
+    <% end %>
+  </td>
+  <td>
+    <%= program.start_date.try(:stamp, '10/10/2017') %>
+    &mdash;
+    <%= program.end_date.try(:stamp, '10/10/2017') %>
+  </td>
+  <td>
+    <%= program.claims.count %>
+  </td>
+  <td>
+    <%= program.reimbursement_rules.count %>
+  </td>
+  <td>
+    <%=number_to_currency program.funds.map(&:amount).map(&:to_f).sum rescue '[error]'%>
+  </td>
+  <td>
+    <%= link_to [:edit,program.organization, program] do %>
+      <i class=""></i> Manage
+    <% end %>
+  </td>
+</tr>

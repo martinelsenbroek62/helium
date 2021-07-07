@@ -1,0 +1,23 @@
+<table>
+  <tbody>
+    <% _survey.surveys.limit(1000).each do |survey| %>
+    <tr>
+        <td>
+          <%= survey.user.email if survey.user %>
+        </td>
+        <% survey.questions.each do |question| %>
+          <td>
+            <%= "*" if question.required %>
+
+            <%= question.text %>
+            <hr>
+            <%= question.cell %> &ndash; <%= question.key %>
+            <hr>
+            <%= question.kind %>:
+            <%= question.answer.to_s[0..8].gsub(/\s/, '&nbsp;').html_safe %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

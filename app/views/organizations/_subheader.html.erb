@@ -1,0 +1,26 @@
+<%= content_for :subheader do %>
+  <div class="nav-tabs">
+      <button type="button" class="btn btn-primary btn btn-outline-secondary">
+        <%= link_to "General", edit_organization_path(_organization) %>
+      </button>
+      <button type="button" class="btn btn-primary btn btn-outline-secondary">
+        <%#= link_to "Manage Copy", edit_organization_path(_organization, manage: 'copy') %>
+        <%= link_to "Manage Copy", organization_editor_path(_organization, field: (params[:field]||'benefit_welcome')) %>
+      </button>
+      <button type="button" class="btn btn-primary btn btn-outline-secondary">
+        <%= link_to "Manage Contact Info", edit_organization_path(_organization, manage: 'contact') %>
+      </button>
+      <button type="button" class="btn btn-primary btn btn-outline-secondary">
+        <%= link_to organization_pages_path(_organization) do %>
+          <i class="fa fa-file"></i>
+          Pages
+        <% end %>
+      </button>
+      <button type="button" class="btn btn-primary btn btn-outline-secondary">
+        <%= link_to self_signup_organization_path(_organization) do %>
+          <i class="fa fa-lock"></i>
+          Self Signup
+        <% end %>
+      </button>
+  </div>
+<% end %>

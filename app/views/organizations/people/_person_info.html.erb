@@ -1,0 +1,119 @@
+<table class="table-not-striped">
+  <body>
+    <tr>
+      <td>
+        <h3>
+          <%= link_to organization_person_path(_person.organization, _person) do %>
+          <%= _person.name.to_s.titleize %>
+        <% end %>
+      </h3>
+
+      Office:
+      <%= _person.employee_office_location %><br>
+      Residence:
+      <%= _person.employee_state_of_residence %><br>
+      <%= link_to login_with_token_path(_person.uuid) do %>
+      <i class="fa fa-sign-in"></i>
+      Login as
+      <%= _person.first_name %>
+    <% end %>
+  </td>
+  <td>
+    <br>
+    Employee ID:
+    <b><%= _person.employee_id %></b><br>
+    Email:
+    <%= _person.email %><br>
+    <% if _person.employee_start_date.present? %>
+      <B>Added</b>
+      <%= _person.employee_start_date.stamp('10/10/2016') %>
+    <% end %><br>
+    <% if _person.employee_termination_date.present? %>
+      <B>Terminated</b>
+      <%= _person.employee_termination_date.stamp('10/10/2016') %>
+    <% end %>
+    <%= link_to edit_organization_person_path(_organization, _person) do %>
+    <i class="fa fa-edit"></i>
+    Edit Info
+  <% end %>
+  |
+  <%= link_to send_invite_organization_person_path(_person.organization, _person), data: {confirm: "Are you sure?"}, method: :post do %>
+  <i class="fa fa-send"></i>
+  <% if _person.employee_accepted_invite_at.present? %>
+    Resend Invite
+  <% else %>
+    Send Invite
+  <% end %>
+<% end %>
+</td>
+
+<!-- <td> <%#= render 'organizations/people/person_info_balance' %> </td> -->
+
+<% if true %>
+<td class="">
+  <% if @_claim %>
+    <%= @_claim.benefit_programs.map(&:name).to_sentence %>
+    Balance
+    <h3 class="">
+      <%= number_to_currency( @_claim.benefit_programs.map do |benefit_program| benefit_program.balance_for_user(_person) end.sum ) -%>
+    </h3>
+
+    <b style="">
+      Funds Approved
+      <%= number_to_currency( @_claim.benefit_programs.map do |benefit_program| benefit_program.approved_balance_for_user(_person) end.sum ) -%>
+    </b>
+
+    <div class="">
+      <small style="">User's Total Balance:
+        <%= number_to_currency _person.available_funds %></small>
+    </div>
+  <% else %>
+    <div class="center">
+
+      <table>
+        <tr>
+          <td style="text-align:right">
+            <h3>Total Balance</h3>
+          </td>
+          <td style="text-align:left">
+            <h3>
+              =
+              <%#= number_to_currency _person.available_funds %>
+                <%= number_to_currency _person.benefit_program_funds.map{|k,h|h[:balance]}.sum %>
+              </h3>
+            </td>
+          </tr>
+          <% _person.benefit_program_funds.each do |k, bpf| %>
+            <tr>
+              <td style="text-align:right"><%= bpf[:name] %></td>
+              <td style="text-align:left">
+                =
+                <%#= number_to_currency bpf[:amount] %>
+                  <%= number_to_currency bpf[:balance] %>
+                </td>
+              </li>
+            <% end %>
+          </table>
+        <% end %>
+      </div>
+    </td>
+  <% end %>
+
+  <td>
+      <% _person.funds_grouped_by_year.compact.each do |fund| %>
+        <li>
+          <h5 class="text-center"><%= fund["program_name"] %> <%= fund["expires_year"] %></h5>
+          <p class="text-center"><b>Deposited:</b> <%= number_to_currency fund["amount_total"] %> &nbsp; <b>Remaining:</b> <%= number_to_currency fund["amount_remaining"] %></p>
+        </li>
+      <% end %>
+    </td>
+
+  <td>
+    <%= link_to new_organization_claim_path(user_id:_person.id) do %>
+    <i class=""></i>
+    New Claim
+  <% end %>
+</td>
+</tr>
+</tbody>
+</table>

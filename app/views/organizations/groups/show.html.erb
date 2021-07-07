@@ -1,0 +1,44 @@
+<p>
+  <%= link_to [_organization, _survey] do %>
+    <b><%= _survey.name %></b>
+  <% end %>
+
+  <%= link_to [_organization, _survey, _section] do %>
+    > <%= _section.name %>
+  <% end %>
+</p>
+
+<%= form_for [_organization, _survey, _section, _group] do |f| %>
+  <h3>Update Group</h3>
+  <div class="">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+
+  <div class="">
+    <%= f.label :intro %><br>
+    <%= f.text_area :intro %>
+  </div>
+
+  <div class="">
+    <%= f.label :more_info %><br>
+    <%= f.text_area :more_info %>
+  </div>
+
+  <%= f.submit "Update" %>
+<% end %>
+
+<h3>Add questions to this group</h3>
+
+<table>
+  <tbody>
+    <%= render _group.questions %>
+  </tbody>
+</table>
+
+<%= render 'organizations/questions/form', question:_group.questions.new %>

@@ -1,0 +1,66 @@
+<%= render 'organizations/surveys/subheader' %>
+
+<%= form_for _message, url: '' do |f| %>
+  <h3>Write Message</h3>
+  <div class="">
+    <%= f.label :subject %>
+    <%= f.text_field :subject, class: "u-full-width" %>
+  </div>
+
+  <div class="">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "u-full-width", style: "height:200px" %>
+    <small>
+      Variables: <% _message.to_liquid.each do |k,v| %><%= k %>, <% end %>
+      <%= link_to "See help for more information", help_organization_survey_path(_organization, _survey) %>
+    </small>
+  </div>
+  <div class="">
+    <button>
+      Save Message
+    </button>
+    <small>
+      Message is NOT sent until you click one of the buttons below
+    </small>
+  </div>
+<% end %>
+
+<hr>
+
+<h3 class="">Deliver Message To</h3>
+<p>Choose a preselected group of employees who should receive the message above</p>
+
+<%= form_for _message, url: deliver_organization_survey_message_path(_organization, _survey, _message), method: 'post', data: { confirm: "Are you sure?" } do |f| %>
+  <input type="hidden" name="deliver_to" value="everyone">
+  <div class="">
+      <button class="full-width">Send to everyone</button>
+  </div>
+<% end %>
+
+<%= form_for _message, url: deliver_organization_survey_message_path(_organization, _survey, _message), method: 'post', data: { confirm: "Are you sure?" } do |f| %>
+  <input type="hidden" name="deliver_to" value="complete">
+  <div class="">
+    <button class="full-width">Send to employees with completed Surveys</button>
+  </div>
+<% end %>
+
+<%= form_for _message, url: deliver_organization_survey_message_path(_organization, _survey, _message), method: 'post', data: { confirm: "Are you sure?" } do |f| %>
+  <input type="hidden" name="deliver_to" value="not_yet_started">
+  <div class="">
+    <button class="full-width">Sent to employees who haven't started survey</button>
+  </div>
+<% end %>
+
+<%= form_for _message, url: deliver_organization_survey_message_path(_organization, _survey, _message), method: 'post', data: { confirm: "Are you sure?" } do |f| %>
+  <input type="hidden" name="deliver_to" value="in_progress">
+  <div class="">
+    <button class="full-width">Sent to employees with in progress surveys</button>
+  </div>
+<% end %>
+
+<%= form_for _message, url: deliver_organization_survey_message_path(_organization, _survey, _message), method: 'post', data: { confirm: "Are you sure?" } do |f| %>
+  <input type="hidden" name="deliver_to" value="invalid">
+  <div class="">
+    <button class="full-width">Send to employees with invalid surveys (marked as invalid by admin)</button>
+  </div>
+<% end %>

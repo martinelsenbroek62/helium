@@ -1,0 +1,56 @@
+<% content_for :subheader do %>
+  <div class="nav">
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_claims_path(_organization) do %>
+        All
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_claims_path(_organization, status: "Pending") do %>
+        Pending
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_claims_path(_organization, status: "Approved") do %>
+        Approved
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_claims_path(_organization, status: "sent_to_payroll") do %>
+        Sent to Payroll
+      <% end %>
+    </button></button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_claims_path(_organization, status: "Paid") do %>
+        Paid
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_claims_path(_organization, status: "Rejected") do %>
+        Rejected
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to historical_organization_claims_path(_organization) do %>
+        Historical Claims
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to export_organization_claims_path(_organization) do %>
+        <i class=""></i> CSV
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to export_agg_organization_claims_path(_organization) do %>
+        <i class=""></i> Agg CSV
+      <% end %>
+    </div>
+
+    <%= content_for :searchbar do %>
+      <form class="" action="" method="get" style="">
+        <input type="text" name="filter" value="<%= params[:filter] %>" placeholder="Find claim...">
+        <button class="">Go</button>
+      </form>
+    <% end %>
+  </div>
+<% end %>

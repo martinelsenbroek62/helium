@@ -1,0 +1,32 @@
+<% @category = params[:filter] %>
+
+<table>
+  <tbody>
+  <%
+  products = if params[:filter]
+    f = params[:filter]
+    _organization.products.where('category_name = ?', f).order('focus_area, category_name, product_type')
+  else
+    _organization.products.limit(0)
+  end
+  %>
+  </tbody>
+</table>
+
+<div class="">
+  <div class="">
+    <h1><%= @category %></h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <hr>
+  </div>
+</div>
+
+<% if not params[:filter] %>
+  <% _organization.products.select(:category_name).uniq.each do |product| %>
+  <li>
+    <%= link_to product.category_name, category_products_path(filter:product.category_name) %>
+  </li>
+  <% end %>
+<% end %>

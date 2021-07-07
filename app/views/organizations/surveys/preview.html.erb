@@ -1,0 +1,34 @@
+<%= render 'organizations/surveys/subheader' %>
+
+<div class="nav">
+  <% if _survey.sections.any? %>
+    <% _survey.sections.each do |section| %>
+      <div class="nav-item">
+        <a href="#section_<%= section.id.to_i %>">
+          <%= section.name %>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="nav-item">
+    <%= link_to [:new, _organization, _survey, :section] do %>
+      New Section
+    <% end %>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <% _survey.sections.each do |section| %>
+    <%= render 'organizations/preview/section', section:section %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(window).on('hashchange', function(){
+      el=$(''+location.hash+'')
+      el.effect('highlight', {duration:5000})
+    })
+  })
+</script>

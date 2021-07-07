@@ -1,0 +1,27 @@
+
+<table>
+  <tbody>
+  <% _survey.questions.all.each do |question| %>
+  <tr>
+    <td>
+      <%= select_tag :section,  options_for_select(_survey.sections.all.map { |s| [s.name, s.id] }) %>
+    </td>
+    <td>
+      <%= select_tag :section,  options_for_select(_survey.groups.all.map { |s| [s.name, s.id] }) %>
+    </td>
+    <td>
+      <%= text_field_tag question.position, question.position %>
+    </td>
+    <td>
+      <%= text_field_tag question.text, question.text %>
+    </td>
+    <td>
+      Save
+    </td>
+    <td>
+      Delete
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

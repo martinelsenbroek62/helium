@@ -1,0 +1,97 @@
+<% if (@claim.approved == true) && (@claim.paid_out != true) %>
+<table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="width:570px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;-premailer-width:570px;-premailer-cellpadding:0;-premailer-cellspacing:0;background-color:#FFFFFF;" >
+  <!-- Body content -->
+  <tr>
+    <td class="content-cell" style="word-break:break-word;padding-top:35px;padding-bottom:35px;padding-right:35px;padding-left:35px;" >
+      <h1 style="margin-top:0;color:#74787E;font-size:19px;font-weight:bold;text-align:left;" >Hi <%= @claim.user.first_name %>,
+      </h1>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Great news! Your <%= @organization.name %> <%= @claim.benefit_category.primary_benefit_program %> Benefit request has been approved. You should see the reimbursement in your next paycheck. Remember, all reimbursements are taxable, so the amount in your paycheck won't be the same as your request.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Here are the details about your request:</p>
+        <ul style="list-style-type:none;color:margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+          <li><%= @claim.benefit_category.focus_area %><%= @claim.benefit_category.product_type %></li>
+          <li>Claim ID: <%= @claim.id %></li>
+          <li>Requested Amount: <%= number_to_currency @claim.requesting_amount %></li>
+          <li>Approved Amount: <%= number_to_currency @claim.reimbursement_amount %></li>
+          <br>
+          <li>Note: <%= @claim.approved_claim_note %></li>
+        </ul>
+      <br>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Need to submit another claim? Simply log in and create a new one.
+      </p>
+      <!-- Action -->
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" ><a href="https://www.sustainabli.co/explore" class="button button--sbcblue" target="_blank">Submit a Claim</a>.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >If you have any questions, feel free to <a href="mailto:help@sustainabli.co" style="color:#3869D4;" >drop us a line</a>.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Cheers,
+        <br>The Sustainabli Team</p>
+      <!-- Sub copy -->
+    </td>
+  </tr>
+</table>
+<% end %>
+
+<% if @claim.rejected? %>
+<table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="width:570px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;-premailer-width:570px;-premailer-cellpadding:0;-premailer-cellspacing:0;background-color:#FFFFFF;" >
+  <!-- Body content -->
+  <tr>
+    <td class="content-cell" style="word-break:break-word;padding-top:35px;padding-bottom:35px;padding-right:35px;padding-left:35px;" >
+      <h1 style="margin-top:0;color:#74787E;font-size:19px;font-weight:bold;text-align:left;" >Hi <%= @claim.user.first_name %>,
+      </h1>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Your <%= @organization.name %> <%= @claim.benefit_category.primary_benefit_program %> Benefit request was rejected for the following reason:
+      </p>
+        <ul style="list-style-type:none;color:margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+        <li><%= @claim.benefit_category.focus_area %></li>
+        <li>Request ID: <%= @claim.id %></li>
+        <li>Reason: <strong><%= @claim.rejected_reason.to_s -%></strong></li>
+        </ul>
+      <br>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Don't sweat it, in some cases you may be able to revise your claim and resubmit.
+      </p>
+      <!-- Action -->
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" ><a href="<%= claim_url(@claim) %>" class="button button--sbcblue" target="_blank">Revise your Claim</a>.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >If you have any questions, feel free to <a href="mailto:help@sustainabli.co" style="color:#3869D4;" >drop us a line</a>.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Cheers,
+        <br>The Sustainabli Team</p>
+      <!-- Sub copy -->
+    </td>
+  </tr>
+</table>
+<% end %>
+
+<% if @claim.paid_out? %>
+<table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="width:570px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;-premailer-width:570px;-premailer-cellpadding:0;-premailer-cellspacing:0;background-color:#FFFFFF;" >
+  <!-- Body content -->
+  <tr>
+    <td class="content-cell" style="word-break:break-word;padding-top:35px;padding-bottom:35px;padding-right:35px;padding-left:35px;" >
+      <h1 style="margin-top:0;color:#74787E;font-size:19px;font-weight:bold;text-align:left;" >Hi <%= @claim.user.first_name %>,
+      </h1>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Cha-ching! Your <%= @organization.name %> <%= @claim.benefit_category.primary_benefit_program %> Benefit request has been paid. You should see the money in your paycheck. Remember, all reimbursements are taxable, so the amount in your paycheck won't be the same as your request.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Here are the details about your request:</p>
+        <ul style="list-style-type:none;color:margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+        <li><%= @claim.benefit_category.focus_area %></li>
+        <li>Claim ID: <%= @claim.id %></li>
+        <li>Requested Amount: <%= number_to_currency @claim.requesting_amount %></li>
+        <li>Paid Amount: <%= number_to_currency @claim.reimbursement_amount %></li>
+        </ul>
+      <br>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Need to submit another claim? Simply log in and create a new one.
+      </p>
+      <!-- Action -->
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" ><a href="https://www.sustainabli.co/explore" class="button button--sbcblue" target="_blank" >Submit a Claim</a>.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >If you have any questions, feel free to <a href="mailto:help@sustainabli.co" style="color:#3869D4;" >drop us a line</a>.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Cheers,
+        <br>The Sustainabli Team</p>
+      <!-- Sub copy -->
+    </td>
+  </tr>
+</table>
+<% end %>

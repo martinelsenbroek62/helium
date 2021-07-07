@@ -1,0 +1,55 @@
+<%
+@programs = _organization.benefit_programs.map do |program|
+  begin
+    funds_total =_user.funds.where(benefit_program_id: program.id).map(&:amount).sum
+    reimbursed_total = _user.claims.where(benefit_category_id: program.benefit_category_ids).map(&:reimbursement_amount).map(&:to_f).sum
+  rescue
+    funds_total=0
+    reimbursed_total=0
+  end
+
+  attrs = program.attributes
+  attrs["categories"] = program.benefit_categories
+  attrs["url"] = benefit_categories_path(pid:program.id)
+  attrs["user_balance"] = number_to_currency(funds_total - reimbursed_total)
+  attrs
+end
+%>
+
+<%
+@benefit_categories = if params[:pid].present?
+  _organization.benefit_programs.find(params[:pid]).benefit_categories.where.not(name:'', focus_area:'')
+else
+  _organization.benefit_categories.where.not(name:'', focus_area:'')
+end.order('name asc').reject {|bc| params[:category].present? && params[:category].parameterize.downcase != bc.name.parameterize.downcase }.group_by { |benefit_category| benefit_category.name }.map { |name, items| {"name" => name, "items" => items}}
+%>
+
+<%
+@benefit_category_links = if params[:pid].present?
+  _organization.benefit_programs.find(params[:pid]).benefit_categories.select('distinct name')
+else
+  _organization.benefit_categories.select('distinct name')
+end
+
+@benefit_category_links = @benefit_category_links.map { |benefit_category|
+  {
+    "url" => "?"+({pid: params[:pid], category: benefit_category.name}.to_param),
+    "name" => benefit_category.name
+  }
+}
+%>
+
+<%
+  @program = params[:pid] && _organization.benefit_programs.where(id: params[:pid]).first
+%>
+
+<% template = _organization.benefit_categories_template.to_s %>
+<%= Liquid::Template.parse(template).render(
+  'programs' => @programs,
+  'categories' => @benefit_categories,
+  'category_links' => @benefit_category_links,
+  'program_id' => params[:pid],
+  'program'=>@program,
+  'funds' => _user.funds,
+  'funds_by_year' => _user.funds_grouped_by_year
+).html_safe %>

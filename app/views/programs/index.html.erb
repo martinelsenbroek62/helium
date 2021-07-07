@@ -1,0 +1,38 @@
+
+<div class="">
+  <div class="">
+    <h1>Our Programs</h1>
+    <p>
+      Here you will find our benefit programs.
+    </p>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <td>
+        Program
+      </td>
+      <td>
+        Description
+      </td>
+      <td>
+        Items
+      </td>
+      <td>
+        Start
+      </td>
+      <td>
+        End
+      </td>
+      <td>
+        Funds Available
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'programs/program', collection:(programs = _organization.benefit_programs), as: :program %>
+    <%= empty_table_rows(7,5) if programs.empty? %>
+  </tbody>
+</table>

@@ -1,0 +1,3 @@
+<%= Liquid::Template.parse(_survey.template('faq_template.html')).render(
+  'survey' => _survey
+).html_safe %>

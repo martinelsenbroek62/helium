@@ -1,0 +1,22 @@
+<%= render 'subheader' %>
+
+<% @user ||= _organization.users.new %>
+
+<% if @user.errors.any? %>
+  <div class="error">
+    <b>Please fix the following:</b>
+    <% for error in @user.errors.full_messages %>
+      <div class="">
+        <%= error %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render 'form', url: organization_person_path(@user.organization, @user) %>
+
+<div class="container-fluid">
+  <%= link_to organization_person_path(@user.organization, @user), method: :delete, data: { confirm: "Are you sure? This cannot be undone!"}, class: "btn btn-danger" do %>
+    <i class=""></i> Permanently remove this <%= @user %> from the <%= @user.organization.name %> organization?
+  <% end %>
+</div>

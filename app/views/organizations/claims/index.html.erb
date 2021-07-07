@@ -1,0 +1,89 @@
+<%= render 'subheader' %>
+
+<table>
+  <thead>
+    <tr>
+      <td colspan="2" class="nav">
+        <div class="form-inline">
+          <%= form_for :move, url:bulk_organization_claims_path(_organization), html: { onsubmit: "$('#move_claim_ids').val($('.claim_uuid:checked').map(function(){return this.value}).get().join(',')); return true", style:"padding:0px;margin:0px;display:inline;" } do %>
+            <select name="move_to" style="">
+              <% ["-- Move Selected To: ", "Pending", "Approved", "Paid", "Rejected"].each do |option| %>
+                <option><%= option %></option>
+              <% end %>
+            </select>
+            <input type="hidden" name="move_claim_ids" id="move_claim_ids" style=""/>
+            <button>Move</button>
+            <a href="#" onclick=" $('table input[type=checkbox]').map(function(a){ $(this).trigger('click') }); return false">Check All</a>
+          <% end %>
+        </div>
+      </td>
+      <td colspan="10"></td>
+    </tr>
+    <tr class="thead">
+      <th>
+        Employee
+      </th>
+      <th>
+        Program
+      </th>
+      <th>
+        Balance
+      </th>
+      <th>
+        Category
+      </th>
+      <th>
+        Product
+      </th>
+      <th>
+        Status
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Request Amt
+      </th>
+      <th>
+        % Allowed
+      </th>
+      <th>
+        Reimburse Amt
+      </th>
+      <th>
+        Submitted
+      </th>
+      <th>
+        Expensed
+      </th>
+      <th>
+        PoP
+      </th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if params[:filter] %>
+    <% claims = _organization.claims.joins(:user).where('users.name ~* ?', params[:filter]).order('created_at desc') %>
+  <% else %>
+    <% claims = _organization.claims.order('created_at desc') %>
+  <% end %>
+
+  <% if params[:status] %>
+    <% claims = claims.by_status(params[:status]) %>
+  <% end %>
+
+  <% if params[:benefit_program_id] %>
+    <% claims = claims.where(benefit_program_id:params[:benefit_program_id]) %>
+  <% end %>
+
+  <% claims = claims.paginate(page:params[:page], per_page:15) %>
+  <%= render claims.order('created_at desc') %>
+  <% if claims.empty? %>
+    <%= empty_table_rows(12, 10) %>
+  <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate claims %>

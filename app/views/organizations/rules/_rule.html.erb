@@ -1,0 +1,15 @@
+<div class="">
+  <%= form_for [_organization, _survey, rule] do |f| %>
+    This question will be shown if
+    "<%= rule.answer_from.text unless rule.new_record? %>"
+    <%= f.select :operator, options_for_select(['equals', 'not equal', 'contains', 'not contain', 'like', 'greater than', 'less than', 'present', 'empty'], selected: rule.operator) %>
+    <%= f.text_field :value, placeholder: "value..." %>
+    <%= f.submit "Update" %>
+    <% unless rule.new_record? %>
+    or
+      <%= link_to [_organization, _survey, rule], method:'delete', data: {confirm:"Are you sure?"} do %>
+        [x] remove rule
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

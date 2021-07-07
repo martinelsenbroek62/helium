@@ -1,0 +1,21 @@
+<table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="width:570px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;-premailer-width:570px;-premailer-cellpadding:0;-premailer-cellspacing:0;background-color:#FFFFFF;" >
+  <!-- Body content -->
+  <tr>
+    <td class="content-cell" style="word-break:break-word;padding-top:35px;padding-bottom:35px;padding-right:35px;padding-left:35px;" >
+      <h1 style="margin-top:0;color:#74787E;font-size:19px;font-weight:bold;text-align:left;" >Hi there,
+      </h1>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Just a heads up, <%= @claim.user.first_name %> has successfully submitted a <%= @claim.benefit_category.primary_benefit_program %> Benefit request for reimbursement.
+      </p>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Here are the details about the request:</p>
+        <ul style="list-style-type:none;color:margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+          <li><%= @claim.benefit_category.focus_area %>
+          <li>Request ID: <%= @claim.id %></li>
+          <li>Requested Amount: <%= number_to_currency @claim.requesting_amount %></li>
+        </ul>
+      <br>
+      <p style="margin-top:0;color:#74787E;font-size:16px;line-height:1.5em;text-align:left;" >Cheers,
+        <br>The Sustainabli Team</p>
+      <!-- Sub copy -->
+    </td>
+  </tr>
+</table>

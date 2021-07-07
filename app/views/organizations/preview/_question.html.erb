@@ -1,0 +1,53 @@
+<% visible = question.xshow? %>
+
+<tr id='question_<%= question.id %>' class="<%= visible ? '' : 'hidden-question' %>">
+  <td style="width:100px">
+    <%= link_to [_organization, _survey, section, group, question] do %>
+      #<%= question.position %>
+      <%= visible ? 'is visible' : 'is hidden' %>
+    <% end %>
+  </td>
+
+  <td>
+    <div style="width:750px">
+    <%= link_to [_organization, _survey, section, group, question] do %>
+      <b><%= question.text %></b>
+    <% end %>
+
+    <% if question.rules.any? %>
+      <hr>
+      <div class="row">
+        <div class="col">
+          This Question has <b><%= pluralize question.rules.count, 'rule' %></b>.
+        </div>
+
+        <% question.rules.each do |rule| %>
+          <div>
+            Display if answer from
+            <a href='#question_<%= rule.answer_from_id %>'>
+              <%= rule.answer_from.text %>
+            </a>
+            &nbsp;
+            <b><%= rule.operator %></b>
+            &nbsp; <%= rule.value %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  </td>
+  <td>
+    <div style="width:200px;margin:0px;padding:0px;">
+      <%= form_for [_organization, _survey, question], html: { class: '' } do |f| %>
+        <div class="form-group">
+          <%= f.text_field :answer, placeholder:"Test answer...", class: "form-control" %>
+        </div>
+        <div class="">
+          <button>Go</button>
+        </div>
+      <% end %>
+
+      <small>Question Options:<br> <%= question.options.to_s %></small>
+    </div>
+  </td>
+</tr>

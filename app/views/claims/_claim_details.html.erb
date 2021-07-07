@@ -1,0 +1,49 @@
+<table class="">
+  <tr>
+    <% if _claim.benefit_category.present? && _claim.benefit_category.primary_benefit_program.present? %>
+      <td class="h5">Benefit Program</td>
+      <td class="lead"><%= _claim.benefit_category.primary_benefit_program %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td class="h5">Category</td>
+    <td class="lead"><%= _claim.benefit_category %></td>
+  </tr>
+  <% [
+    {label: "Focus Area", value: _claim.focus_area},
+    {label: "Product Type", value: _claim.product_type},
+    {label: "Purchase Price", value: number_to_currency(_claim.purchase_amount)},
+    {label: "Requesting Amount", value: number_to_currency(_claim.requesting_amount)},
+    {label: "Approved Amount", value: number_to_currency(_claim.reimbursement_amount)},
+    {label: "Purchase Date", value: (_claim.expensed_date.try(:stamp,'Mon Jun 1st, 2017'))},
+    {label: "Manufacturer", value: (_claim.manufacturer)},
+    {label: "Model #", value: (_claim.model_number)},
+    {label: "More Info", value: (_claim.more_info)},
+  ].each do |el| %>
+    <% if el[:value].blank?
+      unless el[:label] =~ /date/i
+        next
+      end
+    end
+    %>
+      <tr>
+        <td><%= el[:label] %></td>
+        <td class="lead"><%= el[:value] %></td>
+      </tr>
+    <% end %>
+    <% _claim.claim_attachments.each do |claim_attachment| %>
+      <tr>
+        <td>
+          <%= claim_attachment.kind.to_s.titleize %>
+        </td>
+        <td class="lead">
+          <a href="<%= claim_attachment.attachment_url %>" target="_blank">
+            <i class="fa fa-download"></i>
+            <%= claim_attachment.attachment['original_filename'] %>
+            -
+            <u>Preview Attachment</u>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </table>

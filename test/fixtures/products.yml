@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organization_id: 1
+  focus_area: MyString
+  category_name: MyString
+  product_type: MyString
+  name: MyString
+  description: MyString
+  image_url: MyString
+  reimbursement_percentage: MyString
+
+two:
+  organization_id: 1
+  focus_area: MyString
+  category_name: MyString
+  product_type: MyString
+  name: MyString
+  description: MyString
+  image_url: MyString
+  reimbursement_percentage: MyString

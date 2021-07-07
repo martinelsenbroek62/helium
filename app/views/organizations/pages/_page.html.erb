@@ -1,0 +1,10 @@
+<div class="page">
+  <%= link_to [_organization, page] do %>
+    <%= page.position %>)
+    <%= page.title %>
+  <% end %>
+
+  &nbsp;
+
+  <%= link_to "(Preview)", page_path(page), target:"_blank" %>
+</div>

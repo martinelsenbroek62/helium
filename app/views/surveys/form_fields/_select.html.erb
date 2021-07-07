@@ -1,0 +1,11 @@
+<div class="mx-auto" style="max-width: 20rem">
+<form action="<%= question.url %>" method="post" id='question_<%= question.id %>'>
+  <select name='question[answer]' <%= 'data-required="true"' if question.required -%>>
+    <option value="">-- Please Choose</option>
+    <% question.options.split(',').each do |option| %>
+      <%= selected = question.answer == option ? "selected=selected" : "" %>
+      <option value='<%= option %>' <%= selected %>><%= option %></option>
+    <% end %>
+  </select>
+</form>
+</div>

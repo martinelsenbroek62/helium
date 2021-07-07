@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col col-3">
+    <ul>
+      <b>Need Help?</b>
+      <li>
+        <a href="#" onclick="Intercom('show');return false;">Chat</a>
+      </li>
+
+      <% if _organization.contact_email.present? %>
+        <li>
+          <a href="mailto:<%= _organization.contact_email %>">Email</a>
+        </li>
+      <% end %>
+
+      <% if _organization.contact_phone.present? %>
+      <li>
+        Call: <%= number_to_phone _organization.contact_phone %>
+      </li>
+      <% end %>
+
+      <li>
+        or visit our <a href="https://intercom.help/sustainabilitybenefits" target="_blank">Help Center</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <%= _organization.benefit_about.to_s.html_safe %>
+  </div>
+</div>

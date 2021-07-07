@@ -1,0 +1,105 @@
+<% if session[:super_admin_id] %>
+  <a class="btn btn-warning" style="color:black;position:fixed;bottom:30px;left:30px;z-index:99999" href="<%= relogin_super_admin_path %>">
+    <i class="fa fa-history"></i>
+    End  Session as <b><%= _user.to_s.titleize[0..20] %>..</b>
+  </a>
+<% end %>
+
+<!-- Primary nav -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-inverse" id="benefits_menu">
+  <a class="navbar-brand" href="<%= products_path %>">
+    <%= image_tag "sust-logo.png" %>
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="<%= products_path %>">
+          <i class="fa fa-home"></i>
+          Home</a>
+      </li>
+
+      <% if _organization.has_benefits? %>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= benefit_categories_path %>">
+          <i class="fa fa-compass"></i>
+          Explore Benefits</a>
+      </li>
+      <% end %>
+
+      <% if _organization.has_offers? %>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= offers_path %>">
+          <i class="fa fa-tags"></i>
+          View Offers</a>
+      </li>
+      <% end %>
+
+      <% if _organization.has_benefits? %>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= claims_path %>">
+          <i class="fa fa-briefcase"></i>
+          My Claims</a>
+      </li>
+      <% end %>
+
+      <% if _organization.has_surveys? %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= surveys_path %>">
+            <i class="fa fa-list"></i>
+            My Surveys</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="<%= footprint_path %>" target="_self">
+            <i class="fa fa-globe"></i>
+            My Footprint</a>
+        </li>
+      <% end %>
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="<%= "https://intercom.help/sustainabilitybenefits/" %>" target="_blank">
+          <i class="fa fa-question-circle"></i>
+          Help Center</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<%= profile_path %>"><i class="fa fa-user"></i> My Profile</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<%= login_path %>">
+          <i class="fa fa-lock"></i>
+          Logout</a>
+      </li>
+    </ul>
+    <div class="searchbar">
+      <%= yield :searchbar %>
+    </div>
+  </div>
+</nav>
+
+<div class="container" id="organization_nav">
+  <div class="nav">
+    <a class="navbar-brand" href="<%= products_path %>">
+      <b class="organization_name">
+        <%= _organization.name %>
+      </b>
+    </a>
+
+    <% for page in _organization.pages.show_in_menu %>
+      <div class="organization_page">
+        <%= link_to page_path(page) do %>
+          <%= page %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

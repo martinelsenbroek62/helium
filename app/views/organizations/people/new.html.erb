@@ -1,0 +1,12 @@
+<%= render 'subheader' %>
+
+<% @user ||= _organization.users.new %>
+
+<% if @user.errors.any? %>
+  <ul>
+    Please Fix:
+    <%= @user.errors.full_messages.join("<br/>").html_safe %>
+  </ul>
+<% end %>
+
+<%= render 'form', url: organization_people_path %>

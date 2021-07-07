@@ -1,0 +1,14 @@
+<%= content_for :subheader do %>
+  <div class="nav">
+    <div class="">
+      <%= link_to "All Organizations", admin_organizations_path %>
+    </div>
+
+    <div class="">
+      <%= link_to new_admin_organization_path, class: "button on right", style: "margin:0px" do  %>
+        <i class=""></i>
+        Add New Organization
+      <% end %>
+    </div>
+  </div>
+<% end %>

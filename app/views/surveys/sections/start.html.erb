@@ -1,0 +1,4 @@
+<%= Liquid::Template.parse(_section.template('start_template.html')).render(
+  'survey' => _survey,
+  'section' => _section
+).html_safe %>

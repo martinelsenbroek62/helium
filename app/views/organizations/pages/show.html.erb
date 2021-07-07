@@ -1,0 +1,15 @@
+<%= render 'organizations/subheader' %>
+
+<div class="container">
+  <%= link_to "(Preview)", page_path(_page), target:"_blank" %>
+
+  <h1>Show</h1>
+
+  <%= render 'form', page: _page %>
+
+  <%= link_to [_organization, _page], method: :delete, data: {confirm: "Are you sure?"} do %>
+    <div class="">
+      Delete this page
+    </div>
+  <% end %>
+</div>

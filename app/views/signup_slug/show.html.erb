@@ -1,0 +1,35 @@
+<div class="center"><%= image_tag "login.jpg", style: "width:300px" %><br><br></div>
+
+<div class="card">
+  <div class="card-body">
+    <%= form_for @user, url: "" do |f| %>
+      <% if @error_msg %>
+        <p class="alert alert-danger">
+          <%= @error_msg %>
+        </p>
+      <% end %>
+
+      <% if @organization.self_signup_password.present? %>
+        <div class="alert alert-warning">
+          <b><%= @organization.name %></b> requires a password for self registration.
+          <br>
+          If you do not know the password please talk to your employer.
+          <br>
+        </div>
+
+        <label>Enter Organization Password*</label>
+        <%= text_field_tag :self_signup_password, "", autofocus:true  %>
+      <% end %>
+
+      <div class="">
+        <br>
+        <p><button class="">Continue <i class="fa fa-send"></i></button></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<style media="screen">
+  #users { margin-top:30px!important;}
+  .hide { display:none; }
+</style>

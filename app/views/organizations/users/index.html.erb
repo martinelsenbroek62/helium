@@ -1,0 +1,212 @@
+<%= render 'organizations/surveys/subheader' %>
+
+<%= form_for [:add_from_organization, _organization, _survey, User.new] do |f| %>
+  <h3>Add all organization employees to this survey</h3>
+  <div class="">
+    <%= f.submit "Add" %>
+    <small>
+      All employees at this organization will be given a survey
+    </small>
+
+  </div>
+<% end %>
+
+<%= form_for [_organization, _survey, User.new] do |f| %>
+  <h3>Add a single employee (via email) to this survey</h3>
+
+  <div class="">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="">
+    <%= f.submit "Add" %>
+    <small>
+      If the employee does not exist, a new record will be added and assigned to this organization
+    </small>
+  </div>
+<% end %>
+
+<hr>
+
+<%= form_for :import, url:[:import, _organization, _survey, :users], method: 'post' do |f| %>
+  <h3>Import multiple employees into this survey via CSV</h3>
+  <pre>first, last, email</pre>
+
+  <div class="">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
+  </div>
+
+  <div class="">
+    <%= f.submit "Upload & Import" %>
+    <small>
+      If the employee does not exist, a new record will be added and assigned to this organization
+    </small>
+  </div>
+<% end %>
+
+<hr>
+
+<% if false %>
+<!--
+  <%= form_for :import, url:[:attach_meta_data, _organization, _survey, :users], method: 'post' do |f| %>
+    <h3>Import Meta</h3>
+  <pre>
+  email, field a, field b, field c...
+  </pre>
+    <%= f.file_field :file %>
+    <%= f.submit ">" %>
+  <% end %>
+
+  <hr>
+  <%= form_for :historical_records, url:[:import_historical_records, _organization, _survey, :users], method: 'post' do |f| %>
+    <h3>Import Historical Data via CSV</h3>
+    <%= f.file_field :file %>
+    <%= f.submit ">" %>
+  <% end %>
+  <hr>
+-->
+<% end %>
+
+<form id="filter" action="#filter" method="get">
+  <h3>Search for employee participating in survey</h3>
+  <div class="">
+    <input type="text" name="s" value="<%= params[:s] %>" placeholder="Find employee...">
+  </div>
+  <div class="">
+    <button>Find...</button>
+  </div>
+</form>
+
+
+
+<table>
+  <thead>
+    <% _survey.surveys.joins(:user).where('users.email ~* ?', params[:s].to_s).order('users.email').group_by { |s| s.allowed_to_submit_answers? }.each do |allowed, surveys| %>
+      <tr>
+        <th colspan="8" style="">
+          <%= allowed ? "Open - Can answer survey questions" : "Closed - Cannot answer survey questions" %>
+
+          <span style="">
+            <% if allowed %>
+              <%= link_to "Close All Open Surveys", toggle_open_and_closed_surveys_organization_survey_users_path(_organization, _survey, direction:"close"), method: :post, data: {confirm:"Are you sure?"} %>
+            <% else %>
+              <%= link_to "Open All Closed Surveys", toggle_open_and_closed_surveys_organization_survey_users_path(_organization, _survey, direction:"open"), method: :post, data: {confirm:"Are you sure?"}%>
+            <% end %>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    <% surveys.each do |survey| %>
+      <tr>
+        <td>
+          <%= highlight survey.user.email, params[:s] %>
+        </td>
+
+        <td>
+          <%= link_to [_organization, _survey, survey.user], method: 'delete', data: {confirm: "Are you sure?" } do %>
+            Delete
+          <% end %>
+        </td>
+
+        <td>
+          <%= link_to [:reinvite, _organization, _survey, survey.user], method: 'post', data: {confirm: "Are you sure?" } do %>
+            Send invite
+          <% end %>
+        </td>
+        <td>
+          <%= link_to [:toggle_survey_is_valid, _organization, _survey, survey.user], method: 'post', data: { confirm: "Are you sure?" } do %>
+            Mark <%= survey.valid_survey? ? "Invalid" : "Valid" %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to [:allowed_to_submit_answers, _organization, _survey, survey.user], method: 'post', data: { confirm: "Are you sure?" } do %>
+            Is <%= survey.allowed_to_submit_answers? ? "Open" : "Closed" %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to [:run_results, _organization, _survey, survey.user], method:'post' do %>
+            Run&nbsp;Results
+          <% end %>
+        </td>
+        <td>
+          <%= link_to login_with_token_path(survey.user.uuid), data: {confirm: "Are you sure?"} do %>
+            Login as
+          <% end %>
+        </td>
+        <td>
+          <%= survey.completed_at.present? ? survey.completed_at.stamp('10/10/2015') : "Not Complete" %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+<% end %>
+</table>
+
+<hr>
+
+<%= form_for :share, url: [:share_spreadsheet, _organization, _survey, :users] do |f| %>
+  <h3>View an employee spreadsheet </h3>
+  <div class="">
+    <label> Email of employee  </label>
+    <%= text_field_tag :user_email %>
+  </div>
+
+  <div class="">
+    <label> Your email (or email of someone who should receive share link) </label>
+    <%= text_field_tag :share_email %>
+  </div>
+  <div class="">
+    <button>Share Spreadsheet</button>
+    <small>You will receive an email with a link to google spreadsheet</small>
+  </div>
+<% end %>
+
+<hr>
+
+<%= form_for :invite, url:[:invite, _organization, _survey, :users], method: 'post' do |f| %>
+  <h3>Send invites to all employees</h3>
+  <div class="">
+    <%= f.submit "Send Invites Now", data: {confirm:"Are you sure?"} %>
+    <small>Employees will recieve an email with a login link to their survey. Only employees with "open" surveys will be emailed.</small>
+  </div>
+
+<% end %>
+
+<hr>
+
+<%= form_for :invite, url:[:reset, _organization, _survey, :users], method: 'post' do |f| %>
+  <h3 id="remove_employees">Deassociate all employees from this survey</h3>
+  <div class="">
+    <%= f.submit "Remove all employee surveys", data: {confirm: "Are you sure?" } %>
+    <small>Employee user records are not deleted. It will just remove their associated survey.</small>
+  </div>
+
+<% end %>
+
+<hr>
+
+<%= form_for :download_data, url:[:download_data, _organization, _survey, :users], method: 'post' do |f| %>
+  <h3>Download employee survey answers</h3>
+  <div class="">
+    <%= f.submit "Download all user survey answrers" %>
+  </div>
+<% end %>
+
+<hr>
+
+<%= form_for :download_results, url:[:download_results, _organization, _survey, :users], method: 'post' do |f| %>
+  <h3>Download calculated employee results</h3>
+  <div class="">
+    <%= f.submit "Download all user surveys results - calculated values from spreadsheet" %>
+  </div>
+<% end %>
+
+<hr>
+
+<%= form_for :rerun_calculations, url:[:rerun_calculations, _organization, _survey, :users], method: 'post', data: { confirm: "Are you sure?" } do |f| %>
+  <h3>Rerun and update database with user calculated survey results</h3>
+  <%= f.submit "Rerun user survey calculations" %>
+<% end %>

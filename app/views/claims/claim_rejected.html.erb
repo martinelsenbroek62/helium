@@ -1,0 +1,40 @@
+<!-- <h1>CLAIM_REJECTED</h1> -->
+
+<!-- <% if flash[:notice] %> <p style=""> <%= flash[:notice] %> </p> <% end %> <h3> Your Claim Has Been Rejected </h3> <div class="alert alert-warning"> <b>Reason for rejection: </b> <p><%= _claim.rejected_reason %></p> </div> -->
+
+<!-- <%= render 'claim_details' %> -->
+
+<div class="mx-auto" style="max-width: 40rem">
+
+  <% if flash[:notice] %>
+    <p style="">
+      <%= flash[:notice] %>
+    </p>
+  <% end %>
+
+  <div class="alert alert-danger text-center mt-4" style="max-width: 40rem" role="alert">
+    <p class="lead">Your Claim Has Been Rejected.</p>
+    <p class="mb-0">
+      <i class="fa fa-times-circle fa-2x"></i>
+    </p>
+    <h5 class="alert-heading mt-2">Claim ID:
+      <%= _claim.id %></h5>
+  </div>
+
+  <div class="alert alert-warning">
+    <b>Reason:
+    </b>
+    <p><%= _claim.rejected_reason %></p>
+  </div>
+
+  <%= render 'claim_details' %>
+
+  <hr>
+
+  <p class="lead text-center">Would you like to revise and resubmit your claim?</p>
+
+  <p class="lead text-center">
+    <%= link_to "Edit Claim", edit_claim_path(_claim) %>
+  </p>
+
+</div>

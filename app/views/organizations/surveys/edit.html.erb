@@ -1,0 +1,166 @@
+<%= render 'subheader' %>
+
+<%= form_for [_organization, _survey] do |f| %>
+  <h3>Edit Survey Meta Data</h3>
+  <div class="">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="">
+    <%= f.label :survey_year %>
+    <%= f.text_field :survey_year %>
+    <small>This will be used on bar graphs as the label name.</small>
+  </div>
+
+  <div class="">
+    <%= f.label :survey_identifier %>
+    <%= f.text_field :survey_identifier %>
+    <small>
+      This field is used to group surveys together across multiple years. Useful for showing
+      users answers to previous years surveys.
+    </small>
+  </div>
+
+  <div class="">
+    <%= f.label :survey_notes %>
+    <%= f.text_field :survey_notes %>
+  </div>
+
+  <div class="">
+    <%= f.label :participation_goal %>
+    <%= f.text_field :participation_goal %>
+  </div>
+
+  <div class="">
+    <%= f.label :report_threshold %>
+    <%= f.text_field :report_threshold %>
+  </div>
+
+  <div class="">
+    <%= f.label :finish_date %>
+    <%= f.text_field :finish_date, class: "datepicker" %>
+  </div>
+
+  <script type="text/javascript">
+    $('.datepicker').datepicker()
+  </script>
+
+  <div class="">
+    <label>
+      <%= f.check_box :allowed_to_submit_answers %> Survey is on
+    </label>
+  </div>
+
+  <div class="">
+    <label>
+      <%= f.check_box :create_on_self_signup %> Create On Self Signup - (Users who self signup will be given this survey when they create their account)
+    </label>
+  </div>
+
+  <%= f.submit "Update Survey" %>
+<% end %>
+
+<hr>
+
+<%= form_for [_organization, _survey], url: push_changes_to_organization_survey_path(_organization, _survey), data: {confirm: "Are you sure?"}, method: :post do |f| %>
+  <h3>Push Changes to User Surveys</h3>
+
+  <p>
+    If you've made any changes to question text, rules or templates, click "Push Changes Now", to update user surveys.
+  </p>
+
+  <div class="">
+    <button class="full-width">Push Survey Changes Now</button>
+    <small>This may take a while</small>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col">
+    <h3>Clone Survey</h3>
+
+    <%= link_to clone_organization_survey_path(_organization, _survey) do %>
+      <button class="full-width">Clone This Survey</button>
+    <% end %>
+
+    <small>Copy all settings and users into a new survey</small>
+  </div>
+
+  <div class="col">
+    <h3>Move Survey</h3>
+    <%= link_to move_to_organization_survey_path(_organization, _survey) do %>
+      <button class="full-width">Move Survey To Other Organization</button>
+    <% end %>
+
+    <small>Move this survey to another organization</small>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <h3>Anonymous Survey URL</h3>
+
+    <form><input type="text" value="<%= anonymous_survey_url(_organization.uuid, _survey.survey_uuid) %>" style="" ></form>
+
+    <small>
+      Using this URL will allow anonymous user surveys w/out prior user account creation. A new survey
+      will be created just by visiting the URL.
+    </small>
+  </div>
+</div>
+
+<hr>
+
+<%= form_for [:upload, _organization, _survey], method: 'post' do |f| %>
+  <h3>Step 1: Upload Spreadsheet</h3>
+
+  <div class="">
+    <%= f.label :spreadsheet %>
+    <%= f.file_field :spreadsheet %>
+  </div>
+
+  <div class="">
+    <%= f.submit "Step 1: Upload Spreadsheet" %>
+  </div>
+<% end %>
+
+<% if _survey.spreadsheet.present? %>
+  <div class="">
+    <h3>Step 2: Import Questions</h3>
+    <%= form_for [:import, _organization, _survey], method: 'post' do |f| %>
+      <div class="">
+        <%= f.submit "Step 2: Import Questions and Rules" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="">
+    <h3>Step 3: Import Only Report Questions</h3>
+    <%= form_for [:import_report_questions, _organization, _survey], method: 'post' do |f| %>
+      <div class="">
+        <%= f.submit "Import Only Report Questions" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<hr>
+
+<%= form_for :historical_records, url:[:import_historical_records, _organization, _survey, :users], method: 'post' do |f| %>
+  <h3>Import Historical Data via CSV</h3>
+  <div class="">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
+  </div>
+
+  <div class="">
+    <%= f.submit "Import Historical Data" %>
+  </div>
+<% end %>
+
+<%= link_to [:remove, _organization, _survey], data: { confirm: "On the next page are very destructive actions. Proceed with caution."} do %>
+  <span class="btn btn-danger">Go to reset (or delete) survey page</span>
+<% end %>

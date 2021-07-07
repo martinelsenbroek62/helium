@@ -1,0 +1,31 @@
+<%= render 'organizations/reimbursement_rules/subheader' %>
+
+<div class="">
+  <b><%= _organization.name %></b>
+  Products eligible for reimbursement. Their rules overrride category and product type
+  reimbursement rules.
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Category</th>
+    <th>Product Type</th>
+    <th>Name</th>
+    <th colspan="3">Allowable Reimbursement Amount</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <%
+  products = if params[:filter]
+    f = params[:filter]
+    _organization.products.where('focus_area ~* ? or category_name ~* ? or product_type ~* ? or name ~* ?', f,f,f,f).order('focus_area, category_name, product_type')
+  else
+    _organization.products.order('focus_area, category_name, product_type')
+  end
+  %>
+  <%= render products %>
+  <%= empty_table_rows(4) if products.empty? %>
+  </tbody>
+</table>

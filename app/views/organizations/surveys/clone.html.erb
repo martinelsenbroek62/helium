@@ -1,0 +1,21 @@
+<div class="">
+  <div class="">
+    <%= form_for :clone, url:"", data: { confirm:"Are you sure?"} do %>
+
+      <h3>Clone</h3>
+
+      <div class="">
+        <label>
+          <%= check_box_tag :include_users %> Include Users
+        </label>
+      </div>
+
+      <p>
+        <button>Start Cloning Process</button>
+      </p>
+      <small>
+        This may take a few moments
+      </small>
+    <% end %>
+  </div>
+</div>

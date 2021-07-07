@@ -1,0 +1,12 @@
+{% if claim.approved %}
+Your benefit request has been approved. It will now be processed for reimbursement.
+{% endif %}
+
+{% if claim.rejected %}
+Your benefit request has not been approved.
+{{claim.rejected_reason}}
+{% endif %}
+
+If you have any questions, please contact {{organization.contact_email}} or call us at {{organization.contact_phone}}
+
+Visit {{claim.url}} to view online

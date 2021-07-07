@@ -1,0 +1,29 @@
+<div id="benefit_info">
+  {% for program in programs %}
+    <h3>
+      {{program.name}} - {{category.name}}
+    </h3>
+  {% endfor %}
+
+  <div>
+    You have up to <b>{{program_balance}}</b> to spend on this benefit.
+  </div>
+  <hr>
+  <h4>
+    {{category.focus_area}}
+  </h4>
+
+  <hr>
+
+  <p>{{category.focus_area_description}}</p>
+
+  <h3>
+    {{category.product_type}}
+  </h3>
+
+  <p>{{category.product_type_description}}</p>
+
+  <p>
+    Use this form to submit a reimbursement claim. You will need to have proof of purchase and <a href="http://res.cloudinary.com/vermont-energy-investment-corporation/image/upload/v1485187934/NRG_Living_Lighter_Eligibility_List_Jan-23_diqj0g.pdf">eligibility</a> in order to complete your claims submission. Submissions in the “Custom” category require pre-approval. Contact <a href="mailto:pathways@veic.org">pathways@veic.org</a>
+  </p>
+</div>

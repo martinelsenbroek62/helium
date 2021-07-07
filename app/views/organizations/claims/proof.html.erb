@@ -1,0 +1,30 @@
+<% _claim.claim_attachments.group_by{|claim_attachment| claim_attachment.kind }.each do |kind, claim_attachments| %>
+  <h3 id="<%= kind.to_s %>">
+    <%= kind.to_s.titleize %>
+  </h3>
+
+  <% claim_attachments.each do |attachment| %>
+    <li>
+      <% if attachment.image? %>
+        <%= link_to attachment.attachment_url, target:"_blank" do %>
+          <%= image_tag attachment.attachment_url, width:500 %>
+        <% end %>
+      <% elsif attachment.pdf? %>
+        <div class="">
+          <iframe src="<%= attachment.attachment_url %>" style="width:1000px;height:400px;"></iframe>
+        </div>
+        <%= link_to attachment.attachment_url, target:"_blank" do %>
+          <%= attachment.attachment["original_filename"] %>
+<%= File.extname(File.basename(attachment.attachment_url)).to_s.upcase rescue '' %>
+        <% end %>
+      <% else %>
+        <%= link_to attachment.attachment_url, target:"_blank" do %>
+          <%= attachment.attachment["original_filename"] %>
+<%= File.extname(File.basename(attachment.attachment_url)).to_s.upcase rescue '' %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+
+
+<% end %>

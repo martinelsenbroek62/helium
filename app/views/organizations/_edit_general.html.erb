@@ -1,0 +1,37 @@
+<h3>General Organization Settings</h3>
+
+<div class="">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="">
+  <%= f.label :logo %>
+  <%= f.file_field :logo, name: :logo %>
+</div>
+
+<div class="">
+  <label><%= f.check_box :has_surveys %> Enable Survey Feature</label>
+</div>
+
+<div class="">
+  <label><%= f.check_box :has_benefits %> Enable Benefits Feature</label>
+</div>
+
+<div class="">
+  <label><%= f.check_box :has_offers %> Enable Offers Feature</label>
+</div>
+
+<div class="">
+  <%= f.label :admin_emails %>
+  <small>Enter administrator email addresses, separate each by a space</small>
+
+  <%= f.text_field :admin_emails %>
+</div>
+
+<div class="">
+  <button>Update</button>
+  <%= link_to _organization do %>
+    Cancel
+  <% end %>
+</div>

@@ -1,0 +1,35 @@
+<%= content_for :subheader do %>
+  <div class="nav">
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to new_organization_benefit_program_path(_organization) do %>
+        + New Program
+      <% end %>
+    </button>
+    <button type="button" class="btn btn-primary btn btn-outline-secondary">
+      <%= link_to organization_offers_path(_organization) do %>
+        Manage Offers
+      <% end %>
+    </button>
+  </div>
+<% end %>
+
+<div class="">
+  <b>Benefits Programs</b>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Program</th>
+    <th>Dates</th>
+    <th>Claims</th>
+    <th>Benefits</th>
+    <th>Balance</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% programs = _organization.programs %>
+    <%= render _organization.benefit_programs %>
+    <%= empty_table_rows(6) if _organization.benefit_programs.empty? %>
+  </tbody>
+</table>

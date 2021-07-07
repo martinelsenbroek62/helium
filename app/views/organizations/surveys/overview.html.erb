@@ -1,0 +1,22 @@
+<%= render 'subheader' %>
+
+<h1><%= _survey.name %></h1>
+
+<pre><%= _survey.survey_notes %></pre>
+
+<table>
+  <tr>
+    <td>
+      <h3><%= _survey.surveys.complete.count %> Completed</h3>
+    </td>
+    <td>
+      <h3><%= _survey.surveys.in_progress.count %> In Progress</h3>
+    </td>
+    <td>
+      <h3><%= _survey.surveys.not_yet_started.count %> Not Started</h3>
+    </td>
+    <td>
+      <h3><%= _survey.surveys.invalid.count %> Invalid</h3>
+    </td>
+  </tr>
+</table>

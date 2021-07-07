@@ -1,0 +1,39 @@
+
+<div class="">
+  <div class="">
+    <div class="">
+      <br>
+      <h3>
+        You have an invitation to join
+        <%= @organization.name %>
+      </h3>
+      <p>
+        Please confirm the following information
+        to accept your invitation.
+      </p>
+    </div>
+  </div>
+  <div class="">
+    <div class="">
+      <%= form_for @user, url: '', method: :post do |f| %>
+        <% [:first_name, :last_name, :email].each do |field| %>
+          <div class="">
+            <%= f.label field %>
+            <%= f.text_field field %>
+          </div>
+        <% end %>
+
+        <div class="">
+          <%= f.label :password, "Choose Password" %>
+          <%= f.password_field :password %>
+        </div>
+
+        <div class="">
+          <button>
+            Accept
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

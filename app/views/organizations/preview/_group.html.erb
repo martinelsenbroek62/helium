@@ -1,0 +1,15 @@
+<div class="list-group">
+  <b><%= pluralize group.questions.count, 'Question' %></b>
+
+  <h2>
+    <%= link_to [_organization, _survey, section, group] do %>
+      <%= group.name %> (Edit)
+    <% end %>
+  </h2>
+
+  <table class="table-not-striped">
+    <% group.questions.each do |question| %>
+      <%= render 'organizations/preview/question', question:question, group: group, section:section %>
+    <% end %>
+  </table>
+</div>

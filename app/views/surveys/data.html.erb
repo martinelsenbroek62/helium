@@ -1,0 +1,18 @@
+<table>
+  <tbody>
+    <% _survey.sections.each do |section| %>
+      <% section.groups.each do |group| %>
+        <% group.questions.each do |question| %>
+        <tr class="">
+          <td>
+            <%= question.text %>
+          </td>
+          <td>
+            <%= question.answer %>
+          </td>
+        </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

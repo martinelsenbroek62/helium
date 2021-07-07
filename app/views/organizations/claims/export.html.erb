@@ -1,0 +1,91 @@
+<%= render 'subheader' %>
+
+<div class="well">
+  <h1>CSV Claims Export</h1>
+  Use this form to generate a claims report.
+  Each individual claim matching the criteria from the form will be added to the report.
+  <hr>
+  Use the <%= link_to "CSV Agg", export_agg_organization_claims_path(_organization) %> page to aggregate claims by employeee and program
+</div>
+
+<%= form_for :export do |f| %>
+  <div class="">
+    <%= f.label :headers, "Headers - Enter variables to generate a custom report" %>
+    <%= f.text_field :headers, style: "width:100%", value: _organization.headers_for_claims_export %>
+    <small class="hint">Separate each variable with an empty space</small>
+  </div>
+  <div class="">
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date, class: "datepicker", placeholder: "Start Date" %>
+  </div>
+  <div class="">
+    <%= f.label :end_date %>
+    <%= f.text_field :end_date, class: "datepicker", placeholder: "End Date" %>
+  </div>
+
+  <%= fields_for :booleans do |f| %>
+    <label> <%= f.check_box :paid_out, checked:true %> Paid </label>
+    <label> <%= f.check_box :approved, checked:false %> Approved </label>
+    <label> <%= f.check_box :rejected, checked:false %> Rejected </label>
+  <% end %>
+
+  <div class="">
+      <button>Export & Download</button>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $('.datepicker').datepicker()
+</script>
+
+<p>
+  The following variables can be used in the "Header" field on the form above
+</p>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Claim</h3>
+  </div>
+  <div class="card-body">
+    <pre><%= Claim.new.to_liquid.keys.map{|s| "claim.#{s}"}.join("\n") %></pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>User</h3>
+  </div>
+  <div class="card-body">
+    <pre>
+    <%= User.new.to_liquid.keys.map{|s|"user.#{s}"}.join("\n") %>
+    </pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Organization</h3>
+  </div>
+  <div class="card-body">
+    <pre><%= Organization.new.to_liquid.keys.map{|s| "organization.#{s}"}.join("\n") %></pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Program</h3>
+  </div>
+  <div class="card-body">
+    <pre><%= BenefitProgram.new.to_liquid.keys.map{|s| "program.#{s}"}.join("\n") %></pre>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header">
+    <h3>Category</h3>
+  </div>
+  <div class="card-body">
+    <pre><%= BenefitCategory.new.to_liquid.keys.map{|s| "category.#{s}"}.join("\n") %></pre>
+  </div>
+</div>

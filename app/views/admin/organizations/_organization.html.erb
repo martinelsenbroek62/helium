@@ -1,0 +1,34 @@
+<tr>
+  <td>
+    <%= link_to change_to_admin_organization_path(organization), method: :post do %>
+      <%= organization.id %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to change_to_admin_organization_path(organization), method: :post do %>
+      <%= organization.name %>
+    <% end %>
+  </td>
+  <td>
+    <%= organization.contact_name %>
+  </td>
+  <td>
+    <%= organization.contact_email %>
+    <%= organization.contact_phone %>
+  </td>
+  <td>
+    <%= organization.users.count %>
+  </td>
+  <td>
+    <%= organization.claims.count %>
+  </td>
+  <td>
+    <%= organization.surveys.count %>
+  </td>
+  <td>
+    <%= link_to change_to_admin_organization_path(organization), method: :post do %>
+      Go to this organization
+      <i class=""></i>
+    <% end %>
+  </td>
+</tr>

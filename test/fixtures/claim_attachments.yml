@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  claim_id: 1
+  user_id: 1
+  organization_id: 1
+  kind: MyString
+  attachment: 
+
+two:
+  claim_id: 1
+  user_id: 1
+  organization_id: 1
+  kind: MyString
+  attachment: 

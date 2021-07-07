@@ -1,0 +1,19 @@
+<%= render 'organizations/surveys/subheader' %>
+
+<div class="">
+
+  <%= form_for _survey.messages.new, url:organization_survey_messages_path(_organization, _survey) do |f| %>
+    <div class="">
+      <%= f.label :subject, "New Message" %>
+      <%= f.text_field :subject, placeholder: "Enter subject line...", class:"u-full-width" %>
+    </div>
+
+    <button>
+      Save Message
+    </button>
+  <% end %>
+</div>
+
+<table>
+  <tbody><%= render _survey.messages.order('created_at desc') %></tbody>
+</table>

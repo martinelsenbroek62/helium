@@ -1,0 +1,18 @@
+
+<div class="">
+<tr>
+  <td>Position: <%= question.position %></td>
+  <td>
+    <%= question.text %>
+  </td>
+  <td>
+    <%= link_to [_organization, _survey, _section, _group, question] do %>
+      <i class=""></i> Edit
+    <% end %>
+  </td>
+  <td>
+    <%= link_to [_organization, _survey, _section, _group, question], method:'delete', data: {confirm:"Are you sure?"} do %>
+      <i class=""></i> Delete
+    <% end %>
+  </td>
+</tr>

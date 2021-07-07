@@ -1,0 +1,25 @@
+<!-- <h1>CLAIM_UNDER_REVIEW</h1> -->
+
+<div class="mx-auto" style="max-width: 40rem">
+
+  <% if flash[:notice] %>
+    <p style="">
+      <%= flash[:notice] %>
+    </p>
+  <% end %>
+
+  <div class="alert alert-success text-center mt-4" style="max-width: 40rem" role="alert">
+    <p class="lead">Your claim is
+      <strong>approved</strong>! You should see the reimbursement in your next paycheck.</p>
+    <p class="mb-0">
+      <i class="fa fa-times-circle fa-2x"></i>
+    </p>
+    <h5 class="alert-heading mt-2">Claim ID:
+      <%= _claim.id %></h5>
+  </div>
+
+  <%= render 'claim_details' %>
+
+  <hr>
+
+</div>

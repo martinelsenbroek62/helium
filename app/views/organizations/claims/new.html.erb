@@ -1,0 +1,23 @@
+
+<%= render 'subheader' %>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <br>
+      <h3 style="">Submitting Claim on <%= _user.try(:name) %>'s Behalf</h3>
+
+      <% @url = organization_claims_path(_organization, user_id:params[:user_id]) %>
+      <%= render 'claims/form_for_new_product' %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.helpText').on('click', function(event){
+      event.preventDefault()
+      $(this).closest('.helpTextContainer').find('.helpTextContent').toggleClass('hide')
+    })
+  })
+</script>

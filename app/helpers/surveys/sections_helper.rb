@@ -1,0 +1,2 @@
+module Surveys::SectionsHelper
+end

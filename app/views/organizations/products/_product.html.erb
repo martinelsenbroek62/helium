@@ -1,0 +1,30 @@
+<tr>
+  <td>
+    <%#= link_to product.focus_area, [product.organization, product] %>
+    <%= product.focus_area %>
+  </td>
+  <td>
+    <%#= link_to product.category_name, [product.organization, product] %>
+    <%= product.category_name %>
+  </td>
+  <td>
+    <%#= link_to [product.organization, product] do %>
+      <%= product.name %>
+    <%# end %>
+  </td>
+  <td>
+    <%#= number_to_percentage product.reimbursement_percentage, precision:0 %>
+    <%= number_to_percentage product.reimbursement_rule_percentage.to_f, precision:0 %>
+  </td>
+  <td style="">
+    <%= link_to [:edit,product.organization, product] do %>
+      <i class=""></i> Edit
+    <% end %>
+  </td>
+  <td style="">
+    <%= link_to [product.organization, product], method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class=""></i> Remove
+    <% end %>
+  </td>
+
+</tr>

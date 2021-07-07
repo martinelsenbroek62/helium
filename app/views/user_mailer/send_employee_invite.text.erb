@@ -1,0 +1,8 @@
+You are invited to join <%= @organization.name %>
+<%= employee_invitation_url(organization_name: (@organization.name.present? ? @organization.name : 'pathways').parameterize, employee_invite_uuid: @user.employee_invite_uuid) %>
+
+<%= @organization.employee_welcome_email_text.to_s.strip %>
+
+<%= employee_invitation_url(organization_name: (@organization.name.present? ? @organization.name : 'pathways').parameterize, employee_invite_uuid: @user.employee_invite_uuid) %>
+
+If you have any questions, please contact sustbenefits@veic.org or call us at  (877) 694-7039.

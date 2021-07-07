@@ -1,0 +1,36 @@
+<%= render 'subheader' %>
+
+<%= form_for _organization do |f| %>
+  <h3>Self Signup</h3>
+  <p>
+    Allow people to signup at  an organization
+  </p>
+
+  <div class="">
+    <label><%= f.check_box :has_self_signup %> Enable Self Signup</label>
+  </div>
+
+  <div class="">
+    <label>Signup Password</label>
+    <%= f.text_field :self_signup_password %> Will require logged out visitors to enter password to self register
+  </div>
+
+  <div class="">
+    <label>Self Signup Slug</label>
+    <%= f.text_field :signup_slug %>
+    <small>
+      https://<%= request.host %>/<i><b><span id='x' style='background:yellow;'><%= _organization.signup_slug %></span></b></i>
+    </small>
+    <script type="text/javascript">
+      $('#organization_signup_slug').on("keyup", function(){
+        val = $('#organization_signup_slug').val().replace(/[^a-z0-9\-]/im, '').toLowerCase()
+        $('#organization_signup_slug').val(val)
+        $('#x').text(val)
+      })
+    </script>
+  </div>
+
+  <button>
+    Save
+  </button>
+<% end %>

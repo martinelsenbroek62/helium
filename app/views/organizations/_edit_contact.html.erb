@@ -1,0 +1,12 @@
+<% [:contact_name, :contact_phone, :contact_email].each do |field| %>
+  <div class="">
+    <%= f.label field %>
+    <%= f.text_field field %>
+  </div>
+<% end %>
+
+<button>Update</button>
+
+<%= link_to _organization do %>
+  Cancel
+<% end %>

@@ -1,0 +1,191 @@
+<div ng-app="app">
+  <div ng-controller="MyMainController">
+    <div ng-class="" class="">
+      Loading...
+    </div>
+    <div ng-class="" class="">
+
+      <div class="">
+        <div class="">
+          <h1 class="">
+            <i class=""></i>
+            Your Report
+            <i class=""></i>
+          </h1>
+          <p class="">
+            Explore the results of your Carbon Assessment for LEAD H1!
+          </p>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="">
+          <div class="">
+            <a href="" class="" ng-click="graphVariables('Overall', this); ">Overall</a>
+            <a href="" class="" ng-click="graphVariables('Food and Waste', this); ">Food and Waste</a>
+            <a href="" class="" ng-click="graphVariables('Home Energy', this); ">Home Energy</a>
+            <a href="" class="" ng-click="graphVariables('Transportation', this); ">Transportation</a>
+          </div>
+
+          <div class="">Pick a Category to View!</div>
+          <hr>
+        </div>
+      </div>
+
+      <div class="" ng-if="survey.invalid">
+        <div class="">
+          <div class="">
+            <h3>Hmmm... Something might be wrong with your survey!</h3>
+            <p>You're seeing this message because your answer(s) had errors or were outside of expected ranges. Your results are currently excluded from the rest of the organization's results. Take the following steps and if you have any questions, let us know at <a href="mailto:carbonsurvey@veic.org"> carbonsurvey@veic.org </a> </p>
+            <p> Don't worry, here's how to fix it:
+            <li><span class="">Check your e-mail for a note about what the issue is. </span></li>
+            <li><span class="">Fix mistakes by going back to the question using the "Sections" button above. </span></li>
+            <li><span class="">Send a note to carbonsurvey@veic.org when you're done! </span></li>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="">
+          <i class=""></i>
+          <h3>
+            {{graphCategory}}
+            <span ng-if="perCapita">per Capita</span>
+          </h3>
+
+          <a href="" ng-click="togglePerCapita()" style="" ng-if="perCapita">
+            Toggle by Household / <b>per Capita</b> <i class=""></i>
+          </a>
+
+          <a href="" ng-click="togglePerCapita()" style="" ng-if="!perCapita">
+            Toggle by <b>Household</b> / per Capita
+            <i class=""></i>
+          </a>
+        </div>
+        <div class="">
+          <small>
+            Your Household {{graphCategory}} Carbon Emissions
+            <span ng-if="perCapita">per Capita</span>
+          </small>
+          <h3>{{graphCategoryScore}} tCO2e</h3>
+          <span class="">Organization Household Average {{organizationAVG}} tCO2e</span>
+          <div class="">
+            Learn more in the Reports Section of the <a href="{{survey.url}}/faq#reports" target="_blank">FAQ</a>.
+          </div>
+        </div>
+        <div class="">
+          <small>Where you are relative to others</small>
+          <h3 ng-class="" ng-if="myPercentile">
+            {{myPercentile | ordinal}} percentile
+          </h3>
+          <div ng-if="myPercentile>=50">Good Job! You're in the top half</div>
+          <div ng-if="myPercentile<50">You're in the botton half</div>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="">
+        <div class="">
+          <div id="stackedbar-chart"></div>
+          <p class="">
+            <div class="">
+              <a href="#"><i class=""></i> More Info</a>
+
+              <div class="">
+                This chart shows where your emissions come from and how they compare to the <b>average</b> in your organization, state, and the United States.  <b>Check out what changes when you click the "per Person" toggle and the category buttons!</b> In future years you will be able to compare your results to see how your emissions change over time.
+              </div>
+            </div>
+          </p>
+          <hr>
+          <h3 class="">How You Compare to Others in Your Organization</h3>
+
+
+        </div>
+      </div>
+
+      <div class="">
+        <div class="">
+          <div id="histogram-chart"></div>
+          <center>
+            <span style=""></span>
+            <span>You have {{graphCategoryScore}} tCO2e, {{graphCategory}}  {{perCapita}}</span>
+          </center>
+          <div class="">
+            <a href="#"><i class=""></i> More Info</a>
+
+            <div class="">
+              This is a chart that tells part of the story that is lost when using averages. Each bar represents a range of carbon emissions. The height of the bar shows how many households are in that range.  Your range is in yellow.
+            </div>
+          </div>
+
+        </div>
+        <div class="">
+          <div id="radar-chart"></div>
+
+          <div class="">
+            <a href="#"><i class=""></i> More Info</a>
+
+            <div class="">
+              Use this chart to see at a glance how you compare to your organizational average across all categories.  At the center of the graph is zero emissions, and the further from the center, the larger the amount of emissions. Your results are in yellow, your organizational average is in black.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="">
+        <div class="">
+
+          <h3>Your Household Opportunity Area Rankings</h3>
+          <div class="">
+            <a href="#"><i class=""></i> More Info</a>
+            <div class="">
+              When looking to improve, it can help to know which areas you have more opportunity relative to other households in your organization. Consider focusing on the ones near the top of the list.          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="" ng-repeat="percentile in perCapitaPercentiles">
+        {{percentile}}
+      </div>
+
+      <div class="" style="" ng-repeat="(key, percentile) in percentilesList | orderObjectBy: 'percentile'">
+        <div class="">
+          <h3 class="">{{percentile.title}}</h3>
+          <div class="">
+            {{percentile.me_per_capita}} tCO2e,
+            {{percentile.percentile_per_capita|ordinal}} percentile (per capita)
+          </div>
+        </div>
+        <div class="">
+          <h3 class="" ng-class="">
+            {{percentile.percentile | ordinal}} percentile
+          </h3>
+          <h3 class="">
+            {{percentile.myTons}}
+            <small class="">with {{percentile.me}} tCO2e</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="">
+        <br>
+        <h3 class="">What Are The Next Steps For You?</h3>
+        <p>
+          After exploring your report, let us know which areas and actions interest you!
+        </p>
+        <div class="">
+          <a href="{{survey.url}}/finish" class="">
+            <i class=""></i>
+            Finish Up
+            <i class=""></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

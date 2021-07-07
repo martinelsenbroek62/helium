@@ -1,0 +1,17 @@
+<!-- <h1>SHOW</h1> -->
+
+<% if _claim.submitted_at && _claim.submitted_at >= 1.hour.ago %>
+  <h2>Thank you for submitting your claim</h2>
+  <p>Your claim is currently
+    <i><%= _claim.status %>.</i>
+  </p>
+  <p>You will receive an email after it has been approved or rejected. </p>
+  <p>
+    You may edit your claim until then
+    <%= link_to "Edit claim details", edit_claim_path(_claim) %>
+  </p>
+<% end %>
+
+<h3>Claim Status: <%= _claim.status %></h3>
+
+<%= render 'claim_details' %>

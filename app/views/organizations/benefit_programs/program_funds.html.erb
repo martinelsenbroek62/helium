@@ -1,0 +1,30 @@
+<%= render 'subheader' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Employee Fund
+        &nbsp; <%= link_to upload_organization_people_path(_organization), style: "color:white" do  %>
+          + Import Funds
+        <% end %>
+      </th>
+      <th>Program</th>
+      <th>Deposit Amount</th>
+      <th>Expiration of Money</th>
+      <th>Date Deposited</th>
+      <th>Comment</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%
+    (funds = _benefit_program.funds.for_active_employees.paginate(page:params[:page], per_page:15))
+    funds = funds.joins(:user).where('users.name ~* ? or users.email ~* ?', params[:q], params[:q]) if params[:q].present?
+    %>
+    <%= render funds %>
+    <%= empty_table_rows(7, 3) if funds.empty? %>
+  </tbody>
+</table>
+
+<p><%= will_paginate funds %></p>

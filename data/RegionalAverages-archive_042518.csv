@@ -1,0 +1,274 @@
+Region,Characteristic,Value (metric tons CO2e/year),Updated?,Year,Source,Notes
+California,Household Size,2.94,Y,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+California,Electricity,2.00,Y,2014,Calculated in workbook,
+California,Other Fuels,2.05,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+California,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+California,Personal Vehicles Total (w/Commuting),10.06,Y,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+California,Personal Vehicles (w/out Commuting),7.26,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+California,Personal Vehicles (Commuting),2.80,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+California,Food*,7.75,Y,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+California,Waste disposal*,0.74,Y,2015,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+California,Food and Waste Total,8.49,N/A,,,
+California,Housing Total,4.04,N/A,,,
+California,Transportation Total,11.56,N/A,,,
+California,Total,24.09,N/A,,,
+Canada,Household Size,2.50,Y,2011,http://www12.statcan.gc.ca/census-recensement/2011/dp-pd/prof/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&Data=Count&SearchText=01&SearchType=Begins&SearchPR=01&B1=All&Custom=&TABID=3,
+Canada,Electricity,2.58,,,,
+Canada,Other Fuels,6.39,,,,
+Canada,Long Distance travel,2.57,,,,
+Canada,Personal Vehicles Total (w/Commuting),1.50,,,,
+Canada,Personal Vehicles (w/out Commuting),9.75,,,,
+Canada,Personal Vehicles (Commuting),7.04,,,,
+Canada,Food*,2.71,,,,
+Canada,Waste disposal*,6.78,,,,
+Canada,Food and Waste Total,9.49,N/A,,,
+Canada,Housing Total,8.97,N/A,,,
+Canada,Transportation Total,4.07,N/A,,,
+Canada,Total,22.52,N/A,,,
+Colorado,Household Size,2.53,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Colorado,Electricity,5.89,,2014,Calculated in workbook,
+Colorado,Other Fuels,4.23,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Colorado,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Colorado,Personal Vehicles Total (w/Commuting),8.85,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Colorado,Personal Vehicles (w/out Commuting),6.39,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Colorado,Personal Vehicles (Commuting),2.46,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Colorado,Food*,6.62,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Colorado,Waste disposal*,0.64,,2015,"Based on EPA Warm model, scaled by household size",
+Colorado,Food and Waste Total,7.25,N/A,,,
+Colorado,Housing Total,10.13,N/A,,,
+Colorado,Transportation Total,10.35,N/A,,,
+Colorado,Total,27.73,N/A,,,
+District of Columbia,Household Size,2.20,Y,2009-2013,http://quickfacts.census.gov/qfd/states/11000.html,
+District of Columbia,Electricity,2.67,Y,2014,Calculated in workbook,
+District of Columbia,Other Fuels,2.64,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+District of Columbia,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+District of Columbia,Personal Vehicles Total (w/Commuting),2.16,Y,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+District of Columbia,Personal Vehicles (w/out Commuting),1.56,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+District of Columbia,Personal Vehicles (Commuting),0.60,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+District of Columbia,Food*,5.89,Y,2015.0,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+District of Columbia,Waste disposal*,0.55,Y,2015.0,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+District of Columbia,Food and Waste Total,6.44,N/A,,,
+District of Columbia,Housing Total,5.31,N/A,,,
+District of Columbia,Transportation Total,3.66,N/A,,,
+District of Columbia,Total,15.41,N/A,,,
+Florida,Household Size,2.61,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Florida,Electricity,4.12,,2014,Calculated in workbook,
+Florida,Other Fuels,0.17,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Florida,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Florida,Personal Vehicles Total (w/Commuting),10.09,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Florida,Personal Vehicles (w/out Commuting),7.28,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Florida,Personal Vehicles (Commuting),2.80,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Florida,Food*,6.83,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Florida,Waste disposal*,0.66,,2015,"Based on EPA Warm model, scaled by household size",
+Florida,Food and Waste Total,7.48,N/A,,,
+Florida,Housing Total,4.29,N/A,,,
+Florida,Transportation Total,11.59,N/A,,,
+Florida,Total,23.36,N/A,,,
+Illinois,Household Size,2.63,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Illinois,Electricity,4.67,,2014,Calculated in workbook,
+Illinois,Other Fuels,5.52,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Illinois,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Illinois,Personal Vehicles Total (w/Commuting),8.75,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Illinois,Personal Vehicles (w/out Commuting),6.32,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Illinois,Personal Vehicles (Commuting),2.43,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Illinois,Food*,6.88,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Illinois,Waste disposal*,0.66,,2015,"Based on EPA Warm model, scaled by household size",
+Illinois,Food and Waste Total,7.54,N/A,,,
+Illinois,Housing Total,10.19,N/A,,,
+Illinois,Transportation Total,10.25,N/A,,,
+Illinois,Total,27.98,N/A,,,
+Maine,Household Size,2.33,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Maine,Electricity,3.59,,2014,Calculated in workbook,
+Maine,Other Fuels,4.45,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Maine,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Maine,Personal Vehicles Total (w/Commuting),10.07,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Maine,Personal Vehicles (w/out Commuting),7.27,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Maine,Personal Vehicles (Commuting),2.80,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Maine,Food*,6.09,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Maine,Waste disposal*,0.59,,2015,"Based on EPA Warm model, scaled by household size",
+Maine,Food and Waste Total,6.68,N/A,,,
+Maine,Housing Total,8.03,N/A,,,
+Maine,Transportation Total,11.57,N/A,,,
+Maine,Total,26.28,N/A,,,
+Maryland,Household Size,2.65,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Maryland,Electricity,2.89,,2014,Calculated in workbook,
+Maryland,Other Fuels,2.94,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Maryland,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Maryland,Personal Vehicles Total (w/Commuting),10.17,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Maryland,Personal Vehicles (w/out Commuting),7.34,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Maryland,Personal Vehicles (Commuting),2.83,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Maryland,Food*,6.93,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Maryland,Waste disposal*,0.67,,2015,"Based on EPA Warm model, scaled by household size",
+Maryland,Food and Waste Total,7.60,N/A,,,
+Maryland,Housing Total,5.83,N/A,,,
+Maryland,Transportation Total,11.67,N/A,,,
+Maryland,Total,25.09,N/A,,,
+Massachusetts,Household Size,2.51,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Massachusetts,Electricity,2.83,,2014,Calculated in workbook,
+Massachusetts,Other Fuels,5.42,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Massachusetts,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Massachusetts,Personal Vehicles Total (w/Commuting),8.46,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Massachusetts,Personal Vehicles (w/out Commuting),6.11,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Massachusetts,Personal Vehicles (Commuting),2.35,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Massachusetts,Food*,6.56,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Massachusetts,Waste disposal*,0.63,,2015,"Based on EPA Warm model, scaled by household size",
+Massachusetts,Food and Waste Total,7.20,N/A,,,
+Massachusetts,Housing Total,8.25,N/A,,,
+Massachusetts,Transportation Total,9.96,N/A,,,
+Massachusetts,Total,25.40,N/A,,,
+Minnesota,Household Size,2.47,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Minnesota,Electricity,2.80,,2014,Calculated in workbook,
+Minnesota,Other Fuels,4.46,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Minnesota,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Minnesota,Personal Vehicles Total (w/Commuting),10.42,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Minnesota,Personal Vehicles (w/out Commuting),7.52,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Minnesota,Personal Vehicles (Commuting),2.90,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Minnesota,Food*,6.46,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Minnesota,Waste disposal*,0.62,,2015,"Based on EPA Warm model, scaled by household size",
+Minnesota,Food and Waste Total,7.08,N/A,,,
+Minnesota,Housing Total,7.26,N/A,,,
+Minnesota,Transportation Total,11.92,N/A,,,
+Minnesota,Total,26.26,N/A,,,
+New Hampshire,Household Size,2.47,Y,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+New Hampshire,Electricity,3.97,Y,2014,Calculated in workbook,
+New Hampshire,Other Fuels,3.81,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+New Hampshire,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+New Hampshire,Personal Vehicles Total (w/Commuting),9.74,Y,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+New Hampshire,Personal Vehicles (w/out Commuting),7.03,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+New Hampshire,Personal Vehicles (Commuting),2.71,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+New Hampshire,Food*,6.57,Y,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+New Hampshire,Waste disposal*,0.62,Y,2015,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+New Hampshire,Food and Waste Total,7.19,N/A,,,
+New Hampshire,Housing Total,7.79,N/A,,,
+New Hampshire,Transportation Total,11.24,N/A,,,
+New Hampshire,Total,26.21,N/A,,,
+New Jersey,Household Size,2.71,Y,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+New Jersey,Electricity,4.01,Y,2014,Calculated in workbook,
+New Jersey,Other Fuels,4.18,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+New Jersey,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+New Jersey,Personal Vehicles Total (w/Commuting),9.17,Y,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+New Jersey,Personal Vehicles (w/out Commuting),6.62,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+New Jersey,Personal Vehicles (Commuting),2.55,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+New Jersey,Food*,7.16,Y,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+New Jersey,Waste disposal*,0.68,Y,2015,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+New Jersey,Food and Waste Total,7.84,N/A,,,
+New Jersey,Housing Total,8.19,N/A,,,
+New Jersey,Transportation Total,10.67,N/A,,,
+New Jersey,Total,26.70,N/A,,,
+New York,Household Size,2.61,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+New York,Electricity,2.44,,2014,Calculated in workbook,
+New York,Other Fuels,4.46,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+New York,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+New York,Personal Vehicles Total (w/Commuting),6.95,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+New York,Personal Vehicles (w/out Commuting),5.02,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+New York,Personal Vehicles (Commuting),1.93,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+New York,Food*,6.83,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+New York,Waste disposal*,0.66,,2015,"Based on EPA Warm model, scaled by household size",
+New York,Food and Waste Total,7.48,N/A,,,
+New York,Housing Total,6.90,N/A,,,
+New York,Transportation Total,8.45,N/A,,,
+New York,Total,22.83,N/A,,,
+North Carolina,Household Size,2.53,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+North Carolina,Electricity,3.80,,2014,Calculated in workbook,
+North Carolina,Other Fuels,1.42,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+North Carolina,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+North Carolina,Personal Vehicles Total (w/Commuting),10.77,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+North Carolina,Personal Vehicles (w/out Commuting),7.78,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+North Carolina,Personal Vehicles (Commuting),3.00,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+North Carolina,Food*,6.62,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+North Carolina,Waste disposal*,0.64,,2015,"Based on EPA Warm model, scaled by household size",
+North Carolina,Food and Waste Total,7.25,N/A,,,
+North Carolina,Housing Total,5.22,N/A,,,
+North Carolina,Transportation Total,12.27,N/A,,,
+North Carolina,Total,24.75,N/A,,,
+Ohio,Household Size,2.47,Y,2009-2013,http://quickfacts.census.gov/qfd/states/39000.html,
+Ohio,Electricity,7.47,Y,2014,Calculated in workbook,
+Ohio,Other Fuels,3.56,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Ohio,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Ohio,Personal Vehicles Total (w/Commuting),8.64,Y,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Ohio,Personal Vehicles (w/out Commuting),6.24,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Ohio,Personal Vehicles (Commuting),2.40,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Ohio,Food*,6.52,Y,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+Ohio,Waste disposal*,0.62,Y,2015,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+Ohio,Food and Waste Total,7.14,N/A,,,
+Ohio,Housing Total,11.03,N/A,,,
+Ohio,Transportation Total,10.14,N/A,,,
+Ohio,Total,27.69,N/A,,,
+Ontario,Household Size,2.61,,,,
+Ontario,Electricity,2.44,,,,
+Ontario,Other Fuels,4.46,,,,
+Ontario,Long Distance travel,1.50,,,,
+Ontario,Personal Vehicles Total (w/Commuting),6.95,,,,
+Ontario,Personal Vehicles (w/out Commuting),5.02,,,,
+Ontario,Personal Vehicles (Commuting),1.93,,,,
+Ontario,Food*,6.83,,,,
+Ontario,Waste disposal*,0.66,,,,
+Ontario,Food and Waste Total,7.48,,,,
+Ontario,Housing Total,6.90,,,,
+Ontario,Transportation Total,8.45,,,,
+Ontario,Total,22.83,,,,
+Pennsylvania,Household Size,2.48,,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Pennsylvania,Electricity,3.23,,2014,Calculated in workbook,
+Pennsylvania,Other Fuels,4.02,,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Pennsylvania,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Pennsylvania,Personal Vehicles Total (w/Commuting),7.77,,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Pennsylvania,Personal Vehicles (w/out Commuting),5.61,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Pennsylvania,Personal Vehicles (Commuting),2.16,,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Pennsylvania,Food*,6.49,,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,
+Pennsylvania,Waste disposal*,0.62,,2015,"Based on EPA Warm model, scaled by household size",
+Pennsylvania,Food and Waste Total,7.11,N/A,,,
+Pennsylvania,Housing Total,7.24,N/A,,,
+Pennsylvania,Transportation Total,9.27,N/A,,,
+Pennsylvania,Total,23.62,N/A,,,
+Texas,Household Size,2.82,Y,2009-2013,http://quickfacts.census.gov/qfd/states/34000.html,
+Texas,Electricity,5.63,Y,2014,Calculated in workbook,
+Texas,Other Fuels,1.24,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Texas,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Texas,Personal Vehicles Total (w/Commuting),10.20,Y,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Texas,Personal Vehicles (w/out Commuting),7.37,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Texas,Personal Vehicles (Commuting),2.84,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Texas,Food*,7.37,Y,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+Texas,Waste disposal*,0.71,Y,2015,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+Texas,Food and Waste Total,8.08,N/A,,,
+Texas,Housing Total,6.87,N/A,,,
+Texas,Transportation Total,11.70,N/A,,,
+Texas,Total,26.66,N/A,,,
+United States of America,Household Size,2.58,Y,2009-2013,http://quickfacts.census.gov/qfd/states/39000.html,
+United States of America,Electricity,6.39,Y,2014,Calculated in workbook,
+United States of America,Other Fuels,2.57,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+United States of America,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+United States of America,Personal Vehicles Total (w/Commuting),9.75,Y,2013.0,See personal vehicles tab.,See Regional Averages by Sector workbook
+United States of America,Personal Vehicles (w/out Commuting),7.04,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+United States of America,Personal Vehicles (Commuting),2.71,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+United States of America,Food*,6.78,Y,2015.0,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+United States of America,Waste disposal*,0.65,Y,2015.0,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+United States of America,Food and Waste Total,7.43,N/A,,,
+United States of America,Housing Total,8.95,N/A,,,
+United States of America,Transportation Total,11.25,N/A,,,
+United States of America,Total,27.63,N/A,,,
+VEIC,Household Size,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Electricity,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Other Fuels,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Long Distance travel,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Personal Vehicles Total (w/Commuting),,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Personal Vehicles (w/out Commuting),,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Personal Vehicles (Commuting),,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Food*,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Waste disposal*,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Food and Waste,,Helium Generated,2016,Survey,We need to build this feature out.
+VEIC,Housing Total,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Transportation Total,,Helium Generated,2015,Survey,We need to build this feature out.
+VEIC,Total,,Helium Generated,2015,Survey,We need to build this feature out.
+Vermont,Household Size,2.34,Y,2009-2013,http://quickfacts.census.gov/qfd/states/50000.html,
+Vermont,Electricity,4.05,Y,2014,Calculated in workbook,
+Vermont,Other Fuels,4.12,Y,2013,https://www.eia.gov/state/seds/seds-data-complete.cfm (2013); American Communities Survey (2013),See Regional Averages by Sector workbook
+Vermont,Long Distance travel,1.50,Y,2014,See long distance travel tab. National average,See Regional Averages by Sector workbook
+Vermont,Personal Vehicles Total (w/Commuting),10.81,Y,2013,See personal vehicles tab.,See Regional Averages by Sector workbook
+Vermont,Personal Vehicles (w/out Commuting),7.81,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Vermont,Personal Vehicles (Commuting),3.01,Y,2013,http://traveltrends.transportation.org/Documents/B2_CIA_Role%20Overall%20Travel_web_2.pdf,
+Vermont,Food*,6.23,Y,2015,Per household. Based on numbers derived from CoolClimate Calculator and Cenus numbers of adults and youth/household. See Food tab.,See Regional Averages by Sector workbook
+Vermont,Waste disposal*,0.59,Y,2015.00,"Based on EPA Warm model, scaled by household size",See Regional Averages by Sector workbook
+Vermont,Food and Waste Total,6.82,N/A,,,
+Vermont,Housing Total,8.17,N/A,,,
+Vermont,Transportation Total,12.31,N/A,,,
+Vermont,Total,27.31,N/A,,,

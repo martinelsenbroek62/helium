@@ -1,0 +1,155 @@
+<%= render 'subheader' %>
+
+<%= render 'organizations/people/person_info', _person: _claim.user %>
+
+<%= render 'organizations/people/claims_table', claims: [_claim] %>
+
+<% unless _claim.requesting_amount_is_valid? && _claim.requesting_amount_available_in_program_balance? %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('form').on('submit', function () {
+        return confirm("We think there is something wrong with this claim's requesting amount.\nAre you sure everything looks good?");
+      });
+    });
+  </script>
+<% end %>
+
+<% if _claim.rejected? %>
+  <%= form_for [:reimburse, _organization , _claim], method: :post do |f| %>
+  <%= f.hidden_field :approved, value: false %>
+  <%= f.hidden_field :rejected, value: false %>
+  <%= f.hidden_field :paid_out, value: false %>
+  <%= f.hidden_field :sent_to_payroll, value: false %>
+
+  <button>
+    Reopen Claim
+  </button>
+<% end %>
+</div>
+<% end %>
+
+<% if !_claim.approved? && !_claim.rejected? %>
+<div class="">
+<%= form_for [:reimburse, _organization , _claim], method: :post do |f| %>
+<%= f.hidden_field :approved, value: true %>
+<%= f.hidden_field :rejected, value: false %>
+<%= f.hidden_field :paid_out, value: false %>
+<%= f.hidden_field :sent_to_payroll, value: false %>
+
+<div class="">
+  <%= f.label :reimbursement_amount, "Reimbursement Amount in USD" %>
+  <%= f.text_field :reimbursement_amount, value: (_claim.reimbursement_amount.present? ? _claim.reimbursement_amount : _claim.requesting_amount), placeholder: "E.g., $500.00" %>
+  </div>
+<div class="">
+  <%= f.label :approved_claim_note %>
+  <%= f.text_field :approved_claim_note, size:50, placeholder: "Note to accompany approved claim"%>
+</div>
+
+<button>
+  Approve Claim For Displayed Amount
+</button>
+
+<button name="send_email" value="true" class="btn-success">
+  Approve Claim & Send Email<i ></i>
+</button>
+<small>Employee will be notified via email</small>
+<% end %>
+
+<div class="">
+<%= form_for [:reimburse, _organization , _claim], method: :post do |f| %>
+<%= f.hidden_field :approved, value: false %>
+<%= f.hidden_field :rejected, value: true %>
+<%= f.hidden_field :paid_out, value: false %>
+<%= f.hidden_field :sent_to_payroll, value: false %>
+
+<%= f.label :rejected_reason %>
+<%= f.text_field :rejected_reason, size:50, placeholder: "Provide the reason why the claim was rejected"%>
+<button class="btn-warning">
+  Reject Claim
+</button>
+<button name="send_email" value="true" class="btn-danger">
+  Reject & Send Email
+  <i class=""></i>
+</button>
+<% end %>
+</div>
+
+</div>
+<% end %>
+
+<% if _claim.approved? && !_claim.paid_out? %>
+<%= form_for [:reimburse, _organization, _claim], method: :post do |f| %>
+<%= f.hidden_field :approved, value: true %>
+<%= f.hidden_field :rejected, value: false %>
+<%= f.hidden_field :sent_to_payroll, value: true %>
+
+<button>
+Mark Claim as Sent to Payroll
+</button>
+<% end %>
+
+<%= form_for [:reimburse, _organization , _claim], method: :post do |f| %>
+<%= f.hidden_field :approved, value: true %>
+<%= f.hidden_field :rejected, value: false %>
+<%= f.hidden_field :paid_out, value: true %>
+<%= f.hidden_field :sent_to_payroll, value: true %>
+
+<button>
+Mark Claim as Paid
+</button>
+
+<button name="send_email" value="true" class="btn-success">
+Mark as Paid & Send
+<i class=""></i>
+</button>
+<% end %>
+
+<%= form_for [:reimburse, _organization , _claim], method: :post do |f| %>
+<%= f.hidden_field :approved, value: false %>
+<%= f.hidden_field :rejected, value: false %>
+<%= f.hidden_field :paid_out, value: false %>
+<%= f.hidden_field :sent_to_payroll, value: false %>
+<%= f.hidden_field :submitted_at, value: nil %>
+<%= f.hidden_field :reimbursement_amount, value: "" %>
+
+<button class="btn-warning">
+Revert Claim
+</button>
+<small class="muted">Goes back to initial state of pending approval</small>
+<% end %>
+
+<% end %>
+
+<% if _claim.paid_out? %>
+<%= form_for [:reimburse, _organization , _claim], method: :post do |f| %>
+<%= f.hidden_field :approved, value: false %>
+<%= f.hidden_field :rejected, value: false %>
+<%= f.hidden_field :paid_out, value: false %>
+<%= f.hidden_field :sent_to_payroll, value: false %>
+<%= f.hidden_field :reimbursement_amount, value: "" %>
+<%= f.hidden_field :submitted_at, value: nil %>
+
+<button class="btn-warning">
+Revert Claim
+</button>
+<% end %>
+</div><% end %><div>
+
+<br/>
+
+<h4>Add Additional Attachment</h4>
+<%= form_for [_organization, _claim],html: {multipart: true} do |f| %>
+<%= file_field_tag :attachment, name: "attachment_for_proof_of_purchase[]" %>
+<div class="">
+<button>Submit</button>
+</div><% end %> </div> <div class="card"><div class="card-header">
+<h3>Notes</h3></div><div class="card-body">
+
+<%= form_for [_organization, _claim, Note.new] do |f| %>
+<div class="">
+<%= f.text_area :body %>
+</div>
+
+<div class="">
+<button>Submit</button>
+</div><% end %><%= render 'organizations/people/notes', notes: _claim.notes.order('created_at desc') if _claim.notes.any?%> </div></div>

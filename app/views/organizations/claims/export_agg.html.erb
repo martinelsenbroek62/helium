@@ -1,0 +1,55 @@
+<%= render 'subheader' %>
+
+<div class="well">
+  <h1>CSV Aggregated Claims Export</h1>
+  Use this form to generate a claims report.
+  Claims are aggregated matching the criteria from the form with amounts summed and/or string values concatenated.
+  <hr>
+  Use the <%= link_to "CSV", export_organization_claims_path(_organization) %> page to generate a report with individual claims
+</div>
+
+
+<%= form_for :export do |f| %>
+  <div class="">
+    <%= f.label :headers %>
+    <%= f.text_field :headers, style: "width:100%", value: _organization.headers_for_claims_export_agg %>
+  </div>
+  <div class="">
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date, class: "datepicker", placeholder: "Start Date" %>
+  </div>
+
+  <div class="">
+      <%= f.label :end_date %>
+      <%= f.text_field :end_date, class: "datepicker", placeholder: "End Date" %>
+  </div>
+
+
+  <%= fields_for :booleans do |f| %>
+    <label> <%= f.check_box :paid_out, checked:true %> Paid </label>
+    <label> <%= f.check_box :approved, checked:false %> Approved </label>
+    <label> <%= f.check_box :rejected, checked:false %> Rejected </label>
+  <% end %>
+
+  <div class="">
+    <button>Export</button>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $('.datepicker').datepicker()
+</script>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Claim variable</h3>
+  </div>
+  <div class="card-body">
+    <pre><%= Claim.new(
+      organization: _organization,
+      user: _user,
+      benefit_category: _organization.benefit_categories.first_or_initialize
+    ).csv_attributes.keys.map{|s| "claim.#{s}"}.join("\n") %>
+    </pre>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<table>
+  <thead>
+    <tr class="thead">
+      <th>
+        Person
+      </th>
+      <th>
+        Program
+      </th>
+      <th>
+        Balance
+      </th>
+      <th>
+        Category
+      </th>
+      <th>
+        Product
+      </th>
+      <th>
+        Status
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Request Amt
+      </th>
+      <th>
+        % Allowed
+      </th>
+      <th>
+        Reimburse Amt
+      </th>
+      <th>
+        Submitted
+      </th>
+      <th>
+        Expensed
+      </th>
+      <th>
+        PoP
+      </th>
+      <th>
+        &nbsp;
+      </th>
+      <th>
+        &nbsp;
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render claims %>
+    <%= empty_table_rows(12, 3) if claims.empty? %>
+  </tbody>
+</table>

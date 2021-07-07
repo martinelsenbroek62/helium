@@ -1,0 +1,20 @@
+<div class="center mt-2 lead">
+  Note: If you skipped any *required questions, you can go back by clicking on <b>SECTIONS</b> above
+</div>
+
+<br>
+
+<div class="">
+  <div class="center">
+    <h1> <i class="fa fa-star gold"></i>That's it for {{section.name}}!<i class="fa fa-star gold"></i></h1>
+
+  </div>
+
+  {% if section.next %}
+  <div class="center h5">
+    <a href="{{section.next.url}}" class="button">
+      <h5>{{section.next.name}} is next!</h5>
+    </a>
+  </div>
+  {% endif %}
+</div>

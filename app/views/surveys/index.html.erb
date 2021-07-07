@@ -1,0 +1,11 @@
+<% if _user.surveys.empty? %>
+  <h1> You do not have a survey yet... </h1>
+  <p class="">  But they will show up here when you do!</p>
+  <p><%= image_tag "http://i.stack.imgur.com/4KRPt.png" %></p>
+<% else %>
+  <div class="row" style="margin-top:50px;">
+    <% _user.surveys.includes(:questions).where.not(questions: {id: nil}).order('surveys.created_at desc, allowed_to_submit_answers desc').group_by{|survey| survey.allowed_to_submit_answers? }.each do |allowed, surveys| %>
+      <%= render surveys %>
+    <% end %>
+  </div>
+<% end %>

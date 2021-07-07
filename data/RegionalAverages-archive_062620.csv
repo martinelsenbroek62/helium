@@ -1,0 +1,716 @@
+Region,Characteristic,Value (metric tons CO2e/year),Updated?,Year
+Alabama,Electricity,0.00097360574,Y,2018
+Alaska,Electricity,0.00031830711,Y,2018
+Arizona,Electricity,0.00066141783,Y,2018
+Arkansas,Electricity,0.00074870858,Y,2018
+California,Electricity,0.00033409151,Y,2018
+Canada,Electricity,0.00019455810,Y,2018
+Colorado,Electricity,0.00086804754,Y,2018
+Connecticut,Electricity,0.00053440826,Y,2018
+Delaware,Electricity,0.00067754974,Y,2018
+District of Columbia,Electricity,0.00067754974,Y,2018
+Florida,Electricity,0.00090357953,Y,2018
+Georgia,Electricity,0.00097360574,Y,2018
+Hawaii,Electricity,0.00073055774,Y,2018
+Idaho,Electricity,0.00041322978,Y,2018
+Illinois,Electricity,0.00137373272,Y,2018
+Indiana,Electricity,0.00137373272,Y,2018
+Iowa,Electricity,0.00136929146,Y,2018
+Kansas,Electricity,0.00156110682,Y,2018
+Kentucky,Electricity,0.00106030413,Y,2018
+Louisiana,Electricity,0.00074870858,Y,2018
+Maine,Electricity,0.00053440826,Y,2018
+Maryland,Electricity,0.00067754974,Y,2018
+Massachusetts,Electricity,0.00053440826,Y,2018
+Michigan,Electricity,0.00140383587,Y,2018
+Minnesota,Electricity,0.00136929146,Y,2018
+Mississippi,Electricity,0.00106030413,Y,2018
+Missouri,Electricity,0.00178096824,Y,2018
+Montana,Electricity,0.00041322978,Y,2018
+Nebraska,Electricity,0.00136929146,Y,2018
+Nevada,Electricity,0.00041322978,Y,2018
+New Hampshire,Electricity,0.00053440826,Y,2018
+New Jersey,Electricity,0.00072248926,Y,2018
+New Mexico,Electricity,0.00066141783,Y,2018
+New York,Electricity,0.00028055540,Y,2018
+North Carolina,Electricity,0.00072023971,Y,2018
+North Dakota,Electricity,0.00136929146,Y,2018
+Ohio,Electricity,0.00137373272,Y,2018
+Oklahoma,Electricity,0.00111561849,Y,2018
+Ontario,Electricity,0.00019455810,Y,2018
+Oregon,Electricity,0.00041322978,Y,2018
+Pennsylvania,Electricity,0.00072248926,Y,2018
+Rhode Island,Electricity,0.00053440826,Y,2018
+South Carolina,Electricity,0.00072023971,Y,2018
+South Dakota,Electricity,0.00136929146,Y,2018
+Tennessee,Electricity,0.00106030413,Y,2018
+Texas,Electricity,0.00090155519,Y,2018
+Utah,Electricity,0.00041322978,Y,2018
+Vermont,Electricity,0.00053440826,Y,2018
+Virginia,Electricity,0.00072023971,Y,2018
+Washington,Electricity,0.00041322978,Y,2018
+West Virginia,Electricity,0.00111260997,Y,2018
+Wisconsin,Electricity,0.00184334907,Y,2018
+Wyoming,Electricity,0.00086804754,Y,2018
+Canada - All,Electricity,6.38686263657,Y,2018
+United States of America,Electricity,6.38686263657,Y,2018
+Alabama,Food and Waste Total,7.44011815595,Y,2018
+Alaska,Food and Waste Total,7.44011815595,Y,2018
+Arizona,Food and Waste Total,7.44011815595,Y,2018
+Arkansas,Food and Waste Total,7.44011815595,Y,2018
+California,Food and Waste Total,8.48546328000,Y,2018
+Canada,Food and Waste Total,7.44011815595,Y,2018
+Colorado,Food and Waste Total,7.25252836000,Y,2018
+Connecticut,Food and Waste Total,7.44011815595,Y,2018
+Delaware,Food and Waste Total,6.45050000000,Y,2018
+District of Columbia,Food and Waste Total,6.45050000000,Y,2018
+Florida,Food and Waste Total,7.48185732000,Y,2018
+Georgia,Food and Waste Total,7.44011815595,Y,2018
+Hawaii,Food and Waste Total,7.44011815595,Y,2018
+Idaho,Food and Waste Total,7.44011815595,Y,2018
+Illinois,Food and Waste Total,7.53918956000,Y,2018
+Indiana,Food and Waste Total,7.44011815595,Y,2018
+Iowa,Food and Waste Total,7.44011815595,Y,2018
+Kansas,Food and Waste Total,7.44011815595,Y,2018
+Kentucky,Food and Waste Total,7.44011815595,Y,2018
+Louisiana,Food and Waste Total,7.44011815595,Y,2018
+Maine,Food and Waste Total,6.67920596000,Y,2018
+Maryland,Food and Waste Total,7.59652180000,Y,2018
+Massachusetts,Food and Waste Total,7.19519612000,Y,2018
+Michigan,Food and Waste Total,7.44011815595,Y,2018
+Minnesota,Food and Waste Total,7.08053164000,Y,2018
+Mississippi,Food and Waste Total,7.44011815595,Y,2018
+Missouri,Food and Waste Total,7.44011815595,Y,2018
+Montana,Food and Waste Total,7.44011815595,Y,2018
+Nebraska,Food and Waste Total,7.44011815595,Y,2018
+Nevada,Food and Waste Total,7.44011815595,Y,2018
+New Hampshire,Food and Waste Total,7.18945864000,Y,2018
+New Jersey,Food and Waste Total,7.85117500000,Y,2018
+New Mexico,Food and Waste Total,7.44011815595,Y,2018
+New York,Food and Waste Total,7.48185732000,Y,2018
+North Carolina,Food and Waste Total,7.25252836000,Y,2018
+North Dakota,Food and Waste Total,7.44011815595,Y,2018
+Ohio,Food and Waste Total,7.15178800000,Y,2018
+Oklahoma,Food and Waste Total,7.44011815595,Y,2018
+Ontario,Food and Waste Total,7.44011815595,Y,2018
+Oregon,Food and Waste Total,7.44011815595,Y,2018
+Pennsylvania,Food and Waste Total,7.10919776000,Y,2018
+Rhode Island,Food and Waste Total,7.44011815595,Y,2018
+South Carolina,Food and Waste Total,7.44011815595,Y,2018
+South Dakota,Food and Waste Total,7.44011815595,Y,2018
+Tennessee,Food and Waste Total,7.44011815595,Y,2018
+Texas,Food and Waste Total,8.08384584000,Y,2018
+Utah,Food and Waste Total,7.44011815595,Y,2018
+Vermont,Food and Waste Total,6.82253208000,Y,2018
+Virginia,Food and Waste Total,7.44011815595,Y,2018
+Washington,Food and Waste Total,7.44011815595,Y,2018
+West Virginia,Food and Waste Total,7.44011815595,Y,2018
+Wisconsin,Food and Waste Total,7.44011815595,Y,2018
+Wyoming,Food and Waste Total,7.44011815595,Y,2018
+Canada - All,Food and Waste Total,7.44011815595,Y,2018
+United States of America,Food and Waste Total,7.44011815595,Y,2018
+Alabama,Food*,6.78011815595,Y,2018
+Alaska,Food*,6.78011815595,Y,2018
+Arizona,Food*,6.78011815595,Y,2018
+Arkansas,Food*,6.78011815595,Y,2018
+California,Food*,7.74631200000,Y,2018
+Canada,Food*,6.78011815595,Y,2018
+Colorado,Food*,6.61645600000,Y,2018
+Connecticut,Food*,6.78011815595,Y,2018
+Delaware,Food*,5.89050000000,Y,2018
+District of Columbia,Food*,5.89050000000,Y,2018
+Florida,Food*,6.82567200000,Y,2018
+Georgia,Food*,6.78011815595,Y,2018
+Hawaii,Food*,6.78011815595,Y,2018
+Idaho,Food*,6.78011815595,Y,2018
+Illinois,Food*,6.87797600000,Y,2018
+Indiana,Food*,6.78011815595,Y,2018
+Iowa,Food*,6.78011815595,Y,2018
+Kansas,Food*,6.78011815595,Y,2018
+Kentucky,Food*,6.78011815595,Y,2018
+Louisiana,Food*,6.78011815595,Y,2018
+Maine,Food*,6.09341600000,Y,2018
+Maryland,Food*,6.93028000000,Y,2018
+Massachusetts,Food*,6.56415200000,Y,2018
+Michigan,Food*,6.78011815595,Y,2018
+Minnesota,Food*,6.45954400000,Y,2018
+Mississippi,Food*,6.78011815595,Y,2018
+Missouri,Food*,6.78011815595,Y,2018
+Montana,Food*,6.78011815595,Y,2018
+Nebraska,Food*,6.78011815595,Y,2018
+Nevada,Food*,6.78011815595,Y,2018
+New Hampshire,Food*,6.56847100000,Y,2018
+New Jersey,Food*,7.16117500000,Y,2018
+New Mexico,Food*,6.78011815595,Y,2018
+New York,Food*,6.82567200000,Y,2018
+North Carolina,Food*,6.61645600000,Y,2018
+North Dakota,Food*,6.78011815595,Y,2018
+Ohio,Food*,6.52178800000,Y,2018
+Oklahoma,Food*,6.78011815595,Y,2018
+Ontario,Food*,6.78011815595,Y,2018
+Oregon,Food*,6.78011815595,Y,2018
+Pennsylvania,Food*,6.48569600000,Y,2018
+Rhode Island,Food*,6.78011815595,Y,2018
+South Carolina,Food*,6.78011815595,Y,2018
+South Dakota,Food*,6.78011815595,Y,2018
+Tennessee,Food*,6.78011815595,Y,2018
+Texas,Food*,7.37486400000,Y,2018
+Utah,Food*,6.78011815595,Y,2018
+Vermont,Food*,6.23422800000,Y,2018
+Virginia,Food*,6.78011815595,Y,2018
+Washington,Food*,6.78011815595,Y,2018
+West Virginia,Food*,6.78011815595,Y,2018
+Wisconsin,Food*,6.78011815595,Y,2018
+Wyoming,Food*,6.78011815595,Y,2018
+Canada - All,Food*,6.78011815595,Y,2018
+United States of America,Food*,6.78011815595,Y,2018
+Alabama,Household Size,2.6,Y,2018
+Alaska,Household Size,2.6,Y,2018
+Arizona,Household Size,2.6,Y,2018
+Arkansas,Household Size,2.6,Y,2018
+California,Household Size,2.9,Y,2018
+Canada,Household Size,2.6,Y,2018
+Colorado,Household Size,2.5,Y,2018
+Connecticut,Household Size,2.6,Y,2018
+Delaware,Household Size,2.2,Y,2018
+District of Columbia,Household Size,2.2,Y,2018
+Florida,Household Size,2.6,Y,2018
+Georgia,Household Size,2.6,Y,2018
+Hawaii,Household Size,2.6,Y,2018
+Idaho,Household Size,2.6,Y,2018
+Illinois,Household Size,2.6,Y,2018
+Indiana,Household Size,2.6,Y,2018
+Iowa,Household Size,2.6,Y,2018
+Kansas,Household Size,2.6,Y,2018
+Kentucky,Household Size,2.6,Y,2018
+Louisiana,Household Size,2.6,Y,2018
+Maine,Household Size,2.3,Y,2018
+Maryland,Household Size,2.7,Y,2018
+Massachusetts,Household Size,2.5,Y,2018
+Michigan,Household Size,2.6,Y,2018
+Minnesota,Household Size,2.5,Y,2018
+Mississippi,Household Size,2.6,Y,2018
+Missouri,Household Size,2.6,Y,2018
+Montana,Household Size,2.6,Y,2018
+Nebraska,Household Size,2.6,Y,2018
+Nevada,Household Size,2.6,Y,2018
+New Hampshire,Household Size,2.5,Y,2018
+New Jersey,Household Size,2.7,Y,2018
+New Mexico,Household Size,2.6,Y,2018
+New York,Household Size,2.6,Y,2018
+North Carolina,Household Size,2.5,Y,2018
+North Dakota,Household Size,2.6,Y,2018
+Ohio,Household Size,2.5,Y,2018
+Oklahoma,Household Size,2.6,Y,2018
+Ontario,Household Size,2.6,Y,2018
+Oregon,Household Size,2.6,Y,2018
+Pennsylvania,Household Size,2.5,Y,2018
+Rhode Island,Household Size,2.6,Y,2018
+South Carolina,Household Size,2.6,Y,2018
+South Dakota,Household Size,2.6,Y,2018
+Tennessee,Household Size,2.6,Y,2018
+Texas,Household Size,2.8,Y,2018
+Utah,Household Size,2.6,Y,2018
+Vermont,Household Size,2.3,Y,2018
+Virginia,Household Size,2.6,Y,2018
+Washington,Household Size,2.6,Y,2018
+West Virginia,Household Size,2.6,Y,2018
+Wisconsin,Household Size,2.6,Y,2018
+Wyoming,Household Size,2.6,Y,2018
+Canada - All,Household Size,2.50000000000,Y,2018
+United States of America,Household Size,2.50000000000,Y,2018
+Alabama,Housing Total,2.56624759308,Y,2018
+Alaska,Housing Total,2.56559229445,Y,2018
+Arizona,Housing Total,2.56593540518,Y,2018
+Arkansas,Housing Total,2.56602269592,Y,2018
+California,Housing Total,2.04869131807,Y,2018
+Canada,Housing Total,2.56546854544,Y,2018
+Colorado,Housing Total,4.23448691097,Y,2018
+Connecticut,Housing Total,2.56580839560,Y,2018
+Delaware,Housing Total,2.85067754974,Y,2018
+District of Columbia,Housing Total,2.85067754974,Y,2018
+Florida,Housing Total,0.16971185902,Y,2018
+Georgia,Housing Total,2.56624759308,Y,2018
+Hawaii,Housing Total,2.56600454508,Y,2018
+Idaho,Housing Total,2.56568721713,Y,2018
+Illinois,Housing Total,5.51720300403,Y,2018
+Indiana,Housing Total,2.56664772007,Y,2018
+Iowa,Housing Total,2.56664327880,Y,2018
+Kansas,Housing Total,2.56683509416,Y,2018
+Kentucky,Housing Total,2.56633429148,Y,2018
+Louisiana,Housing Total,2.56602269592,Y,2018
+Maine,Housing Total,4.44628449557,Y,2018
+Maryland,Housing Total,2.94234604769,Y,2018
+Massachusetts,Housing Total,5.41585564190,Y,2018
+Michigan,Housing Total,2.56667782321,Y,2018
+Minnesota,Housing Total,4.45710745092,Y,2018
+Mississippi,Housing Total,2.56633429148,Y,2018
+Missouri,Housing Total,2.56705495559,Y,2018
+Montana,Housing Total,2.56568721713,Y,2018
+Nebraska,Housing Total,2.56664327880,Y,2018
+Nevada,Housing Total,2.56568721713,Y,2018
+New Hampshire,Housing Total,3.81492600525,Y,2018
+New Jersey,Housing Total,4.58072248926,Y,2018
+New Mexico,Housing Total,2.56593540518,Y,2018
+New York,Housing Total,4.45937557349,Y,2018
+North Carolina,Housing Total,1.42092777021,Y,2018
+North Dakota,Housing Total,2.56664327880,Y,2018
+Ohio,Housing Total,3.85137373272,Y,2018
+Oklahoma,Housing Total,2.56638960583,Y,2018
+Ontario,Housing Total,2.56546854544,Y,2018
+Oregon,Housing Total,2.56568721713,Y,2018
+Pennsylvania,Housing Total,4.01623269192,Y,2018
+Rhode Island,Housing Total,2.56580839560,Y,2018
+South Carolina,Housing Total,2.56599422705,Y,2018
+South Dakota,Housing Total,2.56664327880,Y,2018
+Tennessee,Housing Total,2.56633429148,Y,2018
+Texas,Housing Total,1.24485598896,Y,2018
+Utah,Housing Total,2.56568721713,Y,2018
+Vermont,Housing Total,4.33053440826,Y,2018
+Virginia,Housing Total,2.56599422705,Y,2018
+Washington,Housing Total,2.56568721713,Y,2018
+West Virginia,Housing Total,2.56638659732,Y,2018
+Wisconsin,Housing Total,2.56711733641,Y,2018
+Wyoming,Housing Total,2.56614203488,Y,2018
+Canada - All,Housing Total,8.95213662391,Y,2018
+United States of America,Housing Total,8.95213662391,Y,2018
+Alabama,Long Distance travel,1.10000000000,Y,2018
+Alaska,Long Distance travel,1.10000000000,Y,2018
+Arizona,Long Distance travel,1.10000000000,Y,2018
+Arkansas,Long Distance travel,1.10000000000,Y,2018
+California,Long Distance travel,1.50000000000,Y,2018
+Canada,Long Distance travel,1.10000000000,Y,2018
+Colorado,Long Distance travel,1.50000000000,Y,2018
+Connecticut,Long Distance travel,1.10000000000,Y,2018
+Delaware,Long Distance travel,1.10000000000,Y,2018
+District of Columbia,Long Distance travel,1.10000000000,Y,2018
+Florida,Long Distance travel,1.50000000000,Y,2018
+Georgia,Long Distance travel,1.10000000000,Y,2018
+Hawaii,Long Distance travel,1.10000000000,Y,2018
+Idaho,Long Distance travel,1.10000000000,Y,2018
+Illinois,Long Distance travel,1.50000000000,Y,2018
+Indiana,Long Distance travel,1.10000000000,Y,2018
+Iowa,Long Distance travel,1.10000000000,Y,2018
+Kansas,Long Distance travel,1.10000000000,Y,2018
+Kentucky,Long Distance travel,1.10000000000,Y,2018
+Louisiana,Long Distance travel,1.10000000000,Y,2018
+Maine,Long Distance travel,1.50000000000,Y,2018
+Maryland,Long Distance travel,1.50000000000,Y,2018
+Massachusetts,Long Distance travel,1.50000000000,Y,2018
+Michigan,Long Distance travel,1.10000000000,Y,2018
+Minnesota,Long Distance travel,1.50000000000,Y,2018
+Mississippi,Long Distance travel,1.10000000000,Y,2018
+Missouri,Long Distance travel,1.10000000000,Y,2018
+Montana,Long Distance travel,1.10000000000,Y,2018
+Nebraska,Long Distance travel,1.10000000000,Y,2018
+Nevada,Long Distance travel,1.10000000000,Y,2018
+New Hampshire,Long Distance travel,1.50000000000,Y,2018
+New Jersey,Long Distance travel,1.50000000000,Y,2018
+New Mexico,Long Distance travel,1.10000000000,Y,2018
+New York,Long Distance travel,1.50000000000,Y,2018
+North Carolina,Long Distance travel,1.50000000000,Y,2018
+North Dakota,Long Distance travel,1.10000000000,Y,2018
+Ohio,Long Distance travel,1.10000000000,Y,2018
+Oklahoma,Long Distance travel,1.10000000000,Y,2018
+Ontario,Long Distance travel,1.10000000000,Y,2018
+Oregon,Long Distance travel,1.10000000000,Y,2018
+Pennsylvania,Long Distance travel,1.50000000000,Y,2018
+Rhode Island,Long Distance travel,1.10000000000,Y,2018
+South Carolina,Long Distance travel,1.10000000000,Y,2018
+South Dakota,Long Distance travel,1.10000000000,Y,2018
+Tennessee,Long Distance travel,1.10000000000,Y,2018
+Texas,Long Distance travel,1.50000000000,Y,2018
+Utah,Long Distance travel,1.10000000000,Y,2018
+Vermont,Long Distance travel,1.10000000000,Y,2018
+Virginia,Long Distance travel,1.10000000000,Y,2018
+Washington,Long Distance travel,1.10000000000,Y,2018
+West Virginia,Long Distance travel,1.10000000000,Y,2018
+Wisconsin,Long Distance travel,1.10000000000,Y,2018
+Wyoming,Long Distance travel,1.10000000000,Y,2018
+Canada - All,Long Distance travel,1.10000000000,Y,2018
+United States of America,Long Distance travel,1.10000000000,Y,2018
+Alabama,Other Fuels,2.56527398734,Y,2018
+Alaska,Other Fuels,2.56527398734,Y,2018
+Arizona,Other Fuels,2.56527398734,Y,2018
+Arkansas,Other Fuels,2.56527398734,Y,2018
+California,Other Fuels,2.04835722655,Y,2018
+Canada,Other Fuels,2.56527398734,Y,2018
+Colorado,Other Fuels,4.23361886342,Y,2018
+Connecticut,Other Fuels,2.56527398734,Y,2018
+Delaware,Other Fuels,2.85000000000,Y,2018
+District of Columbia,Other Fuels,2.85000000000,Y,2018
+Florida,Other Fuels,0.16880827949,Y,2018
+Georgia,Other Fuels,2.56527398734,Y,2018
+Hawaii,Other Fuels,2.56527398734,Y,2018
+Idaho,Other Fuels,2.56527398734,Y,2018
+Illinois,Other Fuels,5.51582927130,Y,2018
+Indiana,Other Fuels,2.56527398734,Y,2018
+Iowa,Other Fuels,2.56527398734,Y,2018
+Kansas,Other Fuels,2.56527398734,Y,2018
+Kentucky,Other Fuels,2.56527398734,Y,2018
+Louisiana,Other Fuels,2.56527398734,Y,2018
+Maine,Other Fuels,4.44575008731,Y,2018
+Maryland,Other Fuels,2.94166849795,Y,2018
+Massachusetts,Other Fuels,5.41532123365,Y,2018
+Michigan,Other Fuels,2.56527398734,Y,2018
+Minnesota,Other Fuels,4.45573815947,Y,2018
+Mississippi,Other Fuels,2.56527398734,Y,2018
+Missouri,Other Fuels,2.56527398734,Y,2018
+Montana,Other Fuels,2.56527398734,Y,2018
+Nebraska,Other Fuels,2.56527398734,Y,2018
+Nevada,Other Fuels,2.56527398734,Y,2018
+New Hampshire,Other Fuels,3.81439159700,Y,2018
+New Jersey,Other Fuels,4.58000000000,Y,2018
+New Mexico,Other Fuels,2.56527398734,Y,2018
+New York,Other Fuels,4.45909501809,Y,2018
+North Carolina,Other Fuels,1.42020753050,Y,2018
+North Dakota,Other Fuels,2.56527398734,Y,2018
+Ohio,Other Fuels,3.85000000000,Y,2018
+Oklahoma,Other Fuels,2.56527398734,Y,2018
+Ontario,Other Fuels,2.56527398734,Y,2018
+Oregon,Other Fuels,2.56527398734,Y,2018
+Pennsylvania,Other Fuels,4.01551020266,Y,2018
+Rhode Island,Other Fuels,2.56527398734,Y,2018
+South Carolina,Other Fuels,2.56527398734,Y,2018
+South Dakota,Other Fuels,2.56527398734,Y,2018
+Tennessee,Other Fuels,2.56527398734,Y,2018
+Texas,Other Fuels,1.24395443377,Y,2018
+Utah,Other Fuels,2.56527398734,Y,2018
+Vermont,Other Fuels,4.33000000000,Y,2018
+Virginia,Other Fuels,2.56527398734,Y,2018
+Washington,Other Fuels,2.56527398734,Y,2018
+West Virginia,Other Fuels,2.56527398734,Y,2018
+Wisconsin,Other Fuels,2.56527398734,Y,2018
+Wyoming,Other Fuels,2.56527398734,Y,2018
+Canada - All,Other Fuels,4.23361886342,Y,2018
+United States of America,Other Fuels,4.23361886342,Y,2018
+Alabama,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Alaska,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Arizona,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Arkansas,Personal Vehicles (Commuting),17.47830000000,Y,2018
+California,Personal Vehicles (Commuting),17.32555897539,Y,2018
+Canada,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Colorado,Personal Vehicles (Commuting),15.24464430879,Y,2018
+Connecticut,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Delaware,Personal Vehicles (Commuting),17.50789359931,Y,2018
+District of Columbia,Personal Vehicles (Commuting),3.71923644489,Y,2018
+Florida,Personal Vehicles (Commuting),17.36837894022,Y,2018
+Georgia,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Hawaii,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Idaho,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Illinois,Personal Vehicles (Commuting),15.07458444779,Y,2018
+Indiana,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Iowa,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Kansas,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Kentucky,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Louisiana,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Maine,Personal Vehicles (Commuting),17.33631750689,Y,2018
+Maryland,Personal Vehicles (Commuting),17.50789359931,Y,2018
+Massachusetts,Personal Vehicles (Commuting),14.56229248962,Y,2018
+Michigan,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Minnesota,Personal Vehicles (Commuting),17.94517737734,Y,2018
+Mississippi,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Missouri,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Montana,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Nebraska,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Nevada,Personal Vehicles (Commuting),17.47830000000,Y,2018
+New Hampshire,Personal Vehicles (Commuting),16.76685054836,Y,2018
+New Jersey,Personal Vehicles (Commuting),15.96294000000,Y,2018
+New Mexico,Personal Vehicles (Commuting),17.47830000000,Y,2018
+New York,Personal Vehicles (Commuting),11.97414805774,Y,2018
+North Carolina,Personal Vehicles (Commuting),18.55441100055,Y,2018
+North Dakota,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Ohio,Personal Vehicles (Commuting),14.87808000000,Y,2018
+Oklahoma,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Ontario,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Oregon,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Pennsylvania,Personal Vehicles (Commuting),13.37429470720,Y,2018
+Rhode Island,Personal Vehicles (Commuting),17.47830000000,Y,2018
+South Carolina,Personal Vehicles (Commuting),17.47830000000,Y,2018
+South Dakota,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Tennessee,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Texas,Personal Vehicles (Commuting),17.57282957249,Y,2018
+Utah,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Vermont,Personal Vehicles (Commuting),19.13142000000,Y,2018
+Virginia,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Washington,Personal Vehicles (Commuting),17.47830000000,Y,2018
+West Virginia,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Wisconsin,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Wyoming,Personal Vehicles (Commuting),17.47830000000,Y,2018
+Canada - All,Personal Vehicles (Commuting),2.82170000000,Y,2018
+United States of America,Personal Vehicles (Commuting),2.82170000000,Y,2018
+Alabama,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Alaska,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Arizona,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Arkansas,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+California,Personal Vehicles (w/out Commuting),7.26425875739,Y,2018
+Canada,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Colorado,Personal Vehicles (w/out Commuting),6.39177304933,Y,2018
+Connecticut,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Delaware,Personal Vehicles (w/out Commuting),7.34070800157,Y,2018
+District of Columbia,Personal Vehicles (w/out Commuting),1.55940111104,Y,2018
+Florida,Personal Vehicles (w/out Commuting),7.28221230827,Y,2018
+Georgia,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Hawaii,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Idaho,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Illinois,Personal Vehicles (w/out Commuting),6.32047036661,Y,2018
+Indiana,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Iowa,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Kansas,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Kentucky,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Louisiana,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Maine,Personal Vehicles (w/out Commuting),7.26876959348,Y,2018
+Maryland,Personal Vehicles (w/out Commuting),7.34070800157,Y,2018
+Massachusetts,Personal Vehicles (w/out Commuting),6.10567664199,Y,2018
+Michigan,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Minnesota,Personal Vehicles (w/out Commuting),7.52405230339,Y,2018
+Mississippi,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Missouri,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Montana,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Nebraska,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Nevada,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+New Hampshire,Personal Vehicles (w/out Commuting),7.03000354002,Y,2018
+New Jersey,Personal Vehicles (w/out Commuting),6.69294000000,Y,2018
+New Mexico,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+New York,Personal Vehicles (w/out Commuting),5.02051968507,Y,2018
+North Carolina,Personal Vehicles (w/out Commuting),7.77949172032,Y,2018
+North Dakota,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Ohio,Personal Vehicles (w/out Commuting),6.23808000000,Y,2018
+Oklahoma,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Ontario,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Oregon,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Pennsylvania,Personal Vehicles (w/out Commuting),5.60757304216,Y,2018
+Rhode Island,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+South Carolina,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+South Dakota,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Tennessee,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Texas,Personal Vehicles (w/out Commuting),7.36793435037,Y,2018
+Utah,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Vermont,Personal Vehicles (w/out Commuting),8.02142000000,Y,2018
+Virginia,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Washington,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+West Virginia,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Wisconsin,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Wyoming,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Canada - All,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+United States of America,Personal Vehicles (w/out Commuting),7.32830000000,Y,2018
+Alabama,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Alaska,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Arizona,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Arkansas,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+California,Personal Vehicles Total (w/Commuting),10.06130021799,Y,2018
+Canada,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Colorado,Personal Vehicles Total (w/Commuting),8.85287125946,Y,2018
+Connecticut,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Delaware,Personal Vehicles Total (w/Commuting),10.16718559774,Y,2018
+District of Columbia,Personal Vehicles Total (w/Commuting),2.15983533385,Y,2018
+Florida,Personal Vehicles Total (w/Commuting),10.08616663195,Y,2018
+Georgia,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Hawaii,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Idaho,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Illinois,Personal Vehicles Total (w/Commuting),8.75411408118,Y,2018
+Indiana,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Iowa,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Kansas,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Kentucky,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Louisiana,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Maine,Personal Vehicles Total (w/Commuting),10.06754791341,Y,2018
+Maryland,Personal Vehicles Total (w/Commuting),10.16718559774,Y,2018
+Massachusetts,Personal Vehicles Total (w/Commuting),8.45661584763,Y,2018
+Michigan,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Minnesota,Personal Vehicles Total (w/Commuting),10.42112507395,Y,2018
+Mississippi,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Missouri,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Montana,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Nebraska,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Nevada,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+New Hampshire,Personal Vehicles Total (w/Commuting),9.73684700834,Y,2018
+New Jersey,Personal Vehicles Total (w/Commuting),9.27000000000,Y,2018
+New Mexico,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+New York,Personal Vehicles Total (w/Commuting),6.95362837267,Y,2018
+North Carolina,Personal Vehicles Total (w/Commuting),10.77491928023,Y,2018
+North Dakota,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Ohio,Personal Vehicles Total (w/Commuting),8.64000000000,Y,2018
+Oklahoma,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Ontario,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Oregon,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Pennsylvania,Personal Vehicles Total (w/Commuting),7.76672166504,Y,2018
+Rhode Island,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+South Carolina,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+South Dakota,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Tennessee,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Texas,Personal Vehicles Total (w/Commuting),10.20489522212,Y,2018
+Utah,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Vermont,Personal Vehicles Total (w/Commuting),11.11000000000,Y,2018
+Virginia,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Washington,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+West Virginia,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Wisconsin,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Wyoming,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Canada - All,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+United States of America,Personal Vehicles Total (w/Commuting),10.15000000000,Y,2018
+Alabama,Total,21.25636574904,Y,2018
+Alaska,Total,21.25571045041,Y,2018
+Arizona,Total,21.25605356113,Y,2018
+Arkansas,Total,21.25614085188,Y,2018
+California,Total,22.09545481606,Y,2018
+Canada,Total,21.25558670140,Y,2018
+Colorado,Total,21.83988653042,Y,2018
+Connecticut,Total,21.25592655155,Y,2018
+Delaware,Total,20.56836314748,Y,2018
+District of Columbia,Total,12.56101288359,Y,2018
+Florida,Total,19.23773581097,Y,2018
+Georgia,Total,21.25636574904,Y,2018
+Hawaii,Total,21.25612270104,Y,2018
+Idaho,Total,21.25580537308,Y,2018
+Illinois,Total,23.31050664520,Y,2018
+Indiana,Total,21.25676587602,Y,2018
+Iowa,Total,21.25676143475,Y,2018
+Kansas,Total,21.25695325011,Y,2018
+Kentucky,Total,21.25645244743,Y,2018
+Louisiana,Total,21.25614085188,Y,2018
+Maine,Total,22.69303836898,Y,2018
+Maryland,Total,22.20605344543,Y,2018
+Massachusetts,Total,22.56766760954,Y,2018
+Michigan,Total,21.25679597917,Y,2018
+Minnesota,Total,23.45876416487,Y,2018
+Mississippi,Total,21.25645244743,Y,2018
+Missouri,Total,21.25717311154,Y,2018
+Montana,Total,21.25580537308,Y,2018
+Nebraska,Total,21.25676143475,Y,2018
+Nevada,Total,21.25580537308,Y,2018
+New Hampshire,Total,22.24123165359,Y,2018
+New Jersey,Total,23.20189748926,Y,2018
+New Mexico,Total,21.25605356113,Y,2018
+New York,Total,20.39486126616,Y,2018
+North Carolina,Total,20.94837541044,Y,2018
+North Dakota,Total,21.25676143475,Y,2018
+Ohio,Total,20.74316173272,Y,2018
+Oklahoma,Total,21.25650776179,Y,2018
+Ontario,Total,21.25558670140,Y,2018
+Oregon,Total,21.25580537308,Y,2018
+Pennsylvania,Total,20.39215211696,Y,2018
+Rhode Island,Total,21.25592655155,Y,2018
+South Carolina,Total,21.25611238301,Y,2018
+South Dakota,Total,21.25676143475,Y,2018
+Tennessee,Total,21.25645244743,Y,2018
+Texas,Total,21.03359705108,Y,2018
+Utah,Total,21.25580537308,Y,2018
+Vermont,Total,23.36306648826,Y,2018
+Virginia,Total,21.25611238301,Y,2018
+Washington,Total,21.25580537308,Y,2018
+West Virginia,Total,21.25650475327,Y,2018
+Wisconsin,Total,21.25723549237,Y,2018
+Wyoming,Total,21.25626019084,Y,2018
+Canada - All,Total,27.64225477986,Y,2018
+United States of America,Total,27.64225477986,Y,2018
+Alabama,Transportation Total,11.25000000000,Y,2018
+Alaska,Transportation Total,11.25000000000,Y,2018
+Arizona,Transportation Total,11.25000000000,Y,2018
+Arkansas,Transportation Total,11.25000000000,Y,2018
+California,Transportation Total,11.56130021799,Y,2018
+Canada,Transportation Total,11.25000000000,Y,2018
+Colorado,Transportation Total,10.35287125946,Y,2018
+Connecticut,Transportation Total,11.25000000000,Y,2018
+Delaware,Transportation Total,11.26718559774,Y,2018
+District of Columbia,Transportation Total,3.25983533385,Y,2018
+Florida,Transportation Total,11.58616663195,Y,2018
+Georgia,Transportation Total,11.25000000000,Y,2018
+Hawaii,Transportation Total,11.25000000000,Y,2018
+Idaho,Transportation Total,11.25000000000,Y,2018
+Illinois,Transportation Total,10.25411408118,Y,2018
+Indiana,Transportation Total,11.25000000000,Y,2018
+Iowa,Transportation Total,11.25000000000,Y,2018
+Kansas,Transportation Total,11.25000000000,Y,2018
+Kentucky,Transportation Total,11.25000000000,Y,2018
+Louisiana,Transportation Total,11.25000000000,Y,2018
+Maine,Transportation Total,11.56754791341,Y,2018
+Maryland,Transportation Total,11.66718559774,Y,2018
+Massachusetts,Transportation Total,9.95661584763,Y,2018
+Michigan,Transportation Total,11.25000000000,Y,2018
+Minnesota,Transportation Total,11.92112507395,Y,2018
+Mississippi,Transportation Total,11.25000000000,Y,2018
+Missouri,Transportation Total,11.25000000000,Y,2018
+Montana,Transportation Total,11.25000000000,Y,2018
+Nebraska,Transportation Total,11.25000000000,Y,2018
+Nevada,Transportation Total,11.25000000000,Y,2018
+New Hampshire,Transportation Total,11.23684700834,Y,2018
+New Jersey,Transportation Total,10.77000000000,Y,2018
+New Mexico,Transportation Total,11.25000000000,Y,2018
+New York,Transportation Total,8.45362837267,Y,2018
+North Carolina,Transportation Total,12.27491928023,Y,2018
+North Dakota,Transportation Total,11.25000000000,Y,2018
+Ohio,Transportation Total,9.74000000000,Y,2018
+Oklahoma,Transportation Total,11.25000000000,Y,2018
+Ontario,Transportation Total,11.25000000000,Y,2018
+Oregon,Transportation Total,11.25000000000,Y,2018
+Pennsylvania,Transportation Total,9.26672166504,Y,2018
+Rhode Island,Transportation Total,11.25000000000,Y,2018
+South Carolina,Transportation Total,11.25000000000,Y,2018
+South Dakota,Transportation Total,11.25000000000,Y,2018
+Tennessee,Transportation Total,11.25000000000,Y,2018
+Texas,Transportation Total,11.70489522212,Y,2018
+Utah,Transportation Total,11.25000000000,Y,2018
+Vermont,Transportation Total,12.21000000000,Y,2018
+Virginia,Transportation Total,11.25000000000,Y,2018
+Washington,Transportation Total,11.25000000000,Y,2018
+West Virginia,Transportation Total,11.25000000000,Y,2018
+Wisconsin,Transportation Total,11.25000000000,Y,2018
+Wyoming,Transportation Total,11.25000000000,Y,2018
+Canada - All,Transportation Total,11.25000000000,Y,2018
+United States of America,Transportation Total,11.25000000000,Y,2018
+Alabama,Waste disposal*,0.66000000000,Y,2018
+Alaska,Waste disposal*,0.66000000000,Y,2018
+Arizona,Waste disposal*,0.66000000000,Y,2018
+Arkansas,Waste disposal*,0.66000000000,Y,2018
+California,Waste disposal*,0.73915128000,Y,2018
+Canada,Waste disposal*,0.66000000000,Y,2018
+Colorado,Waste disposal*,0.63607236000,Y,2018
+Connecticut,Waste disposal*,0.66000000000,Y,2018
+Delaware,Waste disposal*,0.56000000000,Y,2018
+District of Columbia,Waste disposal*,0.56000000000,Y,2018
+Florida,Waste disposal*,0.65618532000,Y,2018
+Georgia,Waste disposal*,0.66000000000,Y,2018
+Hawaii,Waste disposal*,0.66000000000,Y,2018
+Idaho,Waste disposal*,0.66000000000,Y,2018
+Illinois,Waste disposal*,0.66121356000,Y,2018
+Indiana,Waste disposal*,0.66000000000,Y,2018
+Iowa,Waste disposal*,0.66000000000,Y,2018
+Kansas,Waste disposal*,0.66000000000,Y,2018
+Kentucky,Waste disposal*,0.66000000000,Y,2018
+Louisiana,Waste disposal*,0.66000000000,Y,2018
+Maine,Waste disposal*,0.58578996000,Y,2018
+Maryland,Waste disposal*,0.66624180000,Y,2018
+Massachusetts,Waste disposal*,0.63104412000,Y,2018
+Michigan,Waste disposal*,0.66000000000,Y,2018
+Minnesota,Waste disposal*,0.62098764000,Y,2018
+Mississippi,Waste disposal*,0.66000000000,Y,2018
+Missouri,Waste disposal*,0.66000000000,Y,2018
+Montana,Waste disposal*,0.66000000000,Y,2018
+Nebraska,Waste disposal*,0.66000000000,Y,2018
+Nevada,Waste disposal*,0.66000000000,Y,2018
+New Hampshire,Waste disposal*,0.62098764000,Y,2018
+New Jersey,Waste disposal*,0.69000000000,Y,2018
+New Mexico,Waste disposal*,0.66000000000,Y,2018
+New York,Waste disposal*,0.65618532000,Y,2018
+North Carolina,Waste disposal*,0.63607236000,Y,2018
+North Dakota,Waste disposal*,0.66000000000,Y,2018
+Ohio,Waste disposal*,0.63000000000,Y,2018
+Oklahoma,Waste disposal*,0.66000000000,Y,2018
+Ontario,Waste disposal*,0.66000000000,Y,2018
+Oregon,Waste disposal*,0.66000000000,Y,2018
+Pennsylvania,Waste disposal*,0.62350176000,Y,2018
+Rhode Island,Waste disposal*,0.66000000000,Y,2018
+South Carolina,Waste disposal*,0.66000000000,Y,2018
+South Dakota,Waste disposal*,0.66000000000,Y,2018
+Tennessee,Waste disposal*,0.66000000000,Y,2018
+Texas,Waste disposal*,0.70898184000,Y,2018
+Utah,Waste disposal*,0.66000000000,Y,2018
+Vermont,Waste disposal*,0.58830408000,Y,2018
+Virginia,Waste disposal*,0.66000000000,Y,2018
+Washington,Waste disposal*,0.66000000000,Y,2018
+West Virginia,Waste disposal*,0.66000000000,Y,2018
+Wisconsin,Waste disposal*,0.66000000000,Y,2018
+Wyoming,Waste disposal*,0.66000000000,Y,2018
+Canada - All,Waste disposal*,0.66000000000,Y,2018
+United States of America,Waste disposal*,0.66000000000,Y,2018

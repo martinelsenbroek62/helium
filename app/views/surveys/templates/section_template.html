@@ -1,0 +1,15 @@
+{% for section in sections %}
+  <a href="{{section.url}}">
+    <div class="section-block">
+      <div class="progress-bar">
+        <div class="progress-bar-complete" data-progress='{{section.percent_complete}}%'>
+        </div>
+      </div>
+
+      <div class="section-block-box">
+        <h4>{{section.name}}</h4>
+        <b>{{section.percent_complete}}% complete</b>
+      </div>
+    </div>
+  </a>
+{% endfor %}

@@ -1,0 +1,59 @@
+<%= render 'subheader' %>
+
+<div class="" style="">
+  <div class="">
+    <div class="">
+      <h3>Add New Rule</h3>
+      <div class="">
+        <%= form_for :reimbursement_rule, url: organization_reimbursement_rules_path(_organization) do |f| %>
+          <div class="">
+            <label>Category </label>
+            <%= f.text_field :focus_area %>
+          </div>
+          <div class="">
+            <label>Category Description</label>
+            <%= f.text_field :focus_area_description %>
+          </div>
+          <div class="">
+            <label>Product Type</label>
+            <%= f.text_field :category_name %>
+          </div>
+          <div class="">
+            <label>Product Type Description </label>
+            <%= f.text_field :category_name_description %>
+          </div>
+          <div class="">
+            <label>Amount to Reimburse</label>
+            <%= f.text_field :percentage %>
+          </div>
+          <div class="">
+            <label>Focus Area Image URL Address</label>
+            <%= f.text_field :image_url, placeholder: "http://..." %>
+          </div>
+
+          <div class="">
+            <button>Add Rule</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="">
+      <h3>Upload CSV File</h3>
+      Please include the following fields. You may include headers in uploaded file.
+      <%= link_to "Download sample file", "/upload_reimbursement_rules.csv", target: "_blank" %>
+      <pre style="">Category, Product Type, Kind, %Reimburse, Category Description, Product Type Description, Program Name</pre>
+
+      <%= form_for :upload, url: import_organization_reimbursement_rules_path(_organization) do |f| %>
+        <%= f.file_field :file %>
+        <button>Upload</button>
+      <% end %>
+
+      <small>
+        <i>
+          *A new program will be created if it is present in the CSV file and not in the database already.
+          It cab be configures in the <%= link_to "programs", organization_programs_path(_organization) %> section.
+        </i>
+      </small>
+    </div>
+  </div>
+</div>

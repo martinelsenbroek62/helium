@@ -1,0 +1,24 @@
+<tr>
+  <td>
+    <%= link_to organization_person_path(_organization, person) do %>
+      <%= person.full_name %>
+    <% end %>
+    <small class="">
+      <i><%= "– Terminated #{person.employee_termination_date}" if person.terminated? %></i>
+    </small>
+  </td>
+  <td>
+    <%= link_to organization_person_path(_organization, person) do %>
+      <%= person.email %>
+    <% end %>
+  </td>
+  <td>
+    <%= person.claims.count %>
+  </td>
+  <td>
+    <%= number_to_currency person.available_funds %>
+  </td>
+  <td colspan="">
+    <%= person.date_of_last_deposit.try(:stamp, '10/10/2016') %>
+  </td>
+</tr>

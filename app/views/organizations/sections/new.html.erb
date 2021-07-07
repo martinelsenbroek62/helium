@@ -1,0 +1,46 @@
+<%= render 'form', section:_sections.new %>
+
+<% if false %>
+<ul>
+<% _survey.sections.all.each do |section| %>
+  <li class="">
+    Section: <%= link_to section.name, [_organization, _survey, section] %>
+    <ul>
+
+    <% section.groups.each do |group| %>
+      <li>
+        <%= group.xshow? ? '[Yes]' : '<b style="">[No]</b>'.html_safe %>
+        <%= link_to [_organization, _survey, section, group] do %><%= group.id %>:Group: <%= group.name %><% end %>
+
+        <small><% group.rules.each do |r| %>
+          Q: <%= r.id %>:<%= r.answer_from.text %> =~ <%= r.value %><br>
+        <% end %></small>
+
+        <ul>
+        <% group.questions.each do |question| %>
+          <% next unless question.nil? %>
+          <li>
+
+            <%= form_for question do |f| %>
+            <small>
+              <%= question.xshow? ? '[Yes]' : '<b style="">[No]</b>'.html_safe %>
+            </small>
+            <%= link_to [_organization, _survey, section, group, question] do %><%= question.id %>:Question: <%= question.text %><% end %>
+              <%= f.text_field :answer %><%= f.submit ">" %>
+            <% end %>
+
+            <small>
+              <% question.rules.each do |r| %>
+                Q: <%= r.answer_from_id %>:<%= r.answer_from.text %> =~ <%= r.value %><br>
+              <% end %>
+            </small>
+          </li>
+        <% end %>
+        </ul>
+      </li>
+    <% end %>
+    </ul>
+  </li>
+<% end %>
+</ul>
+<% end %>

@@ -1,0 +1,7 @@
+<% Organization.all.each do |organization| %>
+  <li>
+    <%= link_to organization do %>
+      <%= organization %>
+    <% end %>
+  </li>
+<% end %>

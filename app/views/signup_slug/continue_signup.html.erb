@@ -1,0 +1,36 @@
+<div class="center"><%= image_tag "login.jpg", style: "width:300px" %><br><br></div>
+
+<div class="card">
+  <div class="card-body">
+    <%= form_for @user, url: "", method: :post do |f| %>
+        <% if @error_msg %>
+          <p class="alert alert-danger">
+            <%= @error_msg %>
+          </p>
+        <% end %>
+
+
+        <div class="">
+          <%= f.label :email, "Email" %>
+          <%= f.text_field :email, class:"u-full-width" %>
+        </div>
+
+        <div class="">
+          <button class="">Create Survey <i class="fa fa-send"></i></button>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="card-footer">
+    <div class="">
+      <%= link_to password_path do %>
+        <i class="fa fa-lock"></i>
+        Forgot password?
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<style media="screen">
+  #users { margin-top:30px!important;}
+</style>

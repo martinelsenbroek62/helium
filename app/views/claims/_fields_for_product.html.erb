@@ -1,0 +1,52 @@
+<%
+product = if defined?(_claim) && defined?(_claim.product)
+  _claim.product
+else
+  Product.new(focus_area: params[:filter].to_s.parameterize)
+end
+%>
+<div id="fields_for_product">
+  <%= fields_for product do |f| %>
+    <div class="">
+      <div class="">
+        Please choose category
+      </div>
+      <div class="">
+        <%= f.select :focus_area, Product.unique_focus_area_names(_organization.id).map { |item| [item, item.parameterize]},{}, {name: "none"} %>
+      </div>
+    </div>
+
+    <% ReimbursementRule.where(organization_id:_organization.id,).where.not(focus_area:'', category_name:'').group_by(&:focus_area).each do |focus_area, products| %>
+      <% products.sort_by { |p| p.category_name} %>
+      <div class="" id="<%= focus_area.parameterize -%>">
+        <div class="">
+          <div class="">
+            Please choose product type
+          </div>
+          <div class="">
+            <%= f.select :category_name, products.map(&:category_name).uniq, {}, {name: "none"} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <%= f.hidden_field :focus_area %>
+    <%= f.hidden_field :category_name %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    function selectCategoryFromFocusArea(){
+      $('#fields_for_product .category_name').removeClass('show');
+      $('#'+$('#product_focus_area').val()).addClass('show');
+    }
+
+    selectCategoryFromFocusArea()
+    $('#product_focus_area').on('change', selectCategoryFromFocusArea)
+    $('#fields_for_product select').on('change', function(){
+      $('input#product_focus_area').val($('select#product_focus_area').val())
+      $('input#product_category_name').val($('.show select#product_category_name').val())
+    })
+  })
+</script>
